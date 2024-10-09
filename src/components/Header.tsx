@@ -13,8 +13,6 @@ import {ThemeToggler} from "./theme/ThemeToggler";
 import LocaleSwitcher from "./LocaleSwitcher";
 import {Button} from "./ui/button";
 import UpdateLanguageDialog, {useUpdateLanguageDialog,} from "./common/UpdateLanguage";
-import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
-// import SearchInput from "@/components/movies/sonny/SearchInput";
 
 // const b2bAliveLogo =
 // "https://media.licdn.com/dms/image/C4E0BAQECttqhzuGqBw/company-logo_200_200/0/1651029832992/b2b_alive_logo?e=2147483647&v=beta&t=yaQVzsyhkQw3LhBJexMtVjWovIEQXEzzxRmGTF20RHk";
@@ -66,7 +64,7 @@ const Header: React.FC = () => {
             >
                 <LocaleSwitcher/>
                 <ThemeToggler/>
-                <ThemeSwitcher/>
+                {/*<ThemeSwitcher/>*/}
             </div>
 
             <div className="flex items-center">

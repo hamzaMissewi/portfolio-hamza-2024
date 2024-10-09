@@ -9,10 +9,11 @@ import Image from "next/image";
 import {SignedIn, SignOutButton, UserButton} from "@clerk/nextjs";
 import {useUser} from "@clerk/clerk-react";
 import {useLocale, useTranslations} from "next-intl";
-import {ThemeToggler} from "./ThemeToggler";
+import {ThemeToggler} from "./theme/ThemeToggler";
 import LocaleSwitcher from "./LocaleSwitcher";
 import {Button} from "./ui/button";
 import UpdateLanguageDialog, {useUpdateLanguageDialog,} from "./common/UpdateLanguage";
+import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
 // import SearchInput from "@/components/movies/sonny/SearchInput";
 
 // const b2bAliveLogo =
@@ -34,11 +35,10 @@ const Header: React.FC = () => {
     return (
         <div
             // border border-darkBackground dark:border-customBlue
+            //     backdrop-blur-0
             className={
-                "fixed flex items-center justify-between backdrop-blur-0" +
-                " bg-lightBackground" +
-                " dark:bg-darkBackground" +
-                " w-full z-20 min-w-screen max-h-[200px]"
+                "fixed flex items-center justify-between border border-darkBackground" +
+                " bg-lightHeader dark:bg-darkBlueBackground w-full z-20 max-h-[200px]"
             }
         >
             <motion.div
@@ -47,42 +47,27 @@ const Header: React.FC = () => {
                 transition={{duration: 1}}
                 className={`flex flex-start space-x-2 items-center ${locale === "ar" ? "ml-10" : "mr-10"}`}
             >
-                <Link href="/">Home</Link>
-                <Link
-                    href="https://b2b-alive.com"
-                    rel={"noopener noreferrer"}
-                    target={"_blank"}
-                >
-                    <Image
-                        src={"/assets/b2b-alive-ltd-icon.svg"}
-                        alt="Society Logo"
-                        width={40}
-                        height={30}
-                        // objectFit={"cover"}
-                        className={
-                            "cursor-pointer bg-lightBackground w-15 h-full relative p-1 my-1"
-                        }
-                    />
-                </Link>
+                <Link href="/"><p className={"text-black dark:text-white"}>{t('home')}</p></Link>
             </motion.div>
 
-            {/*<div className={"flex flex-grow"} />*/}
+
+            {/*<Button asChild onClick={openUpdateLanguageDialog} color={"info"}>*/}
+            {/*    Update Language*/}
+            {/*</Button>*/}
 
             <div
                 className={
-                    // "flex justify-center space-x-2 border child:border-black dark:bg-black bg-white  grid grid-cols-3 gap-2"
-                    "grid grid-cols-2 gap-2"
+                    // "flex justify-center space-x-2 border child:border-black dark:bg-black"
+                    "grid grid-cols-3 gap-2"
                 }
             >
-                <Button asChild onClick={openUpdateLanguageDialog} color={"info"}>
-                    Update Language
-                </Button>
                 <LocaleSwitcher/>
+                {/*<ThemeTogglerNew/>*/}
                 <ThemeToggler/>
-                {/*<SearchInput />*/}
+                <ThemeSwitcher/>
             </div>
 
-            <div className="sm:hidden flex w-xl">
+            <div className="flex items-center">
                 {user && isSignedIn ? (
                     <div className={"flex flex-row space-x-2 items-center"}>
                         <h1 className={"text-xl font-semibold"}>
@@ -130,6 +115,23 @@ const Header: React.FC = () => {
                 transition={{duration: 1.5}}
                 className={`flex flex-row items-center cursor-pointer ${locale === "ar" ? "ml-2" : "mr-2"}`}
             >
+                <Link
+                    href="https://b2b-alive.com"
+                    rel={"noopener noreferrer"}
+                    target={"_blank"}
+                >
+                    <Image
+                        src={"/assets/b2b-alive-ltd-icon.svg"}
+                        alt="Society Logo"
+                        width={40}
+                        height={30}
+                        // objectFit={"cover"}
+                        className={
+                            "cursor-pointer bg-lightBackground w-15 h-full relative p-1 my-1"
+                        }
+                    />
+                </Link>
+
                 <SocialIcon
                     url={"https://www.youtube.com/@hamza-topg"}
                     bgColor={"transparent"}

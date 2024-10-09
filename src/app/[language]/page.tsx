@@ -12,12 +12,12 @@ function Page() {
 
     return (
         <div
-            // dark:bg-gradient-to-t from-gray-200/0 via-gray-900/25 to-gray-900 dark:bg-customPageDarkBackground
-            // "md:overflow-hidden overflow-y-scroll flex flex-col xl:-mt-48 space-y-2
             className={
-                "bg-lightBackground dark:bg-gradient-to-b from-slate-900/100 via-gray-900 to-gray-300 w-full" +
-                " h-full snap-y" +
-                " mb-5 overflow-auto snap-mandatory z-0 min-h-screen"
+                // "md:overflow-hidden overflow-y-scroll flex flex-col xl:-mt-48 space-y-2
+                // bg-lightBackground dark:bg-darkBlueBackground
+                // "bg-lightBackground dark:bg-gradient-to-b from-slate-900/100 via-gray-900 to-gray-300 w-full" +
+                "h-full  bg-lightHeader dark:bg-darkBlueBackground " +
+                " overflow-auto snap-y snap-mandatory z-0 min-h-screen"
             }
         >
             <section id={"hero"} className={"snap-start"}>

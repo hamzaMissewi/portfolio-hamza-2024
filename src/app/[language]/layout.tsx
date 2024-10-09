@@ -4,18 +4,12 @@ import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
 import {Inter} from "next/font/google";
 import {ClerkProvider} from "@clerk/nextjs";
-import type {ThemeProviderProps} from "next-themes/dist/types";
-import {ThemeProvider as NextThemesProvider} from "next-themes";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
-// import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-// import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import {Divider} from "@mui/material";
-
-function ThemeProvider({children, ...props}: ThemeProviderProps) {
-    return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
-}
+import ThemeProvider from "@/components/theme/ThemeToggler";
+// import {useTheme} from "next-themes";
+// import {Divider} from "@mui/material";
 
 
 const arFont = localFont({
@@ -43,6 +37,8 @@ interface RootLayoutProps {
 async function Layout({children, params: {language}}: Readonly<RootLayoutProps>) {
     const messages = await getMessages();
     const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+    // const {themes} = useTheme();
+
 
     return (
         <html
@@ -52,35 +48,39 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
         >
         <head>
             <title>Hamza Missaoui's Portfolio</title>
-            <link rel="icon" href="/assets/b2b-alive-ltd-icon.svg" content={"Welcome"} property={"og:title"}/>
-            <meta name="description" content="Hamza Missaoui Resume"/>
+            {/*content={"Welcome"} property={"og:title"}*/}
+            <link rel="icon" href="/assets/b2b-alive-ltd-icon.svg"/>
+            {/*<meta name="description" content="Hamza Missaoui Resume"/>*/}
+            <meta charSet="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            {/*<link id="theme-stylesheet" rel="stylesheet" href=""/>*/}
             {/*  <meta* property="og:image" content="/assets/b2b-alive-ltd-icon.svg"*/}
         </head>
-
         <body
-            // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             className={language === "ar" ? arFont.className : inter.className}
-            suppressHydrationWarning={true}
+            // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            // suppressHydrationWarning={true}
         >
+
         <ThemeProvider
-            themes={["dark", "light"]}
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+            // themes={themes}
+            // themes={["dark", "light"]}
+            // defaultTheme="system"
+            // attribute="class"
+            // enableSystem
+            // disableTransitionOnChange
         >
             <NextIntlClientProvider messages={messages}>
                 <ClerkProvider publishableKey={clerkFrontendApi}>
-                    <div className="flex flex-col w-full overflow-hidden">
+                    <div className="flex flex-col w-full overflow-hidden space-y-10 bg-white dark:bg-black">
                         <header>
                             <Header/>
                         </header>
-                        <Divider/>
-                        <div className={"flex flex-grow flex-1 space-x-2"}>
+                        {/*<Divider/>*/}
+                        <div className={"flex flex-grow flex-1 space-x-2 relative top-7"}>
                             <Sidebar/>
                             {children}
                         </div>
-                        <Divider/>
                         <footer>
                             <Footer/>
                         </footer>

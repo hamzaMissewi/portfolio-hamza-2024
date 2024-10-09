@@ -28,6 +28,7 @@
   },
   "Navbar": {
     "welcome": "Hello and welcome {username}",
+    "home": "Home page",
     "signUp": "Sign up",
     "signIn": "Sign in",
     "signOut": "Sign out",

@@ -31,19 +31,24 @@ const Footer = () => {
                         <b>Whatsapp</b>:{" "}
                         <span>(+216) 56521184</span>
                     </p>
-                    <p>
-                        <b>{t("address.title")}</b>:{" "}
-                        <span onClick={handleClickLocationMap} className="cursor-pointer">
-                    {t("address.value")}
-                     </span>
-                    </p>
+                    <div className={"flex"}>
+
+                        <p>
+                            <b>{t("address.title")}</b>:{" "}
+                        </p>
+                        {/*<span onClick={handleClickLocationMap}*/}
+                        <Link target={"_blank"}
+                              rel={"noopener noreferrer"}
+                              href={`https://www.google.com/maps/search/?api=1&query="El Mourouj 1"`}
+                        ><p className="cursor-pointer color-blue underline">{t("address.value")}</p></Link>
+                    </div>
+
                     <p>
                         <b>{t("email")}</b>:{" "}
                         <span>hamza.missaoui@b2b-alive.com -
                     hamza.missaoui47@gmail.com </span>
                     </p>
 
-                    {/*border border-darkBackground*/}
                     <div className={"flex flex-col items-left w-fit"}>
                         <Link
                             href="https://www.linkedin.com/in/hamza-missaoui/"
@@ -103,7 +108,6 @@ const Footer = () => {
                             className={"flex space-x-1"}
                         >
                             <i>
-                                {/*<TwitterIcon />*/}
                                 <YoutubeIcon/>
                             </i>
                             <p>Youtube</p>

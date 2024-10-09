@@ -25,6 +25,7 @@
   },
   "Navbar": {
     "welcome": "Bonjour et bienvenue {username}",
+    "home": "Page d'accueil",
     "signUp": "S'inscrire",
     "signIn": "Se connecter",
     "signOut": "se déconnecter",

@@ -96,9 +96,8 @@ function ChatBot() {
         >
             <div
                 className={
-                    "flex justify-center items-center px-2 dark:bg-chatbot-light bg-chatbot-dark space-x-2 text-lg" +
-                    " dark:text-black" +
-                    " text-white"
+                    "flex justify-center items-center px-2 dark:bg-chatbot-light bg-chatbot-dark space-x-2 text-lg"
+                    // " dark:text-black text-white"
                 }
                 onClick={() => setExpandChatBox((value) => !value)}
             >
@@ -111,7 +110,6 @@ function ChatBot() {
                 >
                     {t("title")}
                 </Typography>
-                {/*</Button>*/}
                 <KeyboardArrowDownIcon fontSize={"small"}/>
             </div>
             <Divider/>

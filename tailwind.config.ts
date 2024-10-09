@@ -9,27 +9,29 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            colors: {
+            backgroundColor: {
                 // background: "var(--background)",
                 // foreground: "var(--foreground)",
+                // darkHeader: "#1A1C29",
+                lightBlue: "#aefafa",
+                darkBackground: "#333333", // Dark mode background
+                lightBackground: "#d8d8d8",
+                darkBlueBackground: "#05254d",
+                darkVioletBackground: "#410248",
+                darkRed: "#5b0118",
+            },
+            colors: {
+                blackToWhite: {
+                    1: "rgb(40,40,40)",
+                    2: "rgb(104,104,104)",
+                    3: "rgb(204,204,204)",
+                    4: "rgb(239,239,239)",
+                },
                 customBlue: "#1DA1F2", // Custom blue color
                 customGreen: "#4CAF50", // Custom green color
                 customPink: "#FF4081", // Custom pink color
                 customYellow: "#ffcf6s6",
                 customOrange: "#de8826",
-                lightHeader: "#aefafa",
-                darkHeader: "#05254d",
-                // darkHeader: "#1A1C29",
-                darkBackground: "#333333", // Dark mode background
-                lightBackground: "#d8d8d8",
-                darkBlueBackground: "#05254d",
-                darkVioletBackground: "#160468",
-                blackToWhite: {
-                    1: "rgb(40,40,40)",
-                    2: "rgb(104,104,104)",
-                    4: "rgb(206,204,204)",
-                    5: "rgb(239,239,239)",
-                },
                 chatbot: {
                     light: "#d9fbf6",
                     dark: "#76032b",

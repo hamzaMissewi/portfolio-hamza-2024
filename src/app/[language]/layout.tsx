@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import ThemeProvider from "@/components/theme/ThemeToggler";
+import {Divider} from "@mui/material";
 // import {useTheme} from "next-themes";
 // import {Divider} from "@mui/material";
 
@@ -37,27 +38,26 @@ interface RootLayoutProps {
 async function Layout({children, params: {language}}: Readonly<RootLayoutProps>) {
     const messages = await getMessages();
     const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-    // const {themes} = useTheme();
 
 
     return (
         <html
             lang={language}
-            suppressHydrationWarning
             dir={language === "ar" ? "rtl" : "ltr"}
+            suppressHydrationWarning
         >
         <head>
+            {/*<meta charSet="UTF-8"/>*/}
             <title>Hamza Missaoui's Portfolio</title>
             {/*content={"Welcome"} property={"og:title"}*/}
             <link rel="icon" href="/assets/b2b-alive-ltd-icon.svg"/>
+            {/*<meta name="viewport" content="width=device-width, initial-scale=1.0"/>*/}
             {/*<meta name="description" content="Hamza Missaoui Resume"/>*/}
-            <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             {/*<link id="theme-stylesheet" rel="stylesheet" href=""/>*/}
-            {/*  <meta* property="og:image" content="/assets/b2b-alive-ltd-icon.svg"*/}
+            {/*<meta* property="og:image" content="/assets/b2b-alive-ltd-icon.svg"*/}
         </head>
         <body
-            className={language === "ar" ? arFont.className : inter.className}
+            className={`${language === "ar" ? arFont.className : inter.className} text-black bg-lightBlue dark:text-red-700 dark:bg-darkBlueBackground`}
             // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             // suppressHydrationWarning={true}
         >
@@ -72,12 +72,12 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
         >
             <NextIntlClientProvider messages={messages}>
                 <ClerkProvider publishableKey={clerkFrontendApi}>
-                    <div className="flex flex-col w-full overflow-hidden space-y-10 bg-white dark:bg-black">
+                    <div className="relative flex flex-col w-full space-y-2">
                         <header>
                             <Header/>
                         </header>
-                        {/*<Divider/>*/}
-                        <div className={"flex flex-grow flex-1 space-x-2 relative top-7"}>
+                        <Divider/>
+                        <div className={"flex flex-grow space-x-2 top-7"}>
                             <Sidebar/>
                             {children}
                         </div>

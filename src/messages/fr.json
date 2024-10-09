@@ -51,7 +51,7 @@
     "title": "Ingénieur logiciel et développeur web fullstack",
     "description": "Je suis un développeur hautement qualifié et compétent en TypeScript, React et Next Js et bien d'autres technologies.",
     "routes": {
-      "aboutMe": "Sur moi",
+      "aboutMe": "A propos moi",
       "skills": "Compétences",
       "projects": "Projets",
       "experience": "Expérience",
@@ -59,7 +59,7 @@
     }
   },
   "AboutMe": {
-    "title": "Sur moi",
+    "title": "A propos moi",
     "intro": "Voici un petit aperçu de moi",
     "description": "Je suis un développeur Web Full-Stack dévoué et expérimenté avec une forte maîtrise des frameworks TypeScript, React Js et node js (Koa, express) ainsi que de diverses technologies et bibliothèques modernes en plus des connaissances de base que j'ai dans d'autres langages : Python, C#. ",
     "skills": {

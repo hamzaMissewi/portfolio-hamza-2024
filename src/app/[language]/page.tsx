@@ -14,10 +14,8 @@ function Page() {
         <div
             className={
                 // "md:overflow-hidden overflow-y-scroll flex flex-col xl:-mt-48 space-y-2
-                // bg-lightBackground dark:bg-darkBlueBackground
                 // "bg-lightBackground dark:bg-gradient-to-b from-slate-900/100 via-gray-900 to-gray-300 w-full" +
-                "h-full  bg-lightHeader dark:bg-darkBlueBackground " +
-                " overflow-auto snap-y snap-mandatory z-0 min-h-screen"
+                "relative h-full overflow-auto snap-y snap-mandatory z-10"
             }
         >
             <section id={"hero"} className={"snap-start"}>

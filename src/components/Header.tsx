@@ -37,8 +37,9 @@ const Header: React.FC = () => {
             // border border-darkBackground dark:border-customBlue
             //     backdrop-blur-0
             className={
-                "fixed flex items-center justify-between border border-darkBackground" +
-                " bg-lightHeader dark:bg-darkBlueBackground w-full z-20 max-h-[200px]"
+                // bg-lightBlue dark:bg-darkBlueBackground bg-lightBlue dark:bg-darkRed
+                "sticky flex items-center justify-between border border-darkBackground " +
+                " w-full z-50 max-h-[200px]"
             }
         >
             <motion.div
@@ -47,7 +48,8 @@ const Header: React.FC = () => {
                 transition={{duration: 1}}
                 className={`flex flex-start space-x-2 items-center ${locale === "ar" ? "ml-10" : "mr-10"}`}
             >
-                <Link href="/"><p className={"text-black dark:text-white"}>{t('home')}</p></Link>
+                {/*text-black dark:text-white*/}
+                <Link href="/"><p className={""}>{t('home')}</p></Link>
             </motion.div>
 
 
@@ -62,7 +64,6 @@ const Header: React.FC = () => {
                 }
             >
                 <LocaleSwitcher/>
-                {/*<ThemeTogglerNew/>*/}
                 <ThemeToggler/>
                 <ThemeSwitcher/>
             </div>

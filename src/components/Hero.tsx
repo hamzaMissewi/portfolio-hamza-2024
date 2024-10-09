@@ -3,7 +3,6 @@ import BackgroundCircles from "../components/BackgroundCircles";
 import {Cursor, useTypewriter} from "react-simple-typewriter";
 import Link from "next/link";
 // import CloudinaryImage from "../components/cloudinary/CloudinaryImage";
-// import images from "../lib/images.json";
 import {useLocale, useTranslations} from "next-intl";
 import Image from "next/image";
 
@@ -38,12 +37,11 @@ const wordsByLanguage: { [locale: string]: string[] } = {
 function Hero({}: HeroProps) {
     const localActive = useLocale();
     const t = useTranslations("Hero");
-    // const language === "en" ? "en" : "ar";
 
     const [text] = useTypewriter({
         words: [...wordsByLanguage[localActive], "<ButtonLovesToCodeMore />"],
         loop: true,
-        delaySpeed: 2000,
+        delaySpeed: 3000,
     });
 
     return (
@@ -53,8 +51,7 @@ function Hero({}: HeroProps) {
             }
         >
             <BackgroundCircles/>
-            {/*<CloudinaryImage width={200} height={200} url={images.hero["1"].url} />*/}
-            <Image width={200} height={200} alt=""
+            <Image className={"rounded-full"} width={200} height={200} alt="photo"
                    src={"https://res.cloudinary.com/hamzaostouri/image/upload/v1727841111/selfie_cin_xbu0tx.jpg"}/>
 
             {/*<motion.img*/}
@@ -68,10 +65,11 @@ function Hero({}: HeroProps) {
                 <h2 className={"text-sm uppercase text-gray-500 pb-2 tracking-[15px]"}>
                     {t("title")}
                 </h2>
-                <h1 className={"text-5xl lg:text-6xl font-semibold px-10"}>
-                    <span>{text}</span>
+                {/*<h1 className={"text-5xl lg:text-6xl font-semibold px-10"}>*/}
+                <div className={"flex"}>
+                    <h5 className={"font-semibold px-10"}>{text}</h5>
                     <Cursor cursorColor={"#F7AB0A"}/>
-                </h1>
+                </div>
                 <div className={"pt-5 space-x-2"}>
                     <Link href={"#about"}>
                         <button className={"heroButton"}>{t("routes.aboutMe")}</button>

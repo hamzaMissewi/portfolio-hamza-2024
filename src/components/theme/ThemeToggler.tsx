@@ -19,7 +19,7 @@ export default function ThemeProvider({children, ...props}: ThemeProviderProps) 
 }
 
 export function ThemeTogglerNew() {
-    const {theme, themes, setTheme} = useTheme();
+    const {theme, setTheme} = useTheme();
 
     const [mounted, setMounted] = useState(false);
     useEffect(() => {
@@ -42,7 +42,6 @@ export function ThemeTogglerNew() {
 
 export function ThemeToggler() {
     const {theme, setTheme} = useTheme();
-
     const [mounted, setMounted] = useState(false);
     useEffect(() => {
         setMounted(true);
@@ -96,14 +95,8 @@ export function ThemeToggler() {
                             className={`absolute text-black h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all`}
                         />
                     ) : (
-
                         // <MoonIcon
                         <Moon
-                            // style={{
-                            // color: theme === "light" ? "white" : "black",
-                            // rotate: theme === "dark" ? "revert" : "initial",//{x: -90} : 0,
-                            // scale: theme === "dark" ? 0 : "100%"
-                            //}}
                             // className={`h-[1.2rem] w-[1.2rem] transition-all text-black`}
                             className={`absolute text-black h-[1.2rem] w-[1.2rem] dark:rotate-0" +
                             " dark:scale-100 rotate-0 scale-100 transition-all dark:-rotate-90 `}

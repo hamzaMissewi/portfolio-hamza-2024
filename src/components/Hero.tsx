@@ -66,8 +66,8 @@ function Hero({}: HeroProps) {
                     {t("title")}
                 </h2>
                 {/*<h1 className={"text-5xl lg:text-6xl font-semibold px-10"}>*/}
-                <div className={"flex"}>
-                    <h5 className={"font-semibold px-10"}>{text}</h5>
+                <div className={"flex justify-center items-center"}>
+                    <h5 className={"text-3xl lg:text-5xl font-semibold"}>{text}</h5>
                     <Cursor cursorColor={"#F7AB0A"}/>
                 </div>
                 <div className={"pt-5 space-x-2"}>

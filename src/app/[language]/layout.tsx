@@ -49,24 +49,24 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
         <head>
             {/*<meta charSet="UTF-8"/>*/}
             <title>Hamza Missaoui's Portfolio</title>
-            {/*content={"Welcome"} property={"og:title"}*/}
+            content={"Welcome"} property={"og:title"}
             <link rel="icon" href="/assets/b2b-alive-ltd-icon.svg"/>
-            {/*<meta name="viewport" content="width=device-width, initial-scale=1.0"/>*/}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             {/*<meta name="description" content="Hamza Missaoui Resume"/>*/}
             {/*<link id="theme-stylesheet" rel="stylesheet" href=""/>*/}
             {/*<meta* property="og:image" content="/assets/b2b-alive-ltd-icon.svg"*/}
         </head>
         <body
-            className={`${language === "ar" ? arFont.className : inter.className} text-black bg-lightBlue dark:text-red-700 dark:bg-darkBlueBackground`}
+            className={`${language === "ar" ? arFont.className : inter.className} text-black dark:text-red-700`}
             // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             // suppressHydrationWarning={true}
         >
 
         <ThemeProvider
             // themes={themes}
-            // themes={["dark", "light"]}
+            themes={["dark", "light"]}
+            attribute="class"
             // defaultTheme="system"
-            // attribute="class"
             // enableSystem
             // disableTransitionOnChange
         >
@@ -77,6 +77,7 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
                             <Header/>
                         </header>
                         <Divider/>
+                        <div className="h-5 dark:bg-white bg-black"/>
                         <div className={"flex flex-grow space-x-2 top-7"}>
                             <Sidebar/>
                             {children}

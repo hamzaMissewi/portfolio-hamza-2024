@@ -10,10 +10,10 @@ body {
     background-color: #fff;
 }
 
-[data-theme="dark"] body {
-    background-color: #05254d;
-    color: red;
-}
+/*[data-theme="dark"] body {*/
+/*    background-color: #05254d;*/
+/*    color: red;*/
+/*}*/
 
 /*:root {*/
 /*    --background: #ffffff;*/

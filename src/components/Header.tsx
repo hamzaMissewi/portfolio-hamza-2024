@@ -34,11 +34,10 @@ const Header: React.FC = () => {
 
     return (
         <div
-            // border border-darkBackground dark:border-customBlue
-            //     backdrop-blur-0
             className={
-                // bg-lightBlue dark:bg-darkBlueBackground bg-lightBlue dark:bg-darkRed
-                "sticky flex items-center justify-between border border-darkBackground " +
+                // bg-lightBlue dark:bg-darkBlueBackground
+                // "sticky flex items-center justify-between border border-lightBackground dark:border-darkBackground  bg-lightBlue dark:bg-darkRed" +
+                "sticky flex items-center justify-between bg-white dark:bg-gray-800  backdrop-blur-0" +
                 " w-full z-50 max-h-[200px]"
             }
         >
@@ -48,8 +47,10 @@ const Header: React.FC = () => {
                 transition={{duration: 1}}
                 className={`flex flex-start space-x-2 items-center ${locale === "ar" ? "ml-10" : "mr-10"}`}
             >
-                {/*text-black dark:text-white*/}
-                <Link href="/"><p className={""}>{t('home')}</p></Link>
+                <Link href="/">
+                    <p className={"text-black dark:text-white"}>
+                        {t('home')}</p>
+                </Link>
             </motion.div>
 
 
@@ -149,7 +150,7 @@ const Header: React.FC = () => {
 
                 {/*<Link href={"mailto:hamza.missaoui@b2b-alive.com?subject=want_require"}>*/}
                 <div
-                    className="flex items-center cursor-pointer border border-bg-customOrange"
+                    className="flex items-center cursor-pointer"
                     onClick={() =>
                         router.push(
                             "mailto:hamza.missaoui@b2b-alive.com?subject=want_require",

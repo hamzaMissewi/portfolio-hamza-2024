@@ -1,6 +1,7 @@
 import type {Config} from "tailwindcss";
 
 const config: Config = {
+    darkMode: "class", // IMPORTANT
     content: [
         // "./src/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,7 +16,7 @@ const config: Config = {
                 // darkHeader: "#1A1C29",
                 lightBlue: "#aefafa",
                 darkBackground: "#333333", // Dark mode background
-                lightBackground: "#d8d8d8",
+                lightBackground: "rgb(211,206,206)",
                 darkBlueBackground: "#05254d",
                 darkVioletBackground: "#410248",
                 darkRed: "#5b0118",
@@ -24,7 +25,7 @@ const config: Config = {
                 blackToWhite: {
                     1: "rgb(40,40,40)",
                     2: "rgb(104,104,104)",
-                    3: "rgb(204,204,204)",
+                    3: "rgb(211,206,206)",
                     4: "rgb(239,239,239)",
                 },
                 customBlue: "#1DA1F2", // Custom blue color

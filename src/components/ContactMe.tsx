@@ -4,11 +4,16 @@ import {EnvelopeIcon, MapPinIcon, PhoneIcon} from "@heroicons/react/16/solid";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Alert, Box, FormControl, Stack, TextareaAutosize, TextField, Typography,} from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
-import {SendMailOutput} from "../hooks/useSendMail";
 import {useEnqueueSnackbar} from "../components/common/Alerter";
 import {Snackbar, SnackbarCloseReason} from "@mui/base";
 import {useLocale, useTranslations} from "next-intl";
 import {MailFieldsType} from "../lib/nodemailer";
+import {ContactRoutePayload} from "@/app/api/contact/route";
+
+
+export type SendMailOutput = ContactRoutePayload & {
+    error: Record<string, string | undefined> | null;
+} & { formatData?: MailFieldsType };
 
 
 const initContact = {

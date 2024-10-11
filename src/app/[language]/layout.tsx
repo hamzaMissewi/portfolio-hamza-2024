@@ -9,7 +9,6 @@ import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import ThemeProvider from "@/components/theme/ThemeToggler";
 // import {useTheme} from "next-themes";
-// import {Divider} from "@mui/material";
 
 
 const arFont = localFont({
@@ -47,10 +46,10 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
             // suppressHydrationWarning={true}
         >
         <head>
-            {/*<meta charSet="UTF-8"/>*/}
             <title>Hamza Missaoui's Portfolio</title>
             <link rel="icon" href="/assets/b2b-alive-ltd-icon.svg"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta charSet="UTF-8"/>
             {/*<meta name="description" content="Hamza Missaoui Resume"/>*/}
             {/*<link id="theme-stylesheet" rel="stylesheet" href=""/>*/}
             {/*<meta* property="og:image" content="/assets/b2b-alive-ltd-icon.svg"*/}
@@ -61,7 +60,6 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
 
 
         <ThemeProvider
-            // themes={themes}
             themes={["dark", "light"]}
             attribute="class"
             // defaultTheme="system"

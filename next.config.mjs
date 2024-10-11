@@ -17,9 +17,9 @@ const nextConfig = {
     pageExtensions: ["html", "jsx", "tsx", "ts"],
     images: {
         dangerouslyAllowSVG: true,
-        remotePatterns: [
-            {protocol: "https", hostname: "*"},
-        ],
+        // remotePatterns: [
+        //     {protocol: "https", hostname: "*"},
+        // ],
     },
 };
 

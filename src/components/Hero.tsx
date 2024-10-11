@@ -1,7 +1,6 @@
 "use client";
 import BackgroundCircles from "../components/BackgroundCircles";
 import {Cursor, useTypewriter} from "react-simple-typewriter";
-import Link from "next/link";
 // import CloudinaryImage from "../components/cloudinary/CloudinaryImage";
 import {useLocale, useTranslations} from "next-intl";
 import Image from "next/image";
@@ -47,7 +46,7 @@ function Hero({}: HeroProps) {
     return (
         <div
             className={
-                "h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden"
+                "h-full flex flex-col space-y-15 items-center text-center"
             }
         >
             <BackgroundCircles/>
@@ -61,32 +60,30 @@ function Hero({}: HeroProps) {
             {/*    height={200}*/}
             {/*/>*/}
 
-            <div>
-                <h2 className={"text-sm uppercase text-gray-500 pb-2 tracking-[15px]"}>
-                    {t("title")}
-                </h2>
-                {/*<h1 className={"text-5xl lg:text-6xl font-semibold px-10"}>*/}
-                <div className={"flex justify-center items-center"}>
+            {/*pb-2 tracking-[15px]*/}
+            <div className={"my-5"}>
+                <h2 className={"text-sm uppercase text-gray-500"}>{t("title")}</h2>
+                <div className={"flex justify-center items-center text-5xl lg:text-6xl"}>
                     <h5 className={"text-3xl lg:text-5xl font-semibold"}>{text}</h5>
                     <Cursor cursorColor={"#F7AB0A"}/>
                 </div>
-                <div className={"pt-5 space-x-2"}>
-                    <Link href={"#about"}>
-                        <button className={"heroButton"}>{t("routes.aboutMe")}</button>
-                    </Link>
-                    <Link href={"#experience"}>
-                        <button className={"heroButton"}>{t("routes.experience")}</button>
-                    </Link>
-                    <Link href={"#skills"}>
-                        <button className={"heroButton"}>{t("routes.skills")}</button>
-                    </Link>
-                    <Link href={"#projects"}>
-                        <button className={"heroButton"}>{t("routes.projects")}</button>
-                    </Link>
-                    <Link href={"#contactMe"}>
-                        <button className={"heroButton"}>{t("routes.contactMe")}</button>
-                    </Link>
-                </div>
+                {/*<div className={"pt-5 space-x-2"}>*/}
+                {/*    <Link href={"#about"}>*/}
+                {/*        <button className={"heroButton"}>{t("routes.aboutMe")}</button>*/}
+                {/*    </Link>*/}
+                {/*    <Link href={"#experience"}>*/}
+                {/*        <button className={"heroButton"}>{t("routes.experience")}</button>*/}
+                {/*    </Link>*/}
+                {/*    <Link href={"#skills"}>*/}
+                {/*        <button className={"heroButton"}>{t("routes.skills")}</button>*/}
+                {/*    </Link>*/}
+                {/*    <Link href={"#projects"}>*/}
+                {/*        <button className={"heroButton"}>{t("routes.projects")}</button>*/}
+                {/*    </Link>*/}
+                {/*    <Link href={"/contactMe"} className={"heroButton"}>*/}
+                {/*        {t("routes.contactMe")}*/}
+                {/*    </Link>*/}
+                {/*</div>*/}
             </div>
         </div>
     );

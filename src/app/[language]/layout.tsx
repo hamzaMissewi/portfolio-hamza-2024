@@ -8,7 +8,6 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import ThemeProvider from "@/components/theme/ThemeToggler";
-import {Divider} from "@mui/material";
 // import {useTheme} from "next-themes";
 // import {Divider} from "@mui/material";
 
@@ -45,11 +44,11 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
             lang={language}
             dir={language === "ar" ? "rtl" : "ltr"}
             suppressHydrationWarning
+            // suppressHydrationWarning={true}
         >
         <head>
             {/*<meta charSet="UTF-8"/>*/}
             <title>Hamza Missaoui's Portfolio</title>
-            content={"Welcome"} property={"og:title"}
             <link rel="icon" href="/assets/b2b-alive-ltd-icon.svg"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             {/*<meta name="description" content="Hamza Missaoui Resume"/>*/}
@@ -58,9 +57,8 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
         </head>
         <body
             className={`${language === "ar" ? arFont.className : inter.className} text-black dark:text-red-700`}
-            // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            // suppressHydrationWarning={true}
         >
+
 
         <ThemeProvider
             // themes={themes}
@@ -72,13 +70,15 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
         >
             <NextIntlClientProvider messages={messages}>
                 <ClerkProvider publishableKey={clerkFrontendApi}>
-                    <div className="relative flex flex-col w-full space-y-2">
+                    <div className="relative flex flex-col w-full">
                         <header>
                             <Header/>
                         </header>
-                        <Divider/>
-                        <div className="h-5 dark:bg-white bg-black"/>
-                        <div className={"flex flex-grow space-x-2 top-7"}>
+                        {/*<Divider/>*/}
+                        {/*<div className="h-2 dark:bg-white bg-black"/>*/}
+                        <div className="h-4 border-y border-black"/>
+
+                        <div className={"flex flex-grow w-full space-x-2 top-7"}>
                             <Sidebar/>
                             {children}
                         </div>

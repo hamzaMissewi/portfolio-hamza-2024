@@ -11,9 +11,12 @@ const config: Config = {
     theme: {
         extend: {
             backgroundColor: {
+                gradientBackground: "bg-gradient-to-b from-slate-900/100 via-gray-900 to-gray-300",
                 // background: "var(--background)",
                 // foreground: "var(--foreground)",
                 // darkHeader: "#1A1C29",
+                white: '#fff',
+                black: '#333',
                 lightBlue: "#aefafa",
                 darkBackground: "#333333", // Dark mode background
                 lightBackground: "rgb(211,206,206)",
@@ -22,6 +25,10 @@ const config: Config = {
                 darkRed: "#5b0118",
             },
             colors: {
+                primary: 'var(--color-primary)',
+                secondary: 'var(--color-secondary)',
+                buttons: 'var(--color-buttons)',
+                typography: 'var(--color-typography)',
                 blackToWhite: {
                     1: "rgb(40,40,40)",
                     2: "rgb(104,104,104)",
@@ -34,8 +41,8 @@ const config: Config = {
                 customYellow: "#ffcf6s6",
                 customOrange: "#de8826",
                 chatbot: {
-                    light: "#d9fbf6",
-                    dark: "#76032b",
+                    light: "#eaeaea",
+                    dark: "#21010d",
                 },
             },
         },

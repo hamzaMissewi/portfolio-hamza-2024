@@ -4,14 +4,16 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    rewrites: async () => [
-        {
-            source: '/',
-            destination: '/portfolio',
-        },
-    ],
+    // rewrites: async () => [
+    //     {
+    // source: '/',
+    // source: '/sign-in',
+    // destination: '/api/portfolios', // Adjust to your sign-in path
+    // permanent: false,
+    // },
+    // ],
     distDir: 'build',
-    reactStrictMode: true,
+    // reactStrictMode: true,
     pageExtensions: ["html", "jsx", "tsx", "ts"],
     images: {
         dangerouslyAllowSVG: true,

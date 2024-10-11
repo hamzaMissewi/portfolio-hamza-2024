@@ -2,12 +2,13 @@
 import {motion} from "framer-motion";
 import Skill from "./Skill";
 import {Typography} from "@mui/material";
-import {useLocale} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 
 type SkillsProps = {};
 
 function Skills({}: SkillsProps) {
     const language = useLocale();
+    const t = useTranslations("Skills")
 
     return (
         <motion.div
@@ -19,7 +20,7 @@ function Skills({}: SkillsProps) {
             }
         >
             <h3
-                className={`text-center uppercase text-gray-500 ${language && "tracking tracking-[20px]"} text-2xl font-bold`}
+                className={`text-center uppercase text-gray-500 ${language && "tracking tracking-[20px]"} text-2xl font-bold mb-5`}
                 // className={
                 //     "absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl"
                 // }
@@ -32,7 +33,7 @@ function Skills({}: SkillsProps) {
                     "absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm"
                 }
             >
-                Hover over a skill for currency proficiency
+                {t('title')}
             </Typography>
             <div className={"grid grid-cols-4 gap-5"}>
                 <Skill

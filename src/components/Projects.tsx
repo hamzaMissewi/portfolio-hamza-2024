@@ -110,10 +110,8 @@ function Projects() {
                         <li key={index} className={"mb-5"}>
                             {personalProject.thumbnail ? (
                                 <div className={
-                                    // p-20 md:p-44
-                                    "relative flex flex-col items-center space-y-5"
+                                    "relative flex flex-col items-center space-y-5 p-20 md:p-44"
                                 }>
-
                                     {/*<p className="font-semibold text-center decoration-[#F7AB0A]/50">*/}
                                     {/*<p className={"text-lg text-center md:text-left mb-2"}>*/}
                                     {/*    {index + 1}/{projectUrls.personal.length} -{" "}*/}

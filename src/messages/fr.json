@@ -58,6 +58,9 @@
       "contactMe": "Contactez-moi"
     }
   },
+  "Skills": {
+    "title": "Mets le curseur sur une compétence pour voir l'efficacité"
+  },
   "AboutMe": {
     "title": "A propos moi",
     "intro": "Voici un petit aperçu de moi",

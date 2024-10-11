@@ -15,9 +15,7 @@ function Page() {
             className={
                 // "md:overflow-hidden overflow-y-scroll flex flex-col xl:-mt-48 space-y-2
                 // "bg-lightBackground dark:bg-gradient-to-b from-slate-900/100 via-gray-900 to-gray-300 w-full" +
-                "relative h-full overflow-auto snap-y snap-mandatory z-10 dark:bg-gradient-to-b" +
-                " from-slate-900/100 via-gray-900 to-gray-300 bg-lightBackground "
-                // dark:bg-darkBlueBackground
+                "relative h-full overflow-auto snap-y snap-mandatory z-10 dark:bg-[#292929] bg-lightBackground"
             }
         >
             <section id={"hero"} className={"snap-start"}>

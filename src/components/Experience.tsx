@@ -1,6 +1,7 @@
 "use client";
 import {motion} from "framer-motion";
 import ExperienceCard from "../components/ExperienceCard";
+import {useTranslations} from "next-intl";
 
 // type ExperienceProps = {};
 
@@ -54,6 +55,7 @@ const competences: { name: string; url: string }[] = [
 
 
 function Experience() {
+    const t = useTranslations('Experience')
     return (
         <motion.div
             initial={{opacity: 0}}
@@ -75,28 +77,28 @@ function Experience() {
             >
                 <ExperienceCard
                     key={1}
-                    title="Senior web developer expert in typescript, react, graphql, mongodb, node koa framework and other knowledge in many technologies"
+                    title={t('1.title')}
+                    description={t('1.description')}
                     image={
                         "https://media.licdn.com/dms/image/C4E0BAQECttqhzuGqBw/company-logo_200_200/0/1651029832992/b2b_alive_logo?e=2147483647&v=beta&t=yaQVzsyhkQw3LhBJexMtVjWovIEQXEzzxRmGTF20RHk"
                     }
                     imageLink={"https://www.b2b-alive.com/en/"}
                     companyName="B2b alive Ltd"
-                    description="Started work on first october 2022 until today ,gain skills in Typescript and list of technologies and tools"
                     images={competences.slice(0, 6)}
                 />
                 <ExperienceCard
                     key={2}
-                    title={"End of studies internship in b2b alive"}
+                    title={t('2.title')}
+                    description={t('2.description')}
                     image={
                         "https://media.licdn.com/dms/image/C4E0BAQECttqhzuGqBw/company-logo_200_200/0/1651029832992/b2b_alive_logo?e=2147483647&v=beta&t=yaQVzsyhkQw3LhBJexMtVjWovIEQXEzzxRmGTF20RHk"
                     }
                     imageLink={"https://www.b2b-alive.com/en/"}
                     companyName="B2b alive Ltd"
-                    description="Started work on first october 2022 until today ,gain skills in Typescript and list of technologies and tools"
                 />
                 <ExperienceCard
                     key={3}
-                    title={"End of studies internship in b2b alive"}
+                    title={"3.title"}
                     image={
                         "https://www.gnet.tn/wp-content/uploads/2018/11/logo-gnet-1.png"
                     }

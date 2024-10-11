@@ -58,6 +58,26 @@
       "contactMe": "Contact me"
     }
   },
+  "Skills": {
+    "title": "Hover over a skill to show proficiency"
+  },
+  "Experience": {
+    "1": {
+      "title": "Senior web developer expert in typescript, react, graphql, mongodb, node koa framework and other knowledge in many technologies",
+      "description": "Started work on first october 2022 until today ,gain skills in Typescript and list of technologies and tools"
+    },
+    "2": {
+      "title": "End of studies internship in b2b alive",
+      "description": "Started work on first october 2022 until today, gain skills in Typescript and list of technologies and tools"
+    },
+    "3": {
+      "title": "Second internship in Globalnet 3S",
+      "description": "Created a web application"
+    },
+    "4": {
+      "title": "First Internship in Sofrecom"
+    }
+  },
   "AboutMe": {
     "title": "About Me",
     "intro": "Here is a little background about me",

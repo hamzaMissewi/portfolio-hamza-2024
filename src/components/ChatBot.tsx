@@ -92,7 +92,7 @@ function ChatBot() {
             whileInView={{opacity: 1, x: 0}}
             animate={{x: -10, opacity: 1, scale: 1}}
             viewport={{once: true}}
-            className="w-fit flex flex-col rounded-lg border-2 border-amber-400 dark:bg-chatbot-dark bg-chatbot-light z-99"
+            className="w-fit flex flex-col rounded-lg border-2 border-amber-400 dark:bg-chatbot-dark bg-chatbot-light text-black dark:text-white z-99"
         >
             <div
                 className={
@@ -164,8 +164,11 @@ function ChatBot() {
                                 "py-2 flex flex-row items-center w-[100%] px-2 space-x-1"
                             }
                         >
+                            {/*<textfield*/}
                             <TextField
-                                className="flex-1 border rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black text-white"
+                                // focus:ring-2
+                                // sx={{color: 'white'}}
+                                className="flex-1 border rounded-lg px-4 focus:outline-none focus:ring-blue-500 dark:text-black text-white"
                                 type={"text"}
                                 size={"small"}
                                 placeholder={t("typeMessage")}
@@ -175,8 +178,8 @@ function ChatBot() {
 
                             <Button
                                 type={"submit"}
-                                className="dark:bg-black bg-white rounded-r-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 self-center items-center"
-                                // endIcon={<SendIcon fontSize={"small"} color={"primary"} />}
+                                // items-center
+                                className="dark:bg-black bg-lightBackground px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 self-center"
                                 onSubmit={(event) => handleClickAskChatGpt(event)}
                             >
                                 <span>{t("send")}</span>

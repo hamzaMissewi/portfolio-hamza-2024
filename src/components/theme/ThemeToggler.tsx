@@ -57,7 +57,7 @@ export function ThemeToggler() {
                 asChild
                 className={
                     // "border dark:border-white border-black"
-                    "border dark:border-white border-black dark:bg-black bg-white"
+                    "border dark:border-white border-red-400 text-white dark:text-black dark:bg-black bg-white"
                 }
                 // style={currentTheme === 'light' ? 'light.css' : 'dark.css'}
                 // style={{backgroundColor: theme === "light" ? "white" : "black"}}
@@ -81,7 +81,6 @@ export function ThemeToggler() {
                     onClick={() =>
                         setTheme((value) => (value === "light" ? "dark" : "light"))
                     }
-                    // style={{color: theme === "light" ? "white" : "black"}}
                 >
                     {theme === "dark" ? (
                         // <SunIcon
@@ -92,20 +91,22 @@ export function ThemeToggler() {
                             // }}
                             // className={`h-[1.2rem] w-[1.2rem] transition-all text-black`}
                             // className={`absolute ${theme === "dark" ? "text-white" : "text-black"} h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0`}
-                            className={`absolute text-black h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all`}
+                            className={`absolute text-white h-[1.2rem] w-[1.2rem] transition-all dark:scale-100`}
                         />
                     ) : (
                         // <MoonIcon
                         <Moon
                             // className={`h-[1.2rem] w-[1.2rem] transition-all text-black`}
-                            className={`absolute text-black h-[1.2rem] w-[1.2rem] dark:rotate-0" +
-                            " dark:scale-100 rotate-0 scale-100 transition-all dark:-rotate-90 `}
+                            className={`absolute text-black h-[1.2rem] w-[1.2rem]" +
+                            " scale-100 transition-all`}
+                            // dark:-rotate-90
                         />
                     )}
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
                 align="end"
+                // className={`absolute right-1 top-2 text-black bg-white dark:text-black dark:bg-black}`}
                 className={`absolute right-1 top-2 ${theme === "light" ? "text-black bg-white" : "text-white bg-black"}`}
             >
                 <DropdownMenuItem onClick={() => setTheme("light")}>
@@ -114,9 +115,9 @@ export function ThemeToggler() {
                 <DropdownMenuItem onClick={() => setTheme("dark")}>
                     Dark
                 </DropdownMenuItem>
-                {/*<DropdownMenuItem onClick={() => setTheme("system")}>*/}
-                {/*  System*/}
-                {/*</DropdownMenuItem>*/}
+                <DropdownMenuItem onClick={() => setTheme("system")}>
+                    System
+                </DropdownMenuItem>
             </DropdownMenuContent>
 
             {/*<DropdownMenuGroup>*/}

@@ -8,8 +8,8 @@ const nextConfig = {
         return [
             {
                 source: '/',
-                destination: '/[language]',
-                permanent: true, // 308 permanent redirect
+                destination: '/en',
+                permanent: false, // 308 permanent redirect
             },
         ];
     },
@@ -23,7 +23,7 @@ const nextConfig = {
     reactStrictMode: true,
     pageExtensions: ["html", "jsx", "tsx", "ts"],
     images: {
-        // dangerouslyAllowSVG: true,
+        dangerouslyAllowSVG: true,
         remotePatterns: [
             {protocol: "https", hostname: "*"},
         ],

@@ -8,7 +8,6 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import ThemeProvider from "@/components/theme/ThemeToggler";
-// import {useTheme} from "next-themes";
 
 
 const arFont = localFont({
@@ -43,13 +42,12 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
             lang={language}
             dir={language === "ar" ? "rtl" : "ltr"}
             suppressHydrationWarning
-            // suppressHydrationWarning={true}
         >
         <head>
             <title>Hamza Missaoui's Portfolio</title>
             <link rel="icon" href="/assets/b2b-alive-ltd-icon.svg"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <meta charSet="UTF-8"/>
+            {/*<meta name="viewport" content="width=device-width, initial-scale=1.0"/>*/}
             {/*<meta name="description" content="Hamza Missaoui Resume"/>*/}
             {/*<link id="theme-stylesheet" rel="stylesheet" href=""/>*/}
             {/*<meta* property="og:image" content="/assets/b2b-alive-ltd-icon.svg"*/}
@@ -59,19 +57,19 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
         >
 
 
-        <ThemeProvider
-            themes={["dark", "light"]}
-            attribute="class"
-            // defaultTheme="system"
-            // enableSystem
-            // disableTransitionOnChange
-        >
-            <NextIntlClientProvider messages={messages}>
-                <ClerkProvider publishableKey={clerkFrontendApi}>
+        <NextIntlClientProvider messages={messages}>
+            <ClerkProvider publishableKey={clerkFrontendApi}>
+                <ThemeProvider
+                    themes={["dark", "light"]}
+                    attribute="class"
+                    // defaultTheme="system"
+                    // enableSystem
+                    // disableTransitionOnChange
+                >
                     <div className="relative flex flex-col w-full">
-                        <header>
-                            <Header/>
-                        </header>
+                        {/*<header>*/}
+                        <Header/>
+                        {/*</header>*/}
                         {/*<Divider/>*/}
                         {/*<div className="h-2 dark:bg-white bg-black"/>*/}
                         <div className="h-4 border-y border-black"/>
@@ -84,9 +82,9 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
                             <Footer/>
                         </footer>
                     </div>
-                </ClerkProvider>
-            </NextIntlClientProvider>
-        </ThemeProvider>
+                </ThemeProvider>
+            </ClerkProvider>
+        </NextIntlClientProvider>
         </body>
         </html>
     );

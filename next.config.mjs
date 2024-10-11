@@ -13,7 +13,7 @@ const nextConfig = {
     // },
     // ],
     distDir: 'build',
-    // reactStrictMode: true,
+    reactStrictMode: true,
     pageExtensions: ["html", "jsx", "tsx", "ts"],
     images: {
         dangerouslyAllowSVG: true,

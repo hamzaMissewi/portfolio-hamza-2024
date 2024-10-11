@@ -7,18 +7,23 @@ const nextConfig = {
     async redirects() {
         return [
             {
-                source: '/',
-                destination: '/en',
+                source: '/en',
+                destination: '/',
+                permanent: false, // 308 permanent redirect
+            },
+            {
+                source: '/home',
+                destination: '/',
                 permanent: false, // 308 permanent redirect
             },
         ];
     },
-    rewrites: async () => [
-        {
-            source: '/api/:path*',
-            destination: 'https://external-api.com/:path*', // Proxy requests
-        },
-    ],
+    // rewrites: async () => [
+    //     {
+    //         source: '/api/:path*',
+    //         destination: 'https://external-api.com/:path*', // Proxy requests
+    //     },
+    // ],
     distDir: 'build',
     reactStrictMode: true,
     pageExtensions: ["html", "jsx", "tsx", "ts"],
@@ -30,5 +35,5 @@ const nextConfig = {
     },
 };
 
-export default withNextIntl(nextConfig);
-// export default nextConfig;
+// export default withNextIntl(nextConfig);
+export default nextConfig;

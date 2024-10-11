@@ -52,25 +52,18 @@ async function Layout({children, params: {language}}: Readonly<RootLayoutProps>)
             {/*<link id="theme-stylesheet" rel="stylesheet" href=""/>*/}
             {/*<meta* property="og:image" content="/assets/b2b-alive-ltd-icon.svg"*/}
         </head>
-        <body
-            className={`${language === "ar" ? arFont.className : inter.className} text-black dark:text-red-700`}
-        >
-
-
+        <body className={`${language === "ar" ? arFont.className : inter.className} text-black dark:text-red-700`}>
         <NextIntlClientProvider messages={messages}>
             <ClerkProvider publishableKey={clerkFrontendApi}>
                 <ThemeProvider
                     themes={["dark", "light"]}
                     attribute="class"
-                    // defaultTheme="system"
-                    // enableSystem
-                    // disableTransitionOnChange
+                    disableTransitionOnChange
                 >
                     <div className="relative flex flex-col w-full">
-                        {/*<header>*/}
-                        <Header/>
-                        {/*</header>*/}
-                        {/*<Divider/>*/}
+                        <header>
+                            <Header/>
+                        </header>
                         {/*<div className="h-2 dark:bg-white bg-black"/>*/}
                         <div className="h-4 border-y border-black"/>
 

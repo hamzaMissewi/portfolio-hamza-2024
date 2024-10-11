@@ -164,10 +164,7 @@ function ChatBot() {
                                 "py-2 flex flex-row items-center w-[100%] px-2 space-x-1"
                             }
                         >
-                            {/*<textfield*/}
                             <TextField
-                                // focus:ring-2
-                                // sx={{color: 'white'}}
                                 className="flex-1 border rounded-lg px-4 focus:outline-none focus:ring-blue-500 dark:text-black text-white"
                                 type={"text"}
                                 size={"small"}

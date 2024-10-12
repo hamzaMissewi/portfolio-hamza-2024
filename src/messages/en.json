@@ -50,7 +50,7 @@
     ],
     "title": "Software engineer and fullstack web developer",
     "description": "I am highly qualified and competent developer in typescript, react and next js and many other technologies",
-    "routes": {
+    "route": {
       "aboutMe": "About me",
       "skills": "Skills",
       "projects": "Projects",

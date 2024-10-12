@@ -20,10 +20,6 @@ export const transporter = nodemailer.createTransport({
     },
     port: 465, //process.env.MAIL_PORT, Gmail SMTP Port: 465 (SSL required) or 587 (TLS required)
     secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
-    // tls: {
-    //   ciphers: "SSLv3",
-    //   rejectUnauthorized: false,
-    // },
 });
 
 const CONTACT_MESSAGE_FIELDS: MailFieldsType = {

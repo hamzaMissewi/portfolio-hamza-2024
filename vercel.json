@@ -1,19 +1,15 @@
 {
   "version": 2,
+  "name": "hamza-portfolio",
   "cleanUrls": true,
+  "devCommand": "next dev",
   "env": {
-    "NODE_ENV": "development"
+    "NODE_ENV": "production"
   },
   "builds": [
     {
-      "src": "src/pages/**/*",
+      "src": "src/**/*",
       "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/src/pages/$1"
     }
   ]
 }

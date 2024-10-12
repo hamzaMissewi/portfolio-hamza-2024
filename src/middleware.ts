@@ -1,6 +1,8 @@
 import {localePrefix, locales} from "./lib/intl";
 import createMiddleware from "next-intl/middleware";
 
+// import { clerkMiddleware } from "@clerk/nextjs/server";
+
 
 export default createMiddleware({
     // A list of all locales that are supported
@@ -16,6 +18,7 @@ export const config = {
         // Match only internationalized pathnames
         "/",
         "/(fr|en)/:path*",
+        // "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpeg|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
         "/((?!api|_next|_vercel|.*\\..*).*)", // next pathname
         // // Skip Next.js internals and all static files, unless found in search params
         "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpeg|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",

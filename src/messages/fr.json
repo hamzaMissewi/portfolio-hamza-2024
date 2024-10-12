@@ -50,7 +50,7 @@
     ],
     "title": "Ingénieur logiciel et développeur web fullstack",
     "description": "Je suis un développeur hautement qualifié et compétent en TypeScript, React et Next Js et bien d'autres technologies.",
-    "routes": {
+    "route": {
       "aboutMe": "A propos moi",
       "skills": "Compétences",
       "projects": "Projets",

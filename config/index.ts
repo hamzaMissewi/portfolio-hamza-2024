@@ -4,7 +4,7 @@ export const links = {
   // sourceCode: "https://github.com/sanidhyy/next-portfolio",
   // ownerName: "Sanidhya",
   // ownerEmail: "sanidhya.verma12345@gmail.com",
-  sourceCode: "https://github.com/hamzaMissewi/portfolio-codesandbox-test",
+  sourceCode: "https://github.com/hamzaMissewi/portfolio-hamza-14-10",
   ownerName: "hamzaMissewi", // Hamza Missaoui
   ownerEmail: "hamza.missaoui@b2b-alive.com",
 } as const;

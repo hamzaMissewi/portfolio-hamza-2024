@@ -1,4 +1,4 @@
-import "../globals.css";
+// import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Inter } from "next/font/google";
@@ -34,7 +34,7 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
     >
-  
+
     {/*// <body className={locale === "ar" ? arFont.className : inter.className} suppressHydrationWarning={true}>*/}
     <body className={inter.className} suppressHydrationWarning={true}>
     <NextIntlClientProvider messages={messages}>
@@ -43,7 +43,6 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
         attribute="class" defaultTheme="dark">
         {/*attribute="class" defaultTheme="dark" forcedTheme="dark">*/}
         {children}
-        {/*</div>*/}
       </ThemeProvider>
     </NextIntlClientProvider>
     </body>

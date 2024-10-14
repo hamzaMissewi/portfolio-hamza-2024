@@ -12,6 +12,16 @@ import Sidebar from "@/components/sidebar";
 // import ChatBot from "@/components/chatBot";
 
 const MainPage = () => {
+  // const pathname = usePathname();
+  // const locale = useLocale();
+  // const isActive = pathname === `/${locale}`;
+  // // console.log("pathname ", pathname);
+  // const router = useRouter();
+  // if (!isActive) {
+  //   // console.log("not active");
+  //   router.replace("not-found");
+  // }
+
   return (
     <main
       className="relative mx-auto flex flex-col items-center justify-center overflow-clip bg-black-100 text-white dark:text-red-700">

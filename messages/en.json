@@ -70,23 +70,6 @@
   "Skills": {
     "title": "Hover over a skill to show proficiency"
   },
-  "Experience": {
-    "1": {
-      "title": "Senior web developer expert in typescript, react, graphql, mongodb, node koa framework and other knowledge in many technologies",
-      "description": "Started work on first october 2022 until today ,gain skills in Typescript and list of technologies and tools"
-    },
-    "2": {
-      "title": "End of studies internship in b2b alive",
-      "description": "Started work on first october 2022 until today, gain skills in Typescript and list of technologies and tools"
-    },
-    "3": {
-      "title": "Second internship in Globalnet 3S",
-      "description": "Created a web application"
-    },
-    "4": {
-      "title": "First Internship in Sofrecom"
-    }
-  },
   "AboutMe": {
     "title": "About Me",
     "intro": "Here is a little background about me",
@@ -100,6 +83,10 @@
   "Internships": {
     "title": "Intenrships",
     "intro": "I did 3 internships during my 3 years in my engineering education period",
+    "4": {
+      "title": "End of studies internship in b2b alive",
+      "description": "Started work on first october 2022 until today, gain skills in Typescript and list of technologies and tools"
+    },
     "1": {
       "title": "Engineer internship",
       "location_date": "B2b alive ltd: 10 january 2022 - 15 september 2022",
@@ -117,7 +104,7 @@
     }
   },
   "Experience": {
-    "title": "Experience",
+    "title": "Work experience",
     "description": "I worked on main application of visual content company in Typescript on different features and tasks , allowed me to gain hands-on experience with React and TypeScript for the front-end, and Node.js with Koa js for the back-end, tasks worked on like managing medias and upload them on AWS S3. \nI got  experience in writing clean, maintainable code and optimizing existing codebases to improve performance and reduce load times. Apply best practices to ensure efficient and scalable web solutions.\n Besides developping i work as tester sometimes to test some queries and mutations of graphql endpoint in server side ",
     "personalProjects": {
       "title": "Personal projects",
@@ -148,6 +135,10 @@
           "description": "Work server of main application with node typescript and graphql"
         },
         "2": {
+          "title": "Senior web developer expert in typescript, react, graphql, mongodb, node koa framework and other knowledge in many technologies",
+          "description": "Started work on first october 2022 until today ,gain skills in Typescript and list of technologies and tools"
+        },
+        "3": {
           "society": "globalnet3S",
           "description": "Work on mobile application with react native considered as uber clone"
         }

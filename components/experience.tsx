@@ -2,12 +2,15 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/moving-borders";
 import { workExperience } from "@/data";
+import { useTranslations } from "next-intl";
 
 export const Experience = () => {
+  const t = useTranslations("Experience");
   return (
     <section id="experience" className="py-20">
       <h1 className="heading">
-        My <span className="text-purple">work experience</span>
+        {/*My <span className="text-purple">work experience</span>*/}
+        My <span className="text-purple">{t("title")}</span>
       </h1>
 
       <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">

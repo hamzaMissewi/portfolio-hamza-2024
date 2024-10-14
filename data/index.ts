@@ -79,7 +79,7 @@ export const projects = [
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://clone-figmaa.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/figma-clone",
+    sourceCode: undefined,//"https://github.com/sanidhyy/figma-clone",
   },
   {
     id: 2,
@@ -88,7 +88,7 @@ export const projects = [
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://clone-yoom.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/zoom-clone",
+    sourceCode: undefined,//"https://github.com/sanidhyy/zoom-clone",
   },
   {
     id: 3,
@@ -97,7 +97,7 @@ export const projects = [
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://ai-imaginify.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/imaginify",
+    sourceCode: undefined,// "https://github.com/sanidhyy/imaginify",
   },
   {
     id: 4,
@@ -106,7 +106,7 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://app-iphone.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/apple-clone",
+    sourceCode: undefined,// "https://github.com/sanidhyy/apple-clone",
   },
   {
     id: 5,
@@ -115,7 +115,7 @@ export const projects = [
     img: "/hamza/quran_project.svg",
     iconLists: ["/ts.svg", "/next.svg", "/hamza/openai.svg"],
     link: "https://quran-clone-app.vercel.app",
-    sourceCode: "https://github.com/hamzaMissewi/quran-next-clone-app",
+    sourceCode: "#",//"https://github.com/hamzaMissewi/quran-next-clone-app",
   },
   // {
   //   id: 6,

@@ -112,13 +112,14 @@ export const projects = [
     id: 5,
     title: "Hamza Uber Clone",
     des: "A collaborative design tool with real-time collaboration, vector editing, and a responsive UI.",
-    img: "/p1.svg",
+    img: "/hamza/project1.svg",
     iconLists: ["/ts.svg", "/hamza/openai.svg", "/hamza/mongodb.svg", "/hamza/koa.svg", "/hamza/reactJs.svg", "/hamza/javascript.svg"],
     link: "https://clone-figmaa.netlify.app",
     sourceCode: "https://github.com/sanidhyy/figma-clone",
   },
 ] as const;
 
+// clients review
 export const testimonials = [
   {
     quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
@@ -127,17 +128,17 @@ export const testimonials = [
   },
   {
     quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    name: "Philippe",
+    title: "Director of B2B Alive Ltd",
   },
   {
     quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
+    name: "Florent",
     title: "Director of AlphaStream Technologies",
   },
   {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
+    quote: `Collaborating with ${links.ownerName} was a game changer. Not only his expertise in web development but also his speed in delivering results for demanded tasks in application. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
+    name: "Mohamed",
     title: "Director of AlphaStream Technologies",
   },
   {
@@ -187,6 +188,16 @@ export const workExperience = [
     desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
+    // new field hamza
+    skills: [
+      "Proven Expertise: Experienced software developer with 2 years in web developing,including cloud-based" +
+      " solutions. ",
+      "Innovation and Efficiency: Implemented automated testing frameworks and CI/CD pipelines that" +
+      " reduced deployment time by 40% and increased code quality.",
+      "Leadership and Mentoring: Experienced in mentoring junior developers and leading technical teams, fostering" +
+      " a collaborative environment that encourages innovation and professional growth.",
+      "Workflow", "Communication",
+    ],
   },
   {
     id: 2,
@@ -208,6 +219,13 @@ export const workExperience = [
     desc: "Developed and maintained user-facing features using modern frontend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
+  },
+  {
+    id: 5,
+    title: "Lead Frontend Developer",
+    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    className: "md:col-span-2",
+    thumbnail: "/hamza/project1.svg",
   },
 ] as const;
 

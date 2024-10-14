@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "@/lib/intl";
 import { FaLocationArrow } from "react-icons/fa6";
 
 import { MagicButton } from "@/components/ui/magic-button";

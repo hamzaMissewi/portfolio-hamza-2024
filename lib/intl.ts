@@ -1,5 +1,5 @@
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
-import { LocalePrefix, Pathnames } from "next-intl/routing";
+import { LocalePrefix } from "next-intl/routing";
 
 export const locales = ["en", "fr", "ar"] as const;
 

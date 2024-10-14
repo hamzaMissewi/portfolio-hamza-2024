@@ -110,13 +110,22 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Hamza Uber Clone",
-    des: "A collaborative design tool with real-time collaboration, vector editing, and a responsive UI.",
-    img: "/hamza/project1.svg",
-    iconLists: ["/ts.svg", "/hamza/openai.svg", "/hamza/mongodb.svg", "/hamza/koa.svg", "/hamza/reactJs.svg", "/hamza/javascript.svg"],
-    link: "https://clone-figmaa.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/figma-clone",
+    title: "Quran lake website",
+    des: "A web application for listening to quran.",
+    img: "/hamza/quran_project.svg",
+    iconLists: ["/ts.svg", "/next.svg", "/hamza/openai.svg"],
+    link: "https://quran-clone-app.vercel.app",
+    sourceCode: "https://github.com/hamzaMissewi/quran-next-clone-app",
   },
+  // {
+  //   id: 6,
+  //   title: "Hamza Uber Clone",
+  //   des: "A collaborative design tool with real-time collaboration, vector editing, and a responsive UI.",
+  //   img: "/hamza/project1.svg",
+  //   iconLists: ["/ts.svg", "/hamza/openai.svg", "/hamza/mongodb.svg", "/hamza/koa.svg", "/hamza/reactJs.svg", "/hamza/javascript.svg"],
+  //   link: "https://clone-figmaa.netlify.app",
+  //   sourceCode: "https://github.com/sanidhyy/figma-clone",
+  // },
 ] as const;
 
 // clients review
@@ -222,10 +231,10 @@ export const workExperience = [
   },
   {
     id: 5,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Senior Fullstack Developer",
+    desc: "Developed and maintained quran web app using next js and modern frontend technologies.",
     className: "md:col-span-2",
-    thumbnail: "/hamza/project1.svg",
+    thumbnail: "/hamza/project2.svg",
   },
 ] as const;
 
@@ -234,6 +243,7 @@ export const socialMedia = [
     name: "GitHub",
     img: "/git.svg",
     link: "https://github.com/hamzaMissewi",
+    // https://github.com/HamzaOstouri
   },
   {
     name: "Twitter",

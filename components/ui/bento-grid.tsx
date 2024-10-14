@@ -98,7 +98,8 @@ export const BentoGridItem = ({
 
         <div
           className={cn(
-            "absolute right-0 -mb-5",
+            // "absolute right-0 -mb-5",
+            "relative",
             id === 5 && "w-full opacity-80",
           )}
         >
@@ -132,7 +133,8 @@ export const BentoGridItem = ({
           {id === 2 && <GridGlobe />}
 
           {id === 3 && (
-            <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
+            // <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
+            <div className="relative -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
               <div className="flex flex-col gap-3 lg:gap-8">
                 {techStack.stack1.map((item) => (
                   <span

@@ -23,6 +23,14 @@
     "moviesPage": "Page Films",
     "aboutPage": "À propos de la page"
   },
+  "LocaleSwitcher": {
+    "label": "Changer la langue",
+    "languages": {
+      "en": "Anglais",
+      "fr": "Français",
+      "ar": "arabe"
+    }
+  },
   "Navbar": {
     "welcome": "Bonjour et bienvenue {username}",
     "home": "Page d'accueil",

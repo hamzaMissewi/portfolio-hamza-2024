@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "Hamza Missaoui",
+    "email": "hamza.missaoui47@gmail.com",
+    "url": "https://github.com/hamzaMissewi"
   },
   "description": "Modern & Minimalist Next.js Portfolio.",
   "keywords": [
@@ -57,23 +57,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/next-portfolio.git"
+    "url": "https://github.com/hamzaMissewi/portfolio-hamza-14-10.git"
   },
-  "homepage": "https://github.com/sanidhyy/next-portfolio#readme",
-  "bugs": {
-    "url": "https://github.com/sanidhyy/next-portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
-  },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
-  ],
+  "homepage": "https://github.com/hamzaMissewi/portfolio-hamza-14-10.git#readme",
   "dependencies": {
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.6",

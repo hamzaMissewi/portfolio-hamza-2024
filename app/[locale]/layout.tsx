@@ -6,10 +6,11 @@ import { ThemeProvider } from "@/theme/provider";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config";
 import React, { PropsWithChildren } from "react";
+import localFont from "next/dist/compiled/@next/font/dist/local";
 
-// const arFont = localFont({
-//   src: "@/fonts/Rubik-MediumItalic.ttf",
-// });
+const arFont = localFont({
+  src: "@/data/Rubik-MediumItalic.ttf",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,8 +41,7 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 
-    {/*// <body className={locale === "ar" ? arFont.className : inter.className} suppressHydrationWarning={true}>*/}
-    <body className={inter.className} suppressHydrationWarning={true}>
+    <body className={locale === "ar" ? arFont.className : inter.className} suppressHydrationWarning={true}>
     <NextIntlClientProvider messages={messages}>
       <ThemeProvider
         themes={["dark", "light"]}

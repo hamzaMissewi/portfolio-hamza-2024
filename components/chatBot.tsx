@@ -8,7 +8,6 @@ import {
   Divider,
   IconButton,
   Snackbar,
-  TextField,
   Typography,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
@@ -161,22 +160,23 @@ function ChatBot() {
             <Box
               component={"form"}
               className={
-                "py-2 flex flex-row items-center w-[100%] px-2 space-x-1 text-white-100  focus:ring-blue-500"
+                "py-2 flex flex-row items-center space-x-2 w-[100%] px-2 space-x-1 text-white-100  focus:ring-blue-500"
               }
             >
-              <TextField
-                className="flex-1 border rounded-lg px-2 focus:outline-none"
-                type={"text"}
-                size={"small"}
+              {/*<TextField*/}
+              <input
+                className="flex-1 rounded-md p-2 focus:outline-none text-white"
+                // type={"text"}
+                // size={"small"}
                 placeholder={t("typeMessage")}
                 value={userMessage}
                 onChange={(event) => setUserMessage(event.target.value)}
-                sx={{ textColor: theme === "light" ? "white" : "#6a1378" }}
+                // sx={{ textColor: theme === "light" ? "white" : "#6a1378" }}
               />
 
               <Button
                 type={"submit"}
-                className="dark:bg-lightBackground bg-darkBackground px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 space-x-2 items-center"
+                className="dark:bg-lightBackground bg-darkBackground px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 space-x-1 w-fit items-center"
                 onSubmit={(event) => handleClickAskChatGpt(event)}
               >
                 <span>{t("send")}</span>

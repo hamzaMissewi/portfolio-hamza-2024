@@ -39,7 +39,7 @@ const MainPage = () => {
         <Sidebar />
         {/*</section>*/}
         <div
-          className="flex flex-col flex-1 flex-grow overflow-x-auto items-center w-full h-full z-0 text-black dark:text-white">
+          className="flex flex-col flex-1 flex-grow overflow-x-auto items-center w-full h-full z-0 text-white">
           <Hero />
           <Grid />
           <RecentProjects />

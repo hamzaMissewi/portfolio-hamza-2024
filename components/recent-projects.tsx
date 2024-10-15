@@ -26,12 +26,12 @@ export const RecentProjects = () => {
                 <div
                   className="relative mb-10 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px]">
                   <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-3xl">
-                    {/*<Image*/}
-                    {/*  height={330}*/}
-                    {/*  width={552}*/}
-                    {/*  src="/bg.png"*/}
-                    {/*  alt="bg-img"*/}
-                    {/*/>*/}
+                    <Image
+                      height={330}
+                      width={552}
+                      src="/bg.png"
+                      alt="bg-img"
+                    />
                   </div>
 
                   <Link href={link}>

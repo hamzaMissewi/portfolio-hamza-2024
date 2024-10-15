@@ -1,13 +1,17 @@
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 
 import { PinContainer } from "./ui/3d-pin";
-import { Link } from "@/lib/intl";
+import { useRouter } from "@/lib/intl";
+// import { redirect, useRouter } from "next/navigation";
+// import { Link } from "@/lib/intl";
 
 export const RecentProjects = () => {
+  const router = useRouter();
+
   return (
     <section id="projects" className="py-20">
       <h1 className="heading">
@@ -34,15 +38,17 @@ export const RecentProjects = () => {
                     />
                   </div>
 
-                  <Link href={link}>
-                    <Image
-                      height={300}
-                      width={464}
-                      src={img}
-                      alt={title}
-                      className="absolute bottom-0 z-10"
-                    />
-                  </Link>
+                  {/*<Link href={link} className={"w-fit h-fit"}>*/}
+                  <Image
+                    height={300}
+                    width={464}
+                    src={img}
+                    alt={title}
+                    className="absolute bottom-1 z-10"
+                    onClick={() => router.push(link)}
+                  />
+                  {/*{ target: "_blank" }*/}
+                  {/*</Link>*/}
                 </div>
 
                 <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl">

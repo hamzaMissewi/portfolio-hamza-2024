@@ -9,9 +9,9 @@ const nextConfig = {
       // { hostname: "*", pathname: "*" },
       {
         // Pattern for images from a specific domain
-        pathname: "./public/**", // Use ** for wildcard matching
-        // protocol: "https",
-        // hostname: "*",
+        // pathname: "./public/**", // Use ** for wildcard matching
+        hostname: "public",
+        pathname: "**",
       },
       {
         protocol: "https",

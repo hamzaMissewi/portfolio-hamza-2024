@@ -31,27 +31,27 @@ const MainPage = () => {
   return (
     <main
       // className="relative mx-auto flex flex-col items-center justify-center overflow-clip bg-black-100 text-white dark:text-red-700">
-      className="relative mx-auto flex flex-col items-center justify-center overflow-clip bg-lightBackground dark:bg-darkBackground text-black-100 dark:text-white">
-      {/*{!isActive ? redirect("/not-found") : (*/}
-      <div className={"flex flex-row w-full h-full"}>
+      className="relative mx-auto flex flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
+      {/*<div className={"relative flex flex-col flex-grow  items-center justify-center"}>*/}
+      <FloatingNav navItems={navItems} className={undefined} />
+      <div className={"flex w-full justify-between space-x-20"}>
+        {/*<section id="sidebar" className={"relative "}>*/}
         <Sidebar />
-
-        <div className={"p-1 flex flex-col flex-grow"}>
-          <FloatingNav navItems={navItems} className={undefined} />
-          <div className="w-full h-full max-w-8xl z-0">
-            <Hero />
-            <Grid />
-            <RecentProjects />
-            <Clients />
-            <Experience />
-            <Approach />
-            {/*<ContactMe />*/}
-            <Footer />
-            <Footer2 />
-          </div>
+        {/*</section>*/}
+        <div
+          className="flex flex-col flex-1 flex-grow overflow-x-auto items-center w-full h-full z-0 text-black dark:text-white">
+          <Hero />
+          <Grid />
+          <RecentProjects />
+          <Clients />
+          <Experience />
+          <Approach />
+          {/*<ContactMe />*/}
+          <Footer />
+          <Footer2 />
         </div>
-        <ChatBot />
       </div>
+      <ChatBot />
     </main>
   );
 };

@@ -17,18 +17,18 @@ export default function LocaleSwitcher() {
   };
 
   return (
-    <label className="rounded">
-      {/*<p className="sr-only">{t("label")}</p>*/}
-      <select
-        defaultValue={localActive}
-        className="px-2 py-1"
-        onChange={onSelectChange}
-        disabled={isPending}
-      >
-        <option value="en">{t("languages.en")}</option>
-        <option value="fr">{t("languages.fr")}</option>
-        <option value="ar">{t("languages.ar")}</option>
-      </select>
-    </label>
+    // <label>
+    //   <p className="sr-only">{t("label")}</p>
+    <select
+      defaultValue={localActive}
+      className="px-2 py-1 border border-black"
+      onChange={onSelectChange}
+      disabled={isPending}
+    >
+      <option value="en">{t("languages.en")}</option>
+      <option value="fr">{t("languages.fr")}</option>
+      <option value="ar">{t("languages.ar")}</option>
+    </select>
+    // </label>
   );
 }

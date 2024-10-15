@@ -17,7 +17,7 @@ function NavigationLink({ href, target, children, ...rest }: LinkProps & { child
   console.log("pathname ", pathname);
   return (
     <Link target={target} aria-current={isActive ? "page" : undefined}
-          className={clsx("inline-block px-2 py-3 transition-colors", isActive ? "text-red-400" : "text-white")}
+          className={clsx("inline-block px-2 py-3 transition-colors", isActive && "text-red-400")}
           href={href} {...rest}>{children}</Link>
   );
 }

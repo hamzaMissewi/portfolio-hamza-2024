@@ -14,7 +14,7 @@ export function ThemeToggler() {
 
   return (
     <select value={theme} onChange={e => setTheme(e.target.value)}
-            className={"dark:text-white text-black px-2 py-1 font-bold"}>
+            className={"px-2 py-1 border border-black"}>
       {/*className={theme === "light" ? "text-black bg-white" : "text-white bg-black"}*/}
       {/*<option value="system">System</option>*/}
       <option value="dark">Dark</option>

@@ -11,7 +11,8 @@ export const Clients = () => {
       </h1>
 
       <div className="flex flex-col items-center max-lg:mt-10">
-        <div className="relative flex h-[50vh] flex-col items-center justify-center  overflow-hidden rounded-md antialiased md:h-[30rem]">
+        <div
+          className="relative flex h-[50vh] flex-col items-center justify-center  overflow-hidden rounded-md antialiased md:h-[30rem]">
           <InfiniteMovingCards
             items={testimonials}
             direction="right"
@@ -29,7 +30,6 @@ export const Clients = () => {
                 alt={`${name}'s logo`}
                 className="w-5 md:w-10"
               />
-
               <Image
                 height={28}
                 width={131}

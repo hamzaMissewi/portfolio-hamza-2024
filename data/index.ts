@@ -71,7 +71,15 @@ export const gridItems = [
   },
 ] as const;
 
-export const projects = [
+export const projects: {
+  id: number,
+  title: string,
+  des: string,
+  img: string,
+  iconLists: string[],
+  link: string,
+  sourceCode: string
+}[] = [
   {
     id: 1,
     title: "FigPro - Collaborative Design Tool",
@@ -79,7 +87,7 @@ export const projects = [
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://clone-figmaa.netlify.app",
-    sourceCode: undefined,//"https://github.com/sanidhyy/figma-clone",
+    sourceCode: "",//"https://github.com/sanidhyy/figma-clone",
   },
   {
     id: 2,
@@ -88,7 +96,7 @@ export const projects = [
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://clone-yoom.netlify.app",
-    sourceCode: undefined,//"https://github.com/sanidhyy/zoom-clone",
+    sourceCode: "",  //"https://github.com/sanidhyy/zoom-clone",
   },
   {
     id: 3,
@@ -97,7 +105,7 @@ export const projects = [
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://ai-imaginify.netlify.app",
-    sourceCode: undefined,// "https://github.com/sanidhyy/imaginify",
+    sourceCode: "",// "https://github.com/sanidhyy/imaginify",
   },
   {
     id: 4,
@@ -106,7 +114,7 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://app-iphone.netlify.app",
-    sourceCode: undefined,// "https://github.com/sanidhyy/apple-clone",
+    sourceCode: "",// "https://github.com/sanidhyy/apple-clone",
   },
   {
     id: 5,
@@ -115,7 +123,7 @@ export const projects = [
     img: "/hamza/quran_project.svg",
     iconLists: ["/ts.svg", "/next.svg", "/hamza/openai.svg"],
     link: "https://quran-clone-app.vercel.app",
-    sourceCode: "#",//"https://github.com/hamzaMissewi/quran-next-clone-app",
+    sourceCode: "https://github.com/hamzaMissewi/quran-next-clone-app",
   },
   // {
   //   id: 6,
@@ -132,13 +140,8 @@ export const projects = [
 export const testimonials = [
   {
     quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
     name: "Philippe",
-    title: "Director of B2B Alive Ltd",
+    title: "CEO of B2B Alive Ltd",
   },
   {
     quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
@@ -151,10 +154,15 @@ export const testimonials = [
     title: "Director of AlphaStream Technologies",
   },
   {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    quote: `As director of globalnet 3s i work with ${links.ownerName} for his internship project and i can say he's a hard worker, competent and fast learner throughout the period of project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. I rcommend him as web developer for any entreprise, ${links.ownerName} is a good option.`,
+    name: "Akrem aalani",
+    title: "Director of Tunisia Globalnet 3s",
   },
+  // {
+  //   quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
+  //   name: "Michael Johnson",
+  //   title: "Director of AlphaStream Technologies",
+  // },
 ] as const;
 
 export const companies = [
@@ -200,7 +208,7 @@ export const workExperience = [
     // new field hamza
     skills: [
       "Proven Expertise: Experienced software developer with 2 years in web developing,including cloud-based" +
-      " solutions. ",
+      " solutions.",
       "Innovation and Efficiency: Implemented automated testing frameworks and CI/CD pipelines that" +
       " reduced deployment time by 40% and increased code quality.",
       "Leadership and Mentoring: Experienced in mentoring junior developers and leading technical teams, fostering" +
@@ -219,7 +227,7 @@ export const workExperience = [
     id: 3,
     title: "Freelance App Dev Project",
     desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
@@ -260,6 +268,6 @@ export const socialMedia = [
 
 export const techStack = {
   stack1: ["React.js", "Next.js", "Typescript"],
-  // stack2: ["Vue.js", "AWS", "MongoDB"],
-  stack2: ["NodeJs", "ElasticSearch", "AWS", "MongoDB"],
+  stack2: ["NodeJs Koa", "ElasticSearch", "AWS", "MongoDB"],
+  stack3: ["AWS", "GraphQl", "MongoDB"],
 } as const;

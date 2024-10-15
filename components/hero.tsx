@@ -4,7 +4,6 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { Spotlight } from "@/components/ui/spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { MagicButton } from "@/components/ui/magic-button";
-import { links } from "@/config";
 //
 import { useLocale } from "use-intl";
 import { useTranslations } from "next-intl";
@@ -44,7 +43,8 @@ export const Hero = () => {
   const localActive = useLocale();
   const t = useTranslations("Hero");
   const [dynamicTexts] = useTypewriter({
-    words: [...introductionsByLang[localActive], "<ButtonLovesToCodeMore />"],
+    words: introductionsByLang[localActive],
+    // words: [...introductionsByLang[localActive], "<ButtonLovesToCodeMore />"],
     loop: true,
     delaySpeed: 3000,
   });
@@ -85,16 +85,18 @@ export const Hero = () => {
 
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            words="Transforming Concepts into Seamless User Experiences"
+            // words="Transforming Concepts into Seamless User Experiences"
+            words={t("text_effect")}
           />
 
           <p className="mb-4 text-center text-sm md:text-lg md:tracking-wider lg:text-2xl">
-            Hi, I&apos;m {links.ownerName}, a Fullstack web developer from Tunisia working with next js and aws other modern technologies.
+            {/*Hi, I&apos;m {links.ownerName}, a Fullstack web developer from Tunisia working with next js and aws other modern technologies.*/}
+            {t("title")}
           </p>
 
           <Link href="#about" className="md:mt-10">
             <MagicButton
-              title="Show my work"
+              title={t("showWork")}
               icon={<FaLocationArrow />}
               position="right"
               asChild

@@ -20,7 +20,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change the language",
-    "locale": "{locale, select, en { English} fr {French} ar {Arabic}}",
+    "locale": "{locale, select, en {English} fr {French} ar {Arabic}}",
     "languages": {
       "en": "English",
       "fr": "French",
@@ -46,9 +46,19 @@
   "ContactMe": {
     "title": "Contact me",
     "contact": "I have what you need to solve your demands and make your dreams come to reality, Let's talk",
-    "address": "Tunisia, Mourouj 1 zip 2074"
+    "address": "Tunisia, Mourouj 1 zip 2074",
+    "default": {
+      "subject": "e.g: Work offer for web developer in ...",
+      "message": "Need to collaborate",
+      "email": "joe_doe@gmail.com",
+      "name": "Work offer"
+    },
+    "send": "يرسل"
   },
   "Hero": {
+    "text_effect": "Transforming User needs into cool user experiences and awesome web design, Working on different modern technologies",
+    "title": "Hi, I'm Hamza Missaoui, a tunisian software engineer and Fullstack web developer working with next js and aws other modern technologies.",
+    "showWork": "Show my work",
     "words": [
       "Hi, My name is Hamza Missaoui",
       "I am software engineer and web developer who loves",
@@ -57,7 +67,6 @@
       "Knowledge in libraries / frameworks such as react, next js, django and spring boot",
       "Knowledge in aws cloud services and docker containerisation"
     ],
-    "title": "Software engineer and fullstack web developer",
     "description": "I am highly qualified and competent developer in typescript, react and next js and many other technologies",
     "route": {
       "aboutMe": "About me",

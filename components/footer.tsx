@@ -1,15 +1,13 @@
 import Image from "next/image";
 // import Link from "next/link";
 import { Link } from "@/lib/intl";
-import { FaLocationArrow } from "react-icons/fa6";
-
-import { MagicButton } from "@/components/ui/magic-button";
 import { links } from "@/config";
 import { socialMedia } from "@/data";
+import ContactMe from "@/components/contactMe";
 
 export const Footer = () => {
   return (
-    <footer id="contact" className="mb-[100px] w-full pb-10 md:mb-auto">
+    <footer id="contact" className="mb-[100px] w-full pb-10 md:mb-auto mt-5">
       <div className="absolute -bottom-72 left-0 min-h-96 w-full">
         <Image
           src="/footer-grid.svg"
@@ -31,19 +29,21 @@ export const Footer = () => {
           achieve your goals.
         </p>
 
-        <Link
-          href={`mailto:${links.ownerEmail}`}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="md:mt-10"
-        >
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-            asChild
-          />
-        </Link>
+        <ContactMe />
+
+        {/*<Link*/}
+        {/*  href={`mailto:${links.ownerEmail}`}*/}
+        {/*  target="_blank"*/}
+        {/*  rel="noreferrer noopener"*/}
+        {/*  className="md:mt-10"*/}
+        {/*>*/}
+        {/*  <MagicButton*/}
+        {/*    title="Let's get in touch"*/}
+        {/*    icon={<FaLocationArrow />}*/}
+        {/*    position="right"*/}
+        {/*    asChild*/}
+        {/*  />*/}
+        {/*</Link>*/}
       </div>
 
       <div className="relative z-[999] mt-16 flex flex-col items-center justify-between md:flex-row">
@@ -51,7 +51,8 @@ export const Footer = () => {
           Copyright &copy; {new Date().getFullYear()}{" "}
           <Link
             // href="https://sanidhy.me"
-            href="https://hamza.missaoui.me"
+            // href="https://hamza.missaoui.me"
+            href={"https://www.linkedin.com/in/hamza-missaoui/"}
             target="_blank"
             rel="noreferrer noopener"
             className="text-purple"

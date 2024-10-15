@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useTransition } from "react";
 
-export default function LocalSwitcher() {
+export default function LocaleSwitcher() {
   const t = useTranslations("LocaleSwitcher");
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -17,11 +17,11 @@ export default function LocalSwitcher() {
   };
 
   return (
-    <label className="border-2 rounded dark:text-white text-black">
-      <p className="sr-only">{t("label")}</p>
+    <label className="rounded">
+      {/*<p className="sr-only">{t("label")}</p>*/}
       <select
         defaultValue={localActive}
-        className="bg-transparent py-2"
+        className="px-2 py-1"
         onChange={onSelectChange}
         disabled={isPending}
       >

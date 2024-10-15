@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+// import { useLocale } from "use-intl";
 // import { Link } from "@/lib/intl";
-
 // import Link from "next/link";
 
 function NotFound() {
+  // const locale = useLocale()
   return (
     // <html lang={"en"}>
     <div>

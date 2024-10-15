@@ -34,7 +34,7 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
   });
 
   return (
-    // <nav className={"container flex justify-between dark:text-white text-red-700"}>
+    // <nav className={"container flex justify-between "}>
     <AnimatePresence mode="wait">
       <motion.nav
         initial={{

@@ -45,9 +45,20 @@
   "ContactMe": {
     "title": "Contactez-moi",
     "contact": "J'ai ce dont vous avez besoin pour répondre à vos demandes et concrétiser vos rêves. Parlons-en",
-    "address": "Tunisie, Mourouj 1 zip 2074"
+    "address": "Tunisie, Mourouj 1 zip 2074",
+    "default": {
+      "subject": "e.g: Offre de travail ...",
+      "message": "e.g: Besoin de collaborer",
+      "email": "e.g: hamza@gmail.com",
+      "name": "e.g: Offre de travail"
+    },
+    "send": "Envoyer"
   },
   "Hero": {
+    "text_effect": "Transformer les concepts en expériences utilisateur transparentes, travailler sur React et différentes technologies modernes",
+    "title": "Bonjour, je m'appelle Hamza Missaoui, un ingénieur logiciel et développeur Web Fullstack tunisien travaillant avec next js et aws d'autres technologies modernes.",
+    "description": "Je suis un développeur hautement qualifié et compétent en TypeScript, React et Next Js et bien d'autres technologies.",
+    "showWork": "Afficher mon travail",
     "words": [
       "Bonjour, je m'appelle Hamza Missaoui",
       "Je suis ingénieur logiciel et développeur Web qui aime",
@@ -56,8 +67,6 @@
       "Connaissance des bibliothèques/frameworks tels que React, Next Js, Django et Spring Boot",
       "Connaissance des services cloud AWS et de la conteneurisation Docker"
     ],
-    "title": "Ingénieur logiciel et développeur web fullstack",
-    "description": "Je suis un développeur hautement qualifié et compétent en TypeScript, React et Next Js et bien d'autres technologies.",
     "route": {
       "aboutMe": "A propos moi",
       "skills": "Compétences",

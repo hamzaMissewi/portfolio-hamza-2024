@@ -2,18 +2,23 @@
 import React, { ReactNode } from "react";
 import { clsx } from "clsx";
 import Link, { LinkProps } from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
+
+// import { enqueueSnackbar } from "notistack";
 
 function NavigationLink({ href, target, children, ...rest }: LinkProps & { children: ReactNode } & {
   target?: React.HTMLAttributeAnchorTarget
 }) {
-  const selectedLayoutSegment = useSelectedLayoutSegment();
-  const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/";
+  // const selectedLayoutSegment = useSelectedLayoutSegment();
+  // const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/";
+  const pathname = usePathname();
   const isActive = pathname === href;
+  console.log("href ", href);
+  console.log("pathname ", pathname);
   return (
     <Link target={target} aria-current={isActive ? "page" : undefined}
-          className={clsx("inline-block px-2 py-3 transition-colors", isActive ? "text-white" : "text-gray-400" +
-            " hover:text-gray-200")} href={href} {...rest}>{children}</Link>
+          className={clsx("inline-block px-2 py-3 transition-colors", isActive ? "text-red-400" : "text-white")}
+          href={href} {...rest}>{children}</Link>
   );
 }
 

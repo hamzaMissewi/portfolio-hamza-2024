@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/theme/provider";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config";
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 
 // const arFont = localFont({
 //   src: "@/fonts/Rubik-MediumItalic.ttf",
@@ -34,6 +34,11 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
     >
+    <head>
+      <title>Hamza Missaoui Portfolio</title>
+      <link rel="icon" href="/hamza/b2b-alive.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
 
     {/*// <body className={locale === "ar" ? arFont.className : inter.className} suppressHydrationWarning={true}>*/}
     <body className={inter.className} suppressHydrationWarning={true}>
@@ -41,7 +46,6 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
       <ThemeProvider
         themes={["dark", "light"]}
         attribute="class" defaultTheme="dark">
-        {/*attribute="class" defaultTheme="dark" forcedTheme="dark">*/}
         {children}
       </ThemeProvider>
     </NextIntlClientProvider>

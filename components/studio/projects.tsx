@@ -120,9 +120,7 @@ function SanityProjects({
                     brandColor={project?.brandColor.hex}
                     coverImage={urlFor(project?.coverImage)?.url()}
                     futureUseText={project?.futureUse || undefined}
-                    github={{
-                      url: project?.codeURL,
-                    }}
+                    github={{ url: project?.codeURL }}
                     key={project._id}
                     skills={
                       project?.technologies.map((skill) => skill.title) || []

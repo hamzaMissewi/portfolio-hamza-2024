@@ -27,7 +27,6 @@ import { fetchSkillCategories } from "@/utils/fetchSkillCategories";
 import { fetchSocials } from "@/utils/fetchSocials";
 import { fetchTestimonials } from "@/utils/fetchTestimonials";
 import { fetchSections } from "@/utils/fetchSection";
-import SanityProjects from "@/components/studio/projects";
 // import ContactMe from "@/components/contactMe";
 
 export default async function MainPage() {
@@ -89,7 +88,7 @@ export default async function MainPage() {
           <Hero />
           <Grid />
           <RecentProjects />
-          <SanityProjects projects={projects} {...projectsProps} />
+          {/*<SanityProjects projects={projects} {...projectsProps} />*/}
           <Clients />
           <ExperiencesComponent />
           <Approach />

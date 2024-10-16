@@ -24,18 +24,16 @@ export default function Sidebar() {
   // const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
   // const isLgScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
-
   // useEffect(() => {
   //   if (isLgScreen) {
   //     setOpenSidebar(true);
   //   }
   // }, [isLgScreen]);
 
-
   return (
     <div
-      className={`mt-2 inset-0 sticky ${locale !== "ar" ? "left-2" : "right-2"}`}>
-
+      className={`sticky inset-0 mt-2 ${locale !== "ar" ? "left-2" : "right-2"}`}
+    >
       {/*<Portal container={navBarToggleButtonEl}>*/}
       <Box
         sx={{
@@ -67,20 +65,13 @@ export default function Sidebar() {
           {openSidebar && <ChevronLeftIcon fontSize="inherit" />}
         </IconButton>
       </Box>
-      {/*</Portal>*/}
-
-      {/*<Drawer variant="permanent"*/}
-      {/*        open={desktopDrawerOpen}*/}
-      {/*        sx={{*/}
-      {/*          display: { xs: "none", sm: "block" },*/}
-      {/*        }}>*/}
-      {/*  <Toolbar />*/}
 
       {openSidebar && (
         <div
-          // className={`${openSidebar}`}
-          className={"pb-5 top-5 border border-black rounded-xl min-h-0 min-w-0 w-fit z-10 flex flex-col" +
-            " dark:bg-grid-white/[0.03] h-fit max-h-screen space-y-2 bg-white dark:bg-black bg-grid-black/[0.2] border-white/[0.2] items-center"}
+          className={
+            "top-5 z-10 flex min-h-0 w-fit min-w-0 flex-col rounded-xl border border-black pb-5" +
+            " h-fit max-h-screen items-center space-y-2 border-white/[0.2] bg-white bg-grid-black/[0.2] dark:bg-black dark:bg-grid-white/[0.03]"
+          }
           // initial={{
           //   opacity: 0.5,
           //   x: -100,
@@ -97,11 +88,14 @@ export default function Sidebar() {
           <NavigationLink href={"https://www.b2b-alive.com"} target={"_blank"}>
             {/*/!*<Image src={"/hamza/b2b-alive.svg"} width={200} height={200} alt="b2b logo"      */}
             <Image
-              className={"bg-white p-1 border border-black-100"}
+              className={"border border-black-100 bg-white p-1"}
               //src={"/png/b2b-alive-icon.png"}
               // src={"/hamza/b2b-alive.svg"}
               src="https://s3-eu-west-1.amazonaws.com/public.b2b-alive.files/logo/b2b-alive-logo_256.png"
-              width={140} height={140} alt="b2b logo" />
+              width={140}
+              height={140}
+              alt="b2b logo"
+            />
           </NavigationLink>
 
           {/*<NavigationLink href={"/pathnames"}>Pathnames</NavigationLink>*/}
@@ -119,8 +113,6 @@ export default function Sidebar() {
           </div>
         </div>
       )}
-
-      {/*</Drawer>*/}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/moving-borders";
 import { workExperience } from "@/data";
 import { useTranslations } from "next-intl";
 
-export const Experience = () => {
+export const ExperiencesComponent = () => {
   const t = useTranslations("Experience");
   return (
     <section id="experience" className="py-20">

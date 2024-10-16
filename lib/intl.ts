@@ -3,7 +3,6 @@ import { defineRouting } from "next-intl/routing";
 
 export const locales: string[] = ["en", "fr", "ar"];
 
-// export type Locales = typeof locales;
 // export const localePrefix: LocalePrefix<Locales> = "as-needed"; // always
 
 export const routing = defineRouting({
@@ -11,7 +10,7 @@ export const routing = defineRouting({
   locales: locales,
   // Used when no locale matches
   defaultLocale: "en",
-  // localePrefix: "as-needed",
+  localePrefix: "as-needed",
   // domains: [
   //   {
   //     domain: "dev.localhost:3000",
@@ -33,4 +32,3 @@ export const routing = defineRouting({
 
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation(routing);
-// createSharedPathnamesNavigation({ locales, localePrefix });

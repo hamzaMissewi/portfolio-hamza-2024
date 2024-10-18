@@ -3,26 +3,19 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schemas";
 import StudioNavbar from "@/components/studio/StudioNavbar/StudioNavbar.component";
+import { colorInput } from "@sanity/color-input";
 import Logo from "@/components/studio/Logo/Logo.component";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 // const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
-// export default defineConfig({
 const config: Config = defineConfig({
   basePath: "/studio",
   name: "portfolio-sanity", //"default",
   title: "portfolio sanity",
-
-  projectId: projectId, //"t1nbpupj",
+  projectId: projectId ?? "t1nbpupj",
   dataset: "production", // dataset
-
-  plugins: [structureTool(), visionTool()],
-  // plugins: [
-  //   colorInput(),
-  //   deskTool(),
-  //   visionTool(),
-  // ],
+  plugins: [colorInput, structureTool(), visionTool()],
   schema: {
     types: schemaTypes,
   },

@@ -1,4 +1,6 @@
-"use client";
+// "use client";
+import React from "react";
+
 import { Approach } from "@/components/approach";
 import { Clients } from "@/components/clients";
 import { ExperiencesComponent } from "@/components/experiencesComponent";
@@ -6,28 +8,17 @@ import { Footer } from "@/components/footer";
 import { Grid } from "@/components/grid";
 import { Hero } from "@/components/hero";
 import { FloatingNav } from "@/components/ui/floating-nav";
-import { RecentProjects } from "@/components/recent-projects";
 import { navItems } from "@/data";
 import Sidebar from "@/components/sidebar";
 import ChatBot from "@/components/chatBot";
 import Footer2 from "@/components/footer2";
-import {
-  Experience,
-  Project,
-  SectionWrapper,
-  Skill,
-  SkillCategory,
-  Social,
-  Testimonial,
-} from "@/typings";
+import { Experience, Project, SectionWrapper } from "@/typings";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchExperiences } from "@/utils/fetchExperiences";
-import { fetchSkills } from "@/utils/fetchSkills";
-import { fetchSkillCategories } from "@/utils/fetchSkillCategories";
-import { fetchSocials } from "@/utils/fetchSocials";
-import { fetchTestimonials } from "@/utils/fetchTestimonials";
 import { fetchSections } from "@/utils/fetchSection";
-// import ContactMe from "@/components/contactMe";
+import SanityProjects from "@/components/studio/projects";
+import { SanityExperiencesComponent } from "@/components/sanityExperiences";
+// import sanityClient from "@sanity/client";
 
 export default async function MainPage() {
   // const locale = useLocale();
@@ -44,12 +35,13 @@ export default async function MainPage() {
 
   const projects: Project[] = await fetchProjects();
   const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const skillCategories: SkillCategory[] = await fetchSkillCategories();
-  const socials: Social[] = await fetchSocials();
-  const testimonials: Testimonial[] = await fetchTestimonials();
-  //
   const sections: SectionWrapper[] = await fetchSections();
+  // const skills: Skill[] = await fetchSkills();
+  // const skillCategories: SkillCategory[] = await fetchSkillCategories();
+  // const socials: Social[] = await fetchSocials();
+  // const testimonials: Testimonial[] = await fetchTestimonials();
+
+  // const client = sanityClient({});
 
   const extractPropsFromSection = (title: string) => {
     const section = sections.find((section) => section.title === title);
@@ -71,8 +63,10 @@ export default async function MainPage() {
   };
 
   // const homeProps = extractPropsFromSection("Home");
-  // const experienceProps = extractPropsFromSection("Experience");
   const projectsProps = extractPropsFromSection("Project");
+  const experienceProps = extractPropsFromSection("Experience");
+
+  console.log("experiences");
 
   return (
     <main
@@ -87,10 +81,16 @@ export default async function MainPage() {
         <div className="z-0 flex h-full w-full flex-1 flex-grow flex-col items-center overflow-x-auto text-white">
           <Hero />
           <Grid />
-          <RecentProjects />
-          {/*<SanityProjects projects={projects} {...projectsProps} />*/}
+          {/*<RecentProjects />*/}
+          <SanityProjects projects={projects} {...projectsProps} />
           <Clients />
           <ExperiencesComponent />
+
+          <SanityExperiencesComponent
+            experiences={experiences}
+            {...experienceProps}
+          />
+
           <Approach />
           <Footer />
           <Footer2 />

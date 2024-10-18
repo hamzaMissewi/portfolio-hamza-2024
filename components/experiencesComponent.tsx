@@ -9,7 +9,6 @@ export const ExperiencesComponent = () => {
   return (
     <section id="experience" className="py-20">
       <h1 className="heading">
-        {/*My <span className="text-purple">work experience</span>*/}
         <span className="text-purple">{t("title")}</span>
       </h1>
 

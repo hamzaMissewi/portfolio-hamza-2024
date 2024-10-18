@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef } from "react";
 
 import Image from "next/image";
@@ -25,7 +26,7 @@ type IProjectsProps = {
   sectionBackground: BaseImage;
   sectionColor?: Color;
   sectionIcon?: string;
-  subText: string;
+  // subText: string;
   title: string;
 };
 
@@ -42,7 +43,6 @@ function SanityProjects({
   sectionBackground,
   sectionColor,
   sectionIcon,
-  subText,
   title,
 }: IProjectsProps) {
   const t = useTranslations("Projects");

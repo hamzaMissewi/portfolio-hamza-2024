@@ -5,7 +5,8 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 
 import { PinContainer } from "./ui/3d-pin";
-import { useRouter } from "@/lib/intl";
+import { useRouter } from "next/navigation";
+// import { useRouter } from "@/lib/intl";
 // import { redirect, useRouter } from "next/navigation";
 // import { Link } from "@/lib/intl";
 
@@ -27,8 +28,7 @@ export const RecentProjects = () => {
               className="flex h-[32rem] w-[90vw] items-center justify-center sm:h-[41rem] sm:w-[570px] lg:min-h-[32.5rem]"
             >
               <PinContainer title="Visit" href={link}>
-                <div
-                  className="relative mb-10 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px]">
+                <div className="relative mb-10 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px]">
                   <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-3xl">
                     <Image
                       height={330}
@@ -94,7 +94,7 @@ export const RecentProjects = () => {
                 </div>
               </PinContainer>
             </div>
-          ),
+          )
         )}
       </div>
     </section>

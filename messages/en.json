@@ -113,7 +113,7 @@
     }
   },
   "Experience": {
-    "title": "Work experience",
+    "title": "My Work experience",
     "description": "I worked on main application of visual content company in Typescript on different features and tasks , allowed me to gain hands-on experience with React and TypeScript for the front-end, and Node.js with Koa js for the back-end, tasks worked on like managing medias and upload them on AWS S3. \nI got  experience in writing clean, maintainable code and optimizing existing codebases to improve performance and reduce load times. Apply best practices to ensure efficient and scalable web solutions.\n Besides developping i work as tester sometimes to test some queries and mutations of graphql endpoint in server side ",
     "personalProjects": {
       "title": "Personal projects",

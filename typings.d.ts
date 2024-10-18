@@ -93,6 +93,7 @@ export interface Experience extends SanityBody {
   description: string[];
   technologies: Skill[];
   role: string;
+  logo: BaseImage | Image;
 }
 
 export interface Project extends SanityBody {

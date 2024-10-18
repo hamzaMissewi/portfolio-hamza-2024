@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   distDir: "build",
   images: {
+    // domains:[]
     remotePatterns: [
       // { hostname: "*", pathname: "*" },
       {
@@ -13,6 +14,9 @@ const nextConfig = {
         // pathname: "./public/**", // Use ** for wildcard matching
         hostname: "public",
         pathname: "**",
+      },
+      {
+        hostname: "cdn.sanity.io",
       },
       {
         protocol: "https",

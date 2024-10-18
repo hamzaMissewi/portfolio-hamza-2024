@@ -47,6 +47,8 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.6",
     "global": "^4.4.0",
+    "humanize-duration": "^3.32.1",
+    "luxon": "^3.5.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.10",
     "next-intl": "^3.21.1",
@@ -67,6 +69,8 @@
     "three-globe": "^2.31.0"
   },
   "devDependencies": {
+    "@types/humanize-duration": "^3",
+    "@types/luxon": "^3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

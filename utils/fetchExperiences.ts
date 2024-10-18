@@ -12,4 +12,5 @@ const query = groq`
 
 export async function fetchExperiences(): Promise<Experience[]> {
   return sanityClient.fetch(query);
+  // const data = await sanityClient.fetch('*[_type == "experience"]');
 }

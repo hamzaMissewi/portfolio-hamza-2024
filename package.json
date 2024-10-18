@@ -63,6 +63,7 @@
     "react-lottie": "^1.2.4",
     "react-simple-typewriter": "^5.0.1",
     "sanity": "^3.19",
+    "styled-components": "^6.1.13",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.164.1",

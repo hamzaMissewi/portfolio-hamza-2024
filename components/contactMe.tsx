@@ -20,18 +20,16 @@ import { links } from "@/config";
 import { FaLocationArrow } from "react-icons/fa6";
 // import { ContactRoutePayload } from "@/app/api/contact/route";
 
-
 type MailFieldsType = {
-  name?: string
-  email?: string
-  message?: string
-  subject?: string
-}
+  name?: string;
+  email?: string;
+  message?: string;
+  subject?: string;
+};
 
-export type SendMailOutput = { success?: boolean, response?: string } & {
+export type SendMailOutput = { success?: boolean; response?: string } & {
   error: Record<string, string | undefined> | null;
 } & { formatData?: MailFieldsType };
-
 
 function ContactMe() {
   const t = useTranslations("ContactMe");
@@ -43,10 +41,10 @@ function ContactMe() {
     formState: { errors, isValid },
   } = useForm<MailFieldsType>({
     defaultValues: {
-      subject: t("default.subject"),//"Work Offer",
-      message: t("default.message"),//"Need to collaborate",
-      email: t("default.email"),//"hamza@gmail.com",
-      name: t("default.name"),//""
+      subject: t("default.subject"), //"Work Offer",
+      message: t("default.message"), //"Need to collaborate",
+      email: t("default.email"), //"hamza@gmail.com",
+      name: t("default.name"), //""
     },
   });
 
@@ -63,7 +61,7 @@ function ContactMe() {
 
   const handleCloseErrorAlert = (
     event?: React.SyntheticEvent | Event,
-    reason?: SnackbarCloseReason,
+    reason?: SnackbarCloseReason
   ) => {
     if (reason === "clickaway") {
       return;
@@ -107,7 +105,7 @@ function ContactMe() {
               autoHideDuration: 6000,
               variant: "success",
               anchorOrigin: { horizontal: "center", vertical: "top" },
-            },
+            }
           );
           setSendEmailResponse({
             success: true,
@@ -121,7 +119,7 @@ function ContactMe() {
           {
             autoHideDuration: 6000,
             variant: "error",
-          },
+          }
         );
         setSendEmailResponse({
           // success: false,
@@ -132,30 +130,29 @@ function ContactMe() {
 
       setEmailSending(false);
     },
-    [showEnqueueSnackbar],
+    [showEnqueueSnackbar]
   );
 
   return (
     <div
       className={
         // "flex min-h-screen h-screen relative flex-col text-center md:text-left md:flex-row md:flex-row max-w-7xl px-10
-        "h-full snap-start shadow shadow-slate-300 relative flex flex-col items-center" +
-        " max-w-7xl justify-evenly mx-auto"
+        "relative flex h-full snap-start flex-col items-center shadow shadow-slate-300" +
+        " mx-auto max-w-7xl justify-evenly"
       }
     >
-
-
       {/*"absolute top-24"*/}
 
       <h3
-        className={`text-center text-gray-500 ${locale !== "ar" && "tracking tracking-[20px] uppercase"} text-2xl font-bold`}>
+        className={`text-center text-gray-500 ${locale !== "ar" && "tracking uppercase tracking-[20px]"} text-2xl font-bold`}
+      >
         {t("title")}
       </h3>
 
       <div className={"relative flex flex-col space-y-10"}>
         <h4
           className={
-            "font-semibold text-center text-slate-700 text-xl decoration-[#F7AB0A]/50"
+            "text-center text-xl font-semibold text-slate-700 decoration-[#F7AB0A]/50"
           }
         >
           {/*<span className={"decoration-[#F7AB0A]/50 underline"}>*/}
@@ -163,8 +160,8 @@ function ContactMe() {
         </h4>
 
         <div className={"items-center"}>
-          <Box className={"flex items-center space-x-5 justify-center"}>
-            <PhoneIcon className={"text-[#F7AB0A] h-7 w-7 animate-pulse"} />
+          <Box className={"flex items-center justify-center space-x-5"}>
+            <PhoneIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
             <Typography
               fontSize={"medium"}
               // color={"text.color.secondary"}
@@ -174,13 +171,13 @@ function ContactMe() {
             </Typography>
           </Box>
 
-          <Box className={"flex items-center space-x-5 justify-center"}>
-            <EnvelopeIcon className={"text-[#F7AB0A] h-7 w-7 animate-pulse"} />
+          <Box className={"flex items-center justify-center space-x-5"}>
+            <EnvelopeIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
             <Typography>hamza.missaoui@b2b-alive.com</Typography>
           </Box>
 
-          <Box className={"flex items-center space-x-5 justify-center"}>
-            <MapPinIcon className={"text-[#F7AB0A] h-7 w-7 animate-pulse"} />
+          <Box className={"flex items-center justify-center space-x-5"}>
+            <MapPinIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
             <Typography>{t("address")}</Typography>
           </Box>
         </div>
@@ -190,49 +187,52 @@ function ContactMe() {
           onSubmit={handleSubmit(handleContactMeSubmit)}
           className={
             // bg-darkBackground dark:bg-gray-100
-            "flex flex-col space-y-2 self-center flex-1 w-full p-2"
+            "flex w-full flex-1 flex-col space-y-2 self-center p-2"
           }
         >
-          {/*<Stack direction={"row"} spacing={2}>*/}
-          <div className={"flex space-x-2 justify-center"}>
-            <FormControl error={!!errors.name}>
-              <TextField
-                placeholder={t("default.name")}
-                className={"bg-lightBackground text-blue-800"}
-                type={"text"}
-                {...register("name")}
-                required
-              />
-            </FormControl>
-
-            <FormControl error={!!errors.email}>
-              <TextField
-                placeholder={t("default.email")}
-                className={"bg-lightBackground text-blue-800"}
-                type={"text"}
-                {...register("email")}
-                required
-              />
-            </FormControl>
-          </div>
-          <TextField
-            placeholder={t("default.subject")}
-            className={"bg-lightBackground text-blue-800"}
-            type={"text"}
-            {...register("subject")}
-            required
-          />
+          {/*<div className={"flex w-full flex-grow justify-center space-x-2"}>*/}
+          <FormControl error={!!errors.name}>
+            <TextField
+              placeholder={t("default.name")}
+              className={"text-blue-800 bg-lightBackground"}
+              type={"text"}
+              {...register("name")}
+              required
+            />
+          </FormControl>
+          <FormControl error={!!errors.email}>
+            <TextField
+              placeholder={t("default.email")}
+              className={"text-blue-800 bg-lightBackground"}
+              type={"text"}
+              {...register("email")}
+              required
+            />
+          </FormControl>
+          {/*</div>*/}
+          <FormControl error={!!errors.subject}>
+            <TextField
+              placeholder={t("default.subject")}
+              className={"text-blue-800 bg-lightBackground"}
+              type={"text"}
+              {...register("subject")}
+              required
+            />
+          </FormControl>
+          {/*<FormControl error={!!errors.message}>*/}
           <TextareaAutosize
             placeholder={t("default.message")}
-            className={"h-[150px] p-2"}
+            className={"h-[150px] bg-white p-2 dark:bg-gray-900"}
             {...register("message")}
             required={false}
           />
-          <div className={"flex justify-center space-x-3 items-center"}>
+          {/*</FormControl>*/}
+
+          <div className={"flex items-center justify-center space-x-3"}>
             <LoadingButton
               color={"primary"}
               size={"small"}
-              className={"rounded-md text-lg uppercase px-0 w-fit self-center"}
+              className={"w-fit self-center rounded-md px-0 text-lg uppercase"}
               disabled={!isValid}
               loading={emailSending}
               type={"submit"}
@@ -247,11 +247,9 @@ function ContactMe() {
                 href={`mailto:${links.ownerEmail}`}
                 target="_blank"
                 rel="noreferrer noopener"
-                className={"self-end text-black"}
+                // className={"self-end"}
               >
-                <p
-                  className={"flex self-start text-black"}
-                >{touch("getInTouch")}</p>
+                <p className={"flex self-start"}>{touch("getInTouch")}</p>
                 {/*<MagicButton*/}
                 {/*  title={touch("getInTouch")}//"Let's get in touch"*/}
                 {/*  icon={<FaLocationArrow />}*/}
@@ -261,7 +259,6 @@ function ContactMe() {
               </Link>
             </div>
           </div>
-
         </form>
         {/*NEW*/}
       </div>
@@ -282,6 +279,6 @@ function ContactMe() {
       </Snackbar>
     </div>
   );
-};
+}
 
 export default ContactMe;

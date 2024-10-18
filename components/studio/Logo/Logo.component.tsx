@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React, { ReactNode } from "react";
 
-import LogoImage from "/hamza/logo.png";
+// import LogoImage from "/hamza/logo.png";
+import LogoImage from "/hamza/b2b-alive.svg";
 
 interface LogoProps {
   renderDefault: () => ReactNode;

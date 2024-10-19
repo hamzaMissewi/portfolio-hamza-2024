@@ -11,6 +11,9 @@ import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/solid";
 import styles from "./ProjectCard.module.scss";
 // import { Dialog } from "@radix-ui/react-dialog";
 import * as Dialog from "@radix-ui/react-dialog";
+import SkillComponent from "@/components/Skill";
+import { Skill } from "@/typings";
+import { urlFor } from "@/sanity";
 
 type ProjectCardProps = {
   backgroundText: string;
@@ -20,7 +23,7 @@ type ProjectCardProps = {
   github?: {
     url: string;
   };
-  skills?: string[];
+  skills: Skill[];
   text: string;
   title: string;
   website: {
@@ -111,16 +114,25 @@ export default function ProjectCardComponent({
           <div
             className="flex justify-between border-b border-solid py-2.5"
             style={{
-              borderColor: `${brandColor}`,
+              borderColor: brandColor,
             }}
           >
+            {skills?.map((skill) => (
+              <SkillComponent
+                key={skill._id}
+                title={skill.title}
+                skillUrl={urlFor(skill.logo).url()}
+                percent={40}
+              />
+            ))}
             <div className="flex w-full justify-between">
               <Dialog.Root>
                 <Dialog.Trigger asChild>
                   <button
                     className={`rounded-lg p-2.5 uppercase ${styles.button}`}
                     style={{
-                      color: `${brandColor}`,
+                      color: brandColor,
+                      backgroundColor: backgroundText,
                     }}
                   >
                     Project Info
@@ -157,10 +169,7 @@ export default function ProjectCardComponent({
                     rel="noopener"
                     target="_blank"
                   >
-                    <EyeIcon
-                      className="h-8 w-8"
-                      style={{ fill: `${brandColor}` }}
-                    />
+                    <EyeIcon className="h-8 w-8" style={{ fill: brandColor }} />
                   </Link>
                 )}
               </div>

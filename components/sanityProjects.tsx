@@ -116,19 +116,17 @@ function SanityProjects({
               <div className="flex flex-wrap items-start justify-center">
                 {projects.map((project: Project) => (
                   <ProjectCardComponent
-                    backgroundText={project?.projectBackground}
-                    brandColor={project?.brandColor.hex}
-                    coverImage={urlFor(project?.coverImage)?.url()}
-                    futureUseText={project?.futureUse || undefined}
-                    github={{ url: project?.codeURL }}
                     key={project._id}
-                    skills={
-                      project?.technologies.map((skill) => skill.title) || []
-                    }
-                    text={project?.summary}
-                    title={project?.title}
+                    backgroundText={project.projectBackground}
+                    brandColor={project.brandColor.hex}
+                    coverImage={urlFor(project.coverImage).url()}
+                    futureUseText={project.futureUse || undefined}
+                    github={{ url: project.codeURL }}
+                    skills={project.technologies}
+                    text={project.summary}
+                    title={project.title}
                     website={{
-                      url: project?.previewURL,
+                      url: project.previewURL,
                     }}
                   />
                 ))}

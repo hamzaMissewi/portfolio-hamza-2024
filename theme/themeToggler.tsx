@@ -13,10 +13,13 @@ export function ThemeToggler() {
   if (!mounted) return null;
 
   return (
-    <select value={theme} onChange={e => setTheme(e.target.value)}
-            className={"px-2 py-1 border border-black"}>
-      {/*className={theme === "light" ? "text-black bg-white" : "text-white bg-black"}*/}
-      {/*<option value="system">System</option>*/}
+    <select
+      value={theme}
+      onChange={(e) => setTheme(e.target.value)}
+      className={"border border-black px-2 py-1"}
+      // theme === "light" ? "text-black bg-white" : "text-white bg-black"
+    >
+      <option value="system">System</option>
       <option value="dark">Dark</option>
       <option value="light">Light</option>
     </select>

@@ -21,7 +21,7 @@ export default function LocaleSwitcher() {
     //   <p className="sr-only">{t("label")}</p>
     <select
       defaultValue={localActive}
-      className="px-2 py-1 border border-black"
+      className="border border-black px-2 py-1"
       onChange={onSelectChange}
       disabled={isPending}
     >
@@ -29,6 +29,5 @@ export default function LocaleSwitcher() {
       <option value="fr">{t("languages.fr")}</option>
       <option value="ar">{t("languages.ar")}</option>
     </select>
-    // </label>
   );
 }

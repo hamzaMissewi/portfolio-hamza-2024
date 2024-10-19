@@ -219,14 +219,17 @@ function ContactMe() {
               required
             />
           </FormControl>
-          {/*<FormControl error={!!errors.message}>*/}
-          <TextareaAutosize
-            placeholder={t("default.message")}
-            className={"h-[150px] bg-white p-2 dark:bg-gray-900"}
-            {...register("message")}
-            required={false}
-          />
-          {/*</FormControl>*/}
+          <FormControl error={!!errors.message}>
+            {/*<textarea*/}
+            <TextareaAutosize
+              placeholder={t("default.message")}
+              className={
+                "h-[150px] bg-white p-2 text-black dark:bg-gray-900 dark:text-white"
+              }
+              {...register("message")}
+              required={false}
+            />
+          </FormControl>
 
           <div className={"flex items-center justify-center space-x-3"}>
             <LoadingButton
@@ -247,7 +250,6 @@ function ContactMe() {
                 href={`mailto:${links.ownerEmail}`}
                 target="_blank"
                 rel="noreferrer noopener"
-                // className={"self-end"}
               >
                 <p className={"flex self-start"}>{touch("getInTouch")}</p>
                 {/*<MagicButton*/}

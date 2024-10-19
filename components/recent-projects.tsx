@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
-
 import { projects } from "@/data";
-
 import { PinContainer } from "./ui/3d-pin";
 import { useRouter } from "next/navigation";
 // import { useRouter } from "@/lib/intl";
@@ -16,8 +14,7 @@ export const RecentProjects = () => {
   return (
     <section id="projects" className="py-20">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        A selection of <span className="text-purple">recent projects</span>
       </h1>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-x-24 gap-y-8 p-4">
@@ -34,11 +31,10 @@ export const RecentProjects = () => {
                       height={330}
                       width={552}
                       src="/bg.png"
-                      alt="bg-img"
+                      alt="bg img"
                     />
                   </div>
 
-                  {/*<Link href={link} className={"w-fit h-fit"}>*/}
                   <Image
                     height={300}
                     width={464}
@@ -47,8 +43,6 @@ export const RecentProjects = () => {
                     className="absolute bottom-1 z-10"
                     onClick={() => router.push(link)}
                   />
-                  {/*{ target: "_blank" }*/}
-                  {/*</Link>*/}
                 </div>
 
                 <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl">

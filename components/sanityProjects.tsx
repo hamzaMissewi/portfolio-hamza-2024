@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef } from "react";
-
 import Image from "next/image";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { urlFor } from "@/sanity";

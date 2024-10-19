@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Social } from "@/typings";
 import Image from "next/image";
@@ -13,7 +14,7 @@ type ISocialsProps = {
 function Socials({ socials }: ISocialsProps) {
   const router = useRouter();
   const t = useTranslations();
-  
+
   return (
     <div className={"flex"}>
       {socials.map((social) => (

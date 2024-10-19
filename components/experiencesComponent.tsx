@@ -1,5 +1,5 @@
+"use client";
 import Image from "next/image";
-
 import { Button } from "@/components/ui/moving-borders";
 import { workExperience } from "@/data";
 import { useTranslations } from "next-intl";

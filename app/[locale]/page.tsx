@@ -1,3 +1,4 @@
+"use client";
 // import React, { useEffect, useState } from "react";
 import { Approach } from "@/components/approach";
 import { Clients } from "@/components/clients";
@@ -16,8 +17,8 @@ import fetchData from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
 import Socials from "@/components/socials";
-// import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 
+// import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 // interface IMainPageProps {
 //   experiences: Experience[];
 //   projects: Project[];
@@ -51,7 +52,7 @@ export default async function Component() {
   const sanityData = await fetchData();
   const extractPropsFromSection = (title: string) => {
     const section = sanityData?.sections.find(
-      (section) => section.title === title,
+      (section) => section.title === title
     );
 
     return {
@@ -88,7 +89,7 @@ export default async function Component() {
           <Hero />
           <Grid />
           {sanityData?.skills && <Skills skills={sanityData.skills} />}
-          <div>
+          <div className={"flex flex-col"}>
             <RecentProjects />
             {sanityData?.projects && (
               <SanityProjects
@@ -119,7 +120,7 @@ export default async function Component() {
       <ChatBot />
     </main>
   );
-};
+}
 
 // export async function getServerSideProps() {
 //   const {

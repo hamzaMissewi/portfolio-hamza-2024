@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import React, { useCallback, useState } from "react";
 import NavigationLink from "./navigationLink";
 import { useTranslations } from "next-intl";

@@ -4,8 +4,9 @@ import { redirect } from "@/lib/intl";
 // import { redirect } from "next/navigation";
 
 function NotFoundPage() {
-  const locale = useLocale();
-  redirect(`/${locale}`);
+  // const locale = useLocale();
+  // redirect(`/${locale}`);
+  redirect(`/not-found`);
 }
 
 export default NotFoundPage;

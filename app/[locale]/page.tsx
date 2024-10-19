@@ -16,6 +16,7 @@ import { RecentProjects } from "@/components/recent-projects";
 import fetchData, { SanityDataTypes } from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
+import Socials from "@/components/socials";
 // import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 
 // interface IMainPageProps {
@@ -72,6 +73,8 @@ const MainPage = () => {
 
   const projectsProps = extractPropsFromSection("Project");
   const experienceProps = extractPropsFromSection("Experience");
+  const socialProps = extractPropsFromSection("Skill");
+  // const skillProps = extractPropsFromSection("Skill");
 
   // console.log("sanity experiences", experienceProps);
   // console.log("sanity projects", projectsProps);
@@ -106,7 +109,9 @@ const MainPage = () => {
           </div>
           <Clients />
           <Approach />
-          {/*{sanityData?.socials && <Socials socials={sanityData.socials} />}*/}
+          {sanityData?.socials && (
+            <Socials socials={sanityData.socials} {...socialProps} />
+          )}
           <ContactMe />
           <Footer />
         </div>
@@ -125,10 +130,6 @@ export default MainPage;
 //     skills,
 //     socials,
 //     sections,
-//     // skillCategories,
-//     // sections,
-//     // testimonials,
-//     // extractPropsFromSection,
 //   } = await fetchData();
 //
 //   return {

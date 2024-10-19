@@ -19,8 +19,7 @@ function Skills({ skills }: SkillsProps) {
         "relative mx-auto flex  max-w-[2000px] flex-col  items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0 xl:px-10"
       }
     >
-      {/*"absolute top-36 text-sm uppercase tracking-[3px] text-gray-500"*/}
-      <h1 className="heading">
+      <h1 className="heading absolute top-36 text-sm uppercase tracking-[3px] text-gray-500">
         My <span className="text-purple">{t("title")}</span>
       </h1>
 

@@ -16,11 +16,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = siteConfig;
 
-// export const viewport: Viewport = {
-//   themeColor: "#000319",
-//   colorScheme: "dark",
-// };
-
 interface RootLayoutProps extends PropsWithChildren {
   children: React.ReactNode;
   params: { locale: string };

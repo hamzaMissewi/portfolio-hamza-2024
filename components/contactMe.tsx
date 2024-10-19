@@ -61,10 +61,10 @@ function ContactForm() {
     formState: { errors, isValid },
   } = useForm<MailFieldsType>({
     defaultValues: {
-      subject: t("default.subject"), //"Work Offer",
-      message: t("default.message"), //"Need to collaborate",
-      email: t("default.email"), //"hamza@gmail.com",
-      name: t("default.name"), //""
+      subject: t("default.subject"),
+      message: t("default.message"),
+      email: t("default.email"),
+      name: t("default.name"),
     },
   });
 

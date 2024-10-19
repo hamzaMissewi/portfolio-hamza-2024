@@ -9,9 +9,10 @@ type RootLayoutProps = {
 
 function RootLayout({ children }: RootLayoutProps) {
   // unstable_setRequestLocale("en-US");
+  // const user = await fetchUser(params.id);
 
   return (
-    <html>
+    <html lang={"en"}>
       <body>{children}</body>
     </html>
   );

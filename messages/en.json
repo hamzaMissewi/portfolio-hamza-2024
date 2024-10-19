@@ -48,12 +48,12 @@
     "contact": "I have what you need to solve your demands and make your dreams come to reality, Let's talk",
     "address": "Tunisia, Mourouj 1 zip 2074",
     "default": {
-      "subject": "e.g: Work offer for web developer in ...",
+      "subject": "Work offer for web developer ..",
       "message": "Need to collaborate",
-      "email": "joe_doe@gmail.com",
+      "email": "hamza_missaoui@gmail.com",
       "name": "Work offer"
     },
-    "send": "يرسل"
+    "send": "Send"
   },
   "Hero": {
     "text_effect": "Transforming User needs into cool user experiences and awesome web design, Working on different modern technologies",

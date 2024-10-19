@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config";
 import React, { PropsWithChildren } from "react";
 // import localFont from "next/dist/compiled/@next/font/dist/local";
+// import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 // const arFont = localFont({
 //   src: "@/fonts/Rubik-MediumItalic.ttf",

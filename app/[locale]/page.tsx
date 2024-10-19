@@ -16,14 +16,7 @@ import { RecentProjects } from "@/components/recent-projects";
 import fetchData, { SanityDataTypes } from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
-// import { fetchSocials } from "@/utils/fetchSocials";
-// import { fetchProjects } from "@/utils/fetchProjects";
-// import { fetchExperiences } from "@/utils/fetchExperiences";
-// import { fetchSections } from "@/utils/fetchSection";
-// import { fetchSkills } from "@/utils/fetchSkills";
 // import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
-
-// import fetchData from "@/app/fetchData";
 
 // interface IMainPageProps {
 //   experiences: Experience[];
@@ -42,6 +35,7 @@ import ContactMe from "@/components/contactMe";
 // }: IMainPageProps) => {
 const MainPage = () => {
   const [sanityData, setSanityData] = useState<SanityDataTypes | null>(null);
+
   useEffect(() => {
     // let isMounted = true; // flag to track if component is mounted
     const sanity = async () => {

@@ -17,18 +17,13 @@ export const routing = defineRouting({
   //     locales: ["en"],
   //     defaultLocale: "en",
   //   },
-  //   {
-  //     domain: "fr.dev.localhost:3000",
-  //     locales: ["fr"],
-  //     defaultLocale: "fr",
-  //   },
-  //   {
-  //     domain: "ar.dev.localhost:3000",
-  //     locales: ["ar"],
-  //     defaultLocale: "ar",
-  //   },
-  // ],
 });
 
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation(routing);
+
+export enum Language {
+  fr = "french",
+  en = "english",
+  ar = "arabic",
+}

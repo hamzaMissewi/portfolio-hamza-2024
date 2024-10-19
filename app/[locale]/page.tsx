@@ -16,6 +16,7 @@ import { SanityExperiencesComponent } from "@/components/sanityExperiences";
 import { RecentProjects } from "@/components/recent-projects";
 import Socials from "@/components/socials";
 import fetchData, { SanityDataTypes } from "@/app/fetchData";
+import Skills from "@/components/skills";
 // import { fetchSocials } from "@/utils/fetchSocials";
 // import { fetchProjects } from "@/utils/fetchProjects";
 // import { fetchExperiences } from "@/utils/fetchExperiences";
@@ -83,14 +84,14 @@ const MainPage = () => {
   console.log("sanity projects", projectsProps);
 
   return (
-    <main className="max-w-screen mx-auto flex flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
+    <main className="flex w-full flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
       <FloatingNav navItems={navItems} className={undefined} />
-      <div className={"flex flex-1 flex-grow"}>
+      <div className={"flex w-full flex-grow overflow-hidden"}>
         <Sidebar />
-        <div className="flex max-w-full flex-col overflow-x-hidden">
+        <div className="inset-0 z-0 flex max-w-full flex-col overflow-x-hidden">
           <Hero />
           <Grid />
-          {/*{sanityData?.skills && <Skills skills={sanityData.skills} />}*/}
+          {sanityData?.skills && <Skills skills={sanityData.skills} />}
           <RecentProjects />
           {sanityData?.projects && (
             <SanityProjects projects={sanityData.projects} {...projectsProps} />
@@ -115,3 +116,27 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+// export async function getServerSideProps() {
+//   const {
+//     experiences,
+//     projects,
+//     skills,
+//     socials,
+//     sections,
+//     // skillCategories,
+//     // sections,
+//     // testimonials,
+//     // extractPropsFromSection,
+//   } = await fetchData();
+//
+//   return {
+//     props: {
+//       experiences,
+//       projects,
+//       socials,
+//       skills,
+//       sections,
+//     },
+//   };
+// }

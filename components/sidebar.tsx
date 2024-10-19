@@ -26,7 +26,7 @@ export default function Sidebar() {
   return (
     // <section id="sidebar">
     <div
-      className={`sticky z-10 mt-2 w-fit max-w-[300px] ${locale !== "ar" ? "left-2" : "right-2"}`}
+      className={`z-99 fixed top-0 mt-2 w-fit max-w-[300px] ${locale !== "ar" ? "left-2" : "right-2"}`}
     >
       {/*<Box*/}
       {/*  sx={{*/}
@@ -59,7 +59,7 @@ export default function Sidebar() {
       {/*{openSidebar && (*/}
       <div
         className={
-          "top-5 flex w-fit flex-col rounded-xl border border-black pb-5" +
+          "z-100 top-5 flex flex-col rounded-xl border border-black pb-5" +
           " h-fit max-h-screen items-center space-y-2 border-white/[0.2] bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] bg-grid-black/[0.2] dark:bg-black dark:bg-grid-white/[0.03]"
         }
         // initial={{

@@ -80,7 +80,6 @@ interface UpdateLanguageFormProps extends DialogProps {
 
 function UpdateLanguageForm({ onClose }: UpdateLanguageFormProps) {
   const t = useTranslations();
-  // const locale = useLocale();
 
   const {
     formState: { isValid, isSubmitting },
@@ -94,7 +93,7 @@ function UpdateLanguageForm({ onClose }: UpdateLanguageFormProps) {
   const handleClose = useCallback(() => {
     console.log("test close");
   }, []);
-  const handleSubmitForm = handleSubmit(async (data) => {
+  const handleSubmitForm = handleSubmit(async () => {
     try {
       handleClose();
     } catch (e) {

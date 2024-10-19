@@ -36,9 +36,13 @@ function Socials({ socials }: ISocialsProps) {
   return (
     <div className={"flex"}>
       {socials.map((social) => (
-        <div className={"flex"}>
-          <Image alt={social.title} src={urlFor(social.icon).url()} />
+        <div className={"flex"} key={social._id}>
           <p className={"text-lg font-bold"}>{social.title}</p>
+          <Image
+            className={`color-${social.primaryColor}`}
+            alt={social.title}
+            src={urlFor(social.icon).url()}
+          />
         </div>
       ))}
     </div>

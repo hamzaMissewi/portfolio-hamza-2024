@@ -1,40 +1,18 @@
 "use client";
-// import React from "react";
 import { motion } from "framer-motion";
 import { Stack, Typography } from "@mui/material";
-import { Skill } from "@/typings";
-import Image from "next/image";
-import { urlFor } from "@/sanity";
 
 type SkillProps = {
   // directionLeft?: boolean;
   skillUrl: string;
   percent: number;
   title: string;
-} & { skill?: Skill };
+};
 
-function SkillComponent({
-  // directionLeft,
-  skillUrl,
-  percent,
-  title,
-  skill,
-}: SkillProps) {
+function SkillComponent({ skillUrl, percent, title }: SkillProps) {
   return (
     <Stack className={"relative flex flex-col items-center py-2"} spacing={2}>
-      <Typography
-        // sx={{color: "black", backgroundColor: "white", fontWeight: "bold"}}
-        fontSize={"medium"}
-      >
-        {title}
-      </Typography>
-
-      {skill && (
-        <div>
-          <p>{skill.title}</p>
-          <Image src={urlFor(skill.logo).url()} alt={""} />
-        </div>
-      )}
+      <Typography fontSize={"medium"}>{title}</Typography>
 
       <div className={"group relative flex cursor-pointer"}>
         <motion.img
@@ -43,7 +21,6 @@ function SkillComponent({
           transition={{ duration: 1 }}
           whileInView={{ opacity: 1, x: 0 }}
           src={skillUrl}
-          // group-hover:grayscale
           className="h-24 w-24 rounded-full border border-gray-500 bg-white object-cover filter transition duration-300 ease-in-out md:h-28 md:w-28 xl:h-32 xl:w-32"
         />
         <div

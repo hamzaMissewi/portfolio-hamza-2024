@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import SkillComponent from "./SkillComponent";
-import { Typography } from "@mui/material";
+import SkillComponent from "./skillComponent";
 import { useLocale, useTranslations } from "next-intl";
 import { Skill } from "@/typings";
 import SanitySkill from "@/components/sanitySkill";
@@ -22,24 +21,17 @@ function Skills({ skills }: SkillsProps) {
       }
     >
       <h3
-        className={`text-center uppercase text-gray-500 ${language && "tracking tracking-[20px]"} mb-5 text-2xl font-bold`}
-        //     "absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl"
-      >
-        My Skills
-      </h3>
-      <Typography
-        component={"h3"}
+        // className={`text-center uppercase text-gray-500 ${language && "tracking tracking-[20px]"} mb-5 text-2xl font-bold`}
         className={
           "absolute top-36 text-sm uppercase tracking-[3px] text-gray-500"
         }
       >
         {t("title")}
-      </Typography>
+      </h3>
 
-      {/*Sanity */}
-      <div className={"flex w-full flex-wrap items-center space-x-2"}>
+      <div className={"flex w-full flex-wrap items-center space-x-2 p-1"}>
         {skills.map((skill) => (
-          <SanitySkill skill={skill} />
+          <SanitySkill key={skill._id} skill={skill} />
         ))}
       </div>
 

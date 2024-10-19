@@ -1,6 +1,5 @@
-"use client";
+// "use client";
 import React from "react";
-
 import { Approach } from "@/components/approach";
 import { Clients } from "@/components/clients";
 import { ExperiencesComponent } from "@/components/experiencesComponent";
@@ -12,48 +11,62 @@ import { navItems } from "@/data";
 import Sidebar from "@/components/sidebar";
 import ChatBot from "@/components/chatBot";
 import Footer2 from "@/components/footer2";
-import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
-import { fetchProjects } from "@/utils/fetchProjects";
-import { fetchExperiences } from "@/utils/fetchExperiences";
-import { fetchSections } from "@/utils/fetchSection";
 import SanityProjects from "@/components/sanityProjects";
 import { SanityExperiencesComponent } from "@/components/sanityExperiences";
 import { RecentProjects } from "@/components/recent-projects";
-import { fetchSocials } from "@/utils/fetchSocials";
 import Socials from "@/components/socials";
-import Skills from "@/components/Skills";
-import { fetchSkills } from "@/utils/fetchSkills";
+import Skills from "@/components/skills";
+import fetchData from "@/app/fetchData";
+// import { fetchSocials } from "@/utils/fetchSocials";
+// import { fetchProjects } from "@/utils/fetchProjects";
+// import { fetchExperiences } from "@/utils/fetchExperiences";
+// import { fetchSections } from "@/utils/fetchSection";
+// import { fetchSkills } from "@/utils/fetchSkills";
+// import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 
 export default async function MainPage() {
-  const projects: Project[] = await fetchProjects();
-  const experiences: Experience[] = await fetchExperiences();
-  const sections: SectionWrapper[] = await fetchSections();
-  const socials: Social[] = await fetchSocials();
-  const skills: Skill[] = await fetchSkills();
+  // const projects: Project[] = await fetchProjects();
+  // const experiences: Experience[] = await fetchExperiences();
+  // const sections: SectionWrapper[] = await fetchSections();
+  // const socials: Social[] = await fetchSocials();
+  // const skills: Skill[] = await fetchSkills();
   // const skillCategories: SkillCategory[] = await fetchSkillCategories();
   // const testimonials: Testimonial[] = await fetchTestimonials();
 
-  const extractPropsFromSection = (title: string) => {
-    const section = sections.find((section) => section.title === title);
-    return {
-      addSectionColor: section?.addSectionColor || false,
-      displayInNav: section?.displayInNav || false,
-      dividerBackground: section?.dividerBackground || false,
-      dividerPattern: section?.dividerPattern || false,
-      heading: section?.heading || "",
-      menuUrl: section?.menuUrl || "",
-      patternBottom: section?.patternBottom || "",
-      patternTop: section?.patternTop || "",
-      sectionBackground: section?.sectionBackground,
-      sectionColor: section?.sectionColor,
-      sectionIcon: section?.sectionIcon || "",
-      subText: section?.subText || "",
-      title: section?.title || "",
-    };
-  };
+  const {
+    experiences,
+    projects,
+    skillCategories,
+    skills,
+    socials,
+    sections,
+    siteWides,
+    testimonials,
+    extractPropsFromSection,
+  } = await fetchData();
+
+  // const extractPropsFromSection = (title: string) => {
+  //   const section = sections.find((section) => section.title === title);
+  //   return {
+  //     addSectionColor: section?.addSectionColor || false,
+  //     displayInNav: section?.displayInNav || false,
+  //     dividerBackground: section?.dividerBackground || false,
+  //     dividerPattern: section?.dividerPattern || false,
+  //     heading: section?.heading || "",
+  //     menuUrl: section?.menuUrl || "",
+  //     patternBottom: section?.patternBottom || "",
+  //     patternTop: section?.patternTop || "",
+  //     sectionBackground: section?.sectionBackground,
+  //     sectionColor: section?.sectionColor,
+  //     sectionIcon: section?.sectionIcon || "",
+  //     subText: section?.subText || "",
+  //     title: section?.title || "",
+  //   };
+  // };
 
   const projectsProps = extractPropsFromSection("Project");
   const experienceProps = extractPropsFromSection("Experience");
+  // const skillProps = extractPropsFromSection("Skill");
 
   console.log("sanity experiences", experienceProps);
   console.log("sanity projects", projectsProps);

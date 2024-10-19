@@ -10,6 +10,7 @@ type SkillProps = { skill: Skill };
 function SanitySkill({ skill }: SkillProps) {
   return (
     <Stack
+      key={skill._id}
       className={"relative flex cursor-pointer flex-col items-center   py-2"}
       spacing={2}
     >

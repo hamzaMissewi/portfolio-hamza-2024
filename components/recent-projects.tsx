@@ -3,13 +3,12 @@ import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 // import { useRouter } from "@/lib/intl";
-// import { redirect, useRouter } from "next/navigation";
 // import { Link } from "@/lib/intl";
 
 export const RecentProjects = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <section id="projects" className="py-20">
@@ -41,7 +40,7 @@ export const RecentProjects = () => {
                     src={img}
                     alt={title}
                     className="absolute bottom-1 z-10"
-                    onClick={() => router.push(link)}
+                    // onClick={() => router.push(link)}
                   />
                 </div>
 

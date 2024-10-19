@@ -86,9 +86,9 @@ const MainPage = () => {
   return (
     <main className="flex w-full flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
       <FloatingNav navItems={navItems} className={undefined} />
-      <div className={"flex w-full flex-grow overflow-hidden"}>
+      <div className={"flex overflow-x-hidden"}>
         <Sidebar />
-        <div className="inset-0 z-0 flex max-w-full flex-col overflow-x-hidden">
+        <div className="ml-54 absolute flex-1 flex-col p-1">
           <Hero />
           <Grid />
           {sanityData?.skills && <Skills skills={sanityData.skills} />}

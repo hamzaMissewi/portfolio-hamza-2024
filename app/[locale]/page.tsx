@@ -60,7 +60,6 @@ export default async function MainPage() {
     <main className="mx-auto flex w-full flex-col items-center overflow-clip bg-lightBackground dark:bg-darkBackground">
       <FloatingNav navItems={navItems} className={undefined} />
       <div className={"flex w-full flex-1"}>
-        {/*<section id="sidebar" className={"relative"}>*/}
         <Sidebar />
         <div className="inset-0 flex flex-col items-center">
           <Hero />
@@ -74,7 +73,6 @@ export default async function MainPage() {
             experiences={experiences}
             {...experienceProps}
           />
-
           <Approach />
           <Footer />
           <Footer2 />

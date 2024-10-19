@@ -13,7 +13,7 @@ import ChatBot from "@/components/chatBot";
 import SanityProjects from "@/components/sanityProjects";
 import { SanityExperiencesComponent } from "@/components/sanityExperiences";
 import { RecentProjects } from "@/components/recent-projects";
-import fetchData, { SanityDataTypes } from "@/app/fetchData";
+import fetchData, { SanityDataTypes } from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
 // import { fetchSocials } from "@/utils/fetchSocials";

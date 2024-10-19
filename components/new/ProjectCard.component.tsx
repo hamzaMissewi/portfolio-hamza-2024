@@ -16,8 +16,8 @@ import { Skill } from "@/typings";
 import { urlFor } from "@/sanity";
 
 type ProjectCardProps = {
-  backgroundText: string;
-  brandColor: string;
+  backgroundText?: string;
+  brandColor?: string;
   coverImage: string;
   futureUseText?: string;
   github?: {
@@ -32,10 +32,10 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCardComponent({
+  // futureUseText,
   backgroundText,
   brandColor,
   coverImage,
-  futureUseText,
   github,
   skills,
   text,

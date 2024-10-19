@@ -114,7 +114,7 @@ function SanityProjects({
                   <ProjectCardComponent
                     key={project._id}
                     backgroundText={project.projectBackground}
-                    brandColor={project.brandColor.hex}
+                    // brandColor={project.brandColor.hex}
                     coverImage={urlFor(project.coverImage).url()}
                     futureUseText={project.futureUse || undefined}
                     github={{ url: project.codeURL }}

@@ -38,7 +38,7 @@ export default defineType({
       hidden: ({ document }) => document?.addSectionColor === false,
       name: "sectionColor",
       title: "Section Color",
-      type: "color",
+      type: "string",
     }),
     defineField({
       hidden: ({ document }) => document?.addSectionColor === true,

@@ -47,7 +47,7 @@ export default defineType({
     defineField({
       name: "typingColor",
       title: "Typing Text Color",
-      type: "color",
+      type: "string",
     }),
     defineField({
       name: "typingText",

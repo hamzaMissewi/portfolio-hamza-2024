@@ -11,7 +11,7 @@ export default defineType({
     defineField({
       name: "brandColor",
       title: "Brand Colour",
-      type: "color",
+      type: "string",
     }),
     defineField({
       name: "title",

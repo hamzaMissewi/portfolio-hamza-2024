@@ -36,12 +36,12 @@ export default defineType({
     defineField({
       name: "primaryColor",
       title: "Primary Colour",
-      type: "color",
+      type: "string",
     }),
     defineField({
       name: "secondaryColor",
       title: "Secondary Colour",
-      type: "color",
+      type: "string",
     }),
   ],
 });

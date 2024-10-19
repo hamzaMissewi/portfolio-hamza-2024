@@ -25,6 +25,11 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "percent",
+      title: "Percent",
+      type: "number",
+    }),
+    defineField({
       name: "category",
       title: "Category",
       type: "array",

@@ -11,7 +11,7 @@ import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/solid";
 import styles from "./ProjectCard.module.scss";
 // import { Dialog } from "@radix-ui/react-dialog";
 import * as Dialog from "@radix-ui/react-dialog";
-import SkillComponent from "@/components/Skill";
+import SkillComponent from "@/components/SkillComponent";
 import { Skill } from "@/typings";
 import { urlFor } from "@/sanity";
 

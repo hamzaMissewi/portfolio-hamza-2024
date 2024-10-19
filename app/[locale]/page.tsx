@@ -12,7 +12,7 @@ import { navItems } from "@/data";
 import Sidebar from "@/components/sidebar";
 import ChatBot from "@/components/chatBot";
 import Footer2 from "@/components/footer2";
-import { Experience, Project, SectionWrapper, Social } from "@/typings";
+import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchExperiences } from "@/utils/fetchExperiences";
 import { fetchSections } from "@/utils/fetchSection";
@@ -21,13 +21,15 @@ import { SanityExperiencesComponent } from "@/components/sanityExperiences";
 import { RecentProjects } from "@/components/recent-projects";
 import { fetchSocials } from "@/utils/fetchSocials";
 import Socials from "@/components/socials";
+import Skills from "@/components/Skills";
+import { fetchSkills } from "@/utils/fetchSkills";
 
 export default async function MainPage() {
   const projects: Project[] = await fetchProjects();
   const experiences: Experience[] = await fetchExperiences();
   const sections: SectionWrapper[] = await fetchSections();
   const socials: Social[] = await fetchSocials();
-  // const skills: Skill[] = await fetchSkills();
+  const skills: Skill[] = await fetchSkills();
   // const skillCategories: SkillCategory[] = await fetchSkillCategories();
   // const testimonials: Testimonial[] = await fetchTestimonials();
 
@@ -64,16 +66,17 @@ export default async function MainPage() {
         <div className="inset-0 flex flex-col items-center">
           <Hero />
           <Grid />
+          <Skills skills={skills} />
           <RecentProjects />
           <SanityProjects projects={projects} {...projectsProps} />
-          <Clients />
-          <Socials socials={socials} />
           <ExperiencesComponent />
           <SanityExperiencesComponent
             experiences={experiences}
             {...experienceProps}
           />
+          <Clients />
           <Approach />
+          <Socials socials={socials} />
           <Footer />
           <Footer2 />
         </div>

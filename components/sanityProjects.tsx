@@ -110,9 +110,6 @@ function SanityProjects({
             }}
           >
             <Container>
-              {/*<p className={`relative text-center ${styles.subheading}`}>*/}
-              {/*  {subText}*/}
-              {/*</p>*/}
               <div className="flex flex-wrap items-start justify-center">
                 {projects.map((project: Project) => (
                   <ProjectCardComponent

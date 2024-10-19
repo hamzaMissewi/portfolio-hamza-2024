@@ -155,6 +155,7 @@ export interface Skill extends SanityBody {
   category: SkillCategory;
   logo: BaseImage | Image;
   title: string;
+  percent: number;
 }
 
 export interface SkillCategory extends SanityBody {

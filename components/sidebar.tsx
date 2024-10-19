@@ -3,16 +3,16 @@ import NavigationLink from "./navigationLink";
 import { useTranslations } from "next-intl";
 import { useLocale } from "use-intl";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { ThemeToggler } from "@/theme/themeToggler";
 import LocaleSwitcher from "@/components/localeSwitcher";
-// import { useTheme } from "next-themes";
 import { Divider } from "@mui/material";
+// import { useTheme } from "next-themes";
 
 export default function Sidebar() {
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
-  const [openSidebar, setOpenSidebar] = useState(false);
+  // const [openSidebar, setOpenSidebar] = useState(false);
   // const theme = useTheme();
 
   // const isXsScreen = useMediaQuery(theme.breakpoints.up("xs"));

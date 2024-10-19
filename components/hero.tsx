@@ -23,7 +23,7 @@ export const Hero = () => {
     loop: true,
     typeSpeed: 30,
     deleteSpeed: 3,
-    delaySpeed: 1000,
+    delaySpeed: 2000,
   });
 
   return (
@@ -55,14 +55,10 @@ export const Hero = () => {
       {/*text-sm md:text-lg*/}
       <div className="relative z-10 my-20 flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
         {/*<p className="mb-3 text-2xl uppercase md:tracking-wider">*/}
-        {/*  /!*Hi, I&apos;m {links.ownerName}, a Fullstack web developer from Tunisia working with next js and aws other modern technologies.*!/*/}
         {/*  {t("title")}*/}
         {/*</p>*/}
-        <div
-          className={
-            "mb-3  flex items-center justify-center md:text-lg lg:text-xl"
-          }
-        >
+        {/*  /!*Hi, I&apos;m {links.ownerName}, a Fullstack web developer from Tunisia working with next js and aws other modern technologies.*!/*/}
+        <div className="mb-3 flex items-center justify-center md:text-lg lg:text-xl">
           <h5 className={"text-2xl font-semibold uppercase md:tracking-wider"}>
             {dynamicTexts}
           </h5>
@@ -71,7 +67,6 @@ export const Hero = () => {
 
         <TextGenerateEffect
           className="text-blue-100 text-md text-center uppercase tracking-widest"
-          // className="text-center text-[40px] text-xl"
           words={t("text_effect")}
           // words={dynamicTexts}
         />

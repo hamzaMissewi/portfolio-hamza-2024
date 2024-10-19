@@ -20,12 +20,11 @@ import { useAskChatGptHook } from "@/hooks/useAskOpenAi4o";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { useLocale } from "use-intl";
-import { useTheme } from "next-themes";
 
 function ChatBot() {
   const t = useTranslations("Chatbot");
   const { askChatGpt } = useAskChatGptHook();
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   const [userMessage, setUserMessage] = useState<string | undefined>(undefined);
   const [chatLoading, setChatLoading] = useState(false);
   const [responses, setResponses] = useState<
@@ -74,7 +73,7 @@ function ChatBot() {
         setExpandChatBox(true);
       }
     },
-    [askChatGpt, userMessage, responses],
+    [askChatGpt, userMessage, responses]
   );
 
   // TODO TEXT TO SPEESH
@@ -87,7 +86,6 @@ function ChatBot() {
     }
   }, []);
 
-
   return (
     <motion.div
       initial={{ opacity: 0.7 }}
@@ -95,17 +93,17 @@ function ChatBot() {
       whileInView={{ opacity: 1, x: 0 }}
       animate={{ x: -10, opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      className={`w-fit fixed z-10 bottom-2 ${locale === "ar" ? "left-2" : "right-2"} rounded-lg border-2 border-amber-400 dark:bg-dark4 bg-chatbotLight`}
+      className={`fixed bottom-2 z-10 w-fit ${locale === "ar" ? "left-2" : "right-2"} rounded-lg border-2 border-amber-400 bg-chatbotLight dark:bg-dark4`}
     >
       <div
         className={
-          "flex items-center px-2 dark:bg-chatbot-light bg-chatbot-dark space-x-2"
+          "dark:bg-chatbot-light bg-chatbot-dark flex items-center space-x-2 px-2"
         }
         onClick={() => setExpandChatBox((value) => !value)}
       >
         <Typography
           component={"h1"}
-          className="text-xl font-bold text-center lowercase"
+          className="text-center text-xl font-bold lowercase"
         >
           {t("title")}
         </Typography>
@@ -119,10 +117,10 @@ function ChatBot() {
             initial={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             className={
-              "flex flex-col justify-between flex-1 dark:bg-chatbot-dark bg-chatbot-light"
+              "dark:bg-chatbot-dark bg-chatbot-light flex flex-1 flex-col justify-between"
             }
           >
-            <div className="overflow-y-auto flex-grow shadow-lg rounded-lg p-2 h-[400px]">
+            <div className="h-[400px] flex-grow overflow-y-auto rounded-lg p-2 shadow-lg">
               <div className="space-y-4">
                 {responses.map((msg, index) => (
                   <div
@@ -130,7 +128,7 @@ function ChatBot() {
                     className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                   >
                     <div
-                      className={`max-w-xs p-3 rounded-lg ${
+                      className={`max-w-xs rounded-lg p-3 ${
                         msg.role === "user"
                           ? "bg-slate-500"
                           : "bg-gray-200 text-gray-800"
@@ -160,12 +158,12 @@ function ChatBot() {
             <Box
               component={"form"}
               className={
-                "py-2 flex flex-row items-center space-x-2 w-[100%] px-2 space-x-1 text-white-100  focus:ring-blue-500"
+                "focus:ring-blue-500 flex w-[100%] flex-row items-center space-x-1 space-x-2 px-2 py-2  text-white-100"
               }
             >
               {/*<TextField*/}
               <input
-                className="flex-1 rounded-md p-2 focus:outline-none text-white"
+                className="flex-1 rounded-md p-2 text-white focus:outline-none"
                 // type={"text"}
                 // size={"small"}
                 placeholder={t("typeMessage")}
@@ -176,7 +174,7 @@ function ChatBot() {
 
               <Button
                 type={"submit"}
-                className="dark:bg-lightBackground bg-darkBackground px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 space-x-1 w-fit items-center"
+                className="focus:ring-blue-500 w-fit items-center space-x-1 bg-darkBackground px-2 py-1 focus:outline-none focus:ring-2 dark:bg-lightBackground"
                 onSubmit={(event) => handleClickAskChatGpt(event)}
               >
                 <span>{t("send")}</span>

@@ -82,8 +82,6 @@ const MainPage = () => {
   // console.log("sanity experiences", experienceProps);
   // console.log("sanity projects", projectsProps);
 
-  // unstable_setRequestLocale("en-US"); // Set the locale for static rendering
-
   return (
     <main className="flex h-full w-full flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
       <FloatingNav navItems={navItems} className={undefined} />

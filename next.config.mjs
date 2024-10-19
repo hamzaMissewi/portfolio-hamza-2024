@@ -9,12 +9,12 @@ const nextConfig = {
     // domains:[]
     remotePatterns: [
       // { hostname: "*", pathname: "*" },
-      {
-        // Pattern for images from a specific domain
-        // pathname: "./public/**", // Use ** for wildcard matching
-        hostname: "public",
-        pathname: "**",
-      },
+      // {
+      //   // Pattern for images from a specific domain
+      //   // pathname: "./public/**", // Use ** for wildcard matching
+      //   hostname: "public",
+      //   pathname: "**",
+      // },
       {
         protocol: "https",
         hostname: "cdn.sanity.io",

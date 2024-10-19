@@ -64,7 +64,6 @@ const Footer = ({ socials }: IFooterProps) => {
                   target="_blank"
                   rel="noreferrer noopener"
                   className="saturate-180 flex size-10 justify-center rounded-lg bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter"
-                  title={social.title}
                 >
                   <Image
                     src={urlFor(social.icon).url()}

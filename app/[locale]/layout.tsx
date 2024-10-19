@@ -37,6 +37,7 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
         className={inter.className}
         suppressHydrationWarning={true}
       >
+        {/* <ClerkProvider>*/}
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             themes={["dark", "light"]}

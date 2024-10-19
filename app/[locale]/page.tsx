@@ -12,7 +12,7 @@ import Sidebar from "@/components/sidebar";
 import ChatBot from "@/components/chatBot";
 import SanityProjects from "@/components/sanityProjects";
 import { SanityExperiencesComponent } from "@/components/sanityExperiences";
-import { RecentProjects } from "@/components/recent-projects";
+import { RecentProjects } from "@/components/recentProjects";
 import fetchData, { SanityDataTypes } from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
@@ -80,7 +80,7 @@ const MainPage = () => {
   // console.log("sanity projects", projectsProps);
 
   return (
-    <main className="flex h-full w-full flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
+    <main className="flex flex-1 flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
       <FloatingNav navItems={navItems} className={undefined} />
       <div className={"relative flex flex-row space-x-2 overflow-x-hidden"}>
         <Sidebar />

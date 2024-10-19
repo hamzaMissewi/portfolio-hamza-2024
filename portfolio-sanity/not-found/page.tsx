@@ -1,11 +1,12 @@
-import { useLocale } from "next-intl";
-import { Link } from "@/lib/intl";
-import Image from "next/image";
+import {useLocale} from 'next-intl'
+// import { Link } from "@/lib/intl";
+import Image from 'next/image'
+import Link from 'next/link'
 
 // import { redirect } from "next/navigation";
 
 function NotFoundPage() {
-  const locale = useLocale();
+  const locale = useLocale()
 
   return (
     <div>
@@ -13,15 +14,10 @@ function NotFoundPage() {
       <p>Sorry, the page you are looking for does not exist.</p>
       <Link href={`/${locale}`}>Go back to home</Link>
       <div className="mx-auto h-40 w-40">
-        <Image
-          src={"/hamza/spinner.svg"}
-          width={200}
-          height={200}
-          alt="spinner"
-        />
+        <Image src={'/hamza/spinner.svg'} width={200} height={200} alt="spinner" />
       </div>
     </div>
-  );
+  )
 }
 
-export default NotFoundPage;
+export default NotFoundPage

@@ -1,12 +1,4 @@
-import {
-  Experience,
-  Project,
-  SectionWrapper,
-  Skill,
-  SkillCategory,
-  Social,
-  Testimonial,
-} from "@/typings";
+import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchExperiences } from "@/utils/fetchExperiences";
 import { fetchSections } from "@/utils/fetchSection";
@@ -21,8 +13,8 @@ export type SanityDataTypes = {
   socials: Social[];
   skills: Skill[];
   sections: SectionWrapper[];
-  testimonials: Testimonial[];
-  skillCategories: SkillCategory[];
+  // testimonials: Testimonial[];
+  // skillCategories: SkillCategory[];
 };
 
 export default async function fetchData(): Promise<SanityDataTypes> {

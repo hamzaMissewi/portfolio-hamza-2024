@@ -3,6 +3,7 @@ import { sanityClient } from "../sanity";
 
 import { Experience } from "@/typings";
 
+//   // const query = '*[_type == "experience"]'; // Adjust this to your schema
 const query = groq`
   *[_type == "experience"] {
     ...,

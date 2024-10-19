@@ -6,11 +6,11 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import { urlFor } from "@/sanity";
 import { BaseImage, Color, Project } from "@/typings";
 import { useTranslations } from "next-intl";
-import HeadingDivider from "@/components/new/HeadingDivider.component";
 import InnerSection from "@/components/new/InnerSection.component";
 import Section from "@/components/new/Section";
 import ProjectCardComponent from "@/components/new/ProjectCard.component";
 import Container from "@/components/new/Container.component";
+// import HeadingDivider from "@/components/new/HeadingDivider.component";
 // import styles from "./Projects.module.scss";
 
 type IProjectsProps = {
@@ -26,7 +26,6 @@ type IProjectsProps = {
   sectionBackground: BaseImage;
   sectionColor?: Color;
   sectionIcon?: string;
-  // subText: string;
   title: string;
 };
 
@@ -58,26 +57,26 @@ function SanityProjects({
       <Section
         dataPosition={dataPosition}
         sectionClassName="relative"
-        sectionColor={addSectionColor ? sectionColor?.hex : undefined}
+        // sectionColor={addSectionColor ? sectionColor?.hex : undefined}
       >
-        <HeadingDivider
-          title={heading || ""}
-          icon={sectionIcon}
-          background={dividerBackground ? true : undefined}
-          patternBottom={
-            dividerPattern && patternBottom.asset
-              ? urlFor(patternBottom.asset).url()
-              : undefined
-          }
-          patternTop={
-            dividerPattern ? urlFor(patternTop?.asset)?.url() : undefined
-          }
-          sectionColor={
-            addSectionColor && !dividerBackground
-              ? sectionColor?.hex
-              : "#74c197"
-          }
-        />
+        {/*<HeadingDivider*/}
+        {/*  title={heading || ""}*/}
+        {/*  icon={sectionIcon}*/}
+        {/*  background={dividerBackground ? true : undefined}*/}
+        {/*  patternBottom={*/}
+        {/*    dividerPattern && patternBottom.asset*/}
+        {/*      ? urlFor(patternBottom.asset).url()*/}
+        {/*      : undefined*/}
+        {/*  }*/}
+        {/*  patternTop={*/}
+        {/*    dividerPattern ? urlFor(patternTop?.asset)?.url() : undefined*/}
+        {/*  }*/}
+        {/*  sectionColor={*/}
+        {/*    addSectionColor && !dividerBackground*/}
+        {/*      ? sectionColor?.hex*/}
+        {/*      : "#b9b9b9"*/}
+        {/*  }*/}
+        {/*/>*/}
         <InnerSection innerContentClass="relative overflow-hidden">
           {!addSectionColor && sectionBackground && (
             <Image
@@ -110,7 +109,7 @@ function SanityProjects({
             }}
           >
             <Container>
-              <div className="flex flex-wrap items-start justify-center">
+              <div className="flex flex-wrap">
                 {projects.map((project: Project) => (
                   <ProjectCardComponent
                     key={project._id}

@@ -25,20 +25,22 @@ type ISanityExperiences = {
 };
 export const SanityExperiencesComponent = ({
   experiences,
-  ...props
+  // ...props
 }: ISanityExperiences) => {
   const t = useTranslations("Experience");
 
   return (
-    <section id="sanity-experiences" className="py-20">
-      {/*<h1 className="heading">*/}
-      {/*<span className="text-purple">Sanity {t("title")}</span>*/}
-      {/*<span className="text-purple">Sanity experiences</span>*/}
-      {/*</h1>*/}
-      <div>
-        <Typography component={"h4"}>{props.title}</Typography>
-        <Typography component={"h4"}>{t("personalProjects")}</Typography>
-        <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">
+    <section
+      id="sanity-experiences"
+      className="flex flex-col items-center py-20"
+    >
+      <div className={"flex flex-col items-center justify-center"}>
+        <h1 className="heading">
+          <span className="text-purple">{t("title")}</span>
+          {/*<Typography component={"h4"}>{props.title}</Typography>*/}
+        </h1>
+        {/*<Typography component={"h4"}>{t("personalProjects")}</Typography>*/}
+        <div className="mt-12 flex grid w-full grid-cols-1 flex-col gap-10 lg:grid-cols-4">
           {experiences.map((experience) => (
             <div key={experience._id}>
               <Button
@@ -138,14 +140,6 @@ export const SanityExperiencesComponent = ({
 };
 
 // export async function getStaticProps() {
-//   // const query = '*[_type == "experience"]'; // Adjust this to your schema
-//   const query = groq`
-//   *[_type == "experience"] {
-//     ...,
-//     technologies[] ->
-//   } | order(_createdAt desc)
-// `;
-//
 //   const experiences = await sanityClient.fetch(query);
 //
 //   return {

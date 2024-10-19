@@ -3,15 +3,19 @@ import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
+import { useTranslations } from "next-intl";
 // import { useRouter } from "next/navigation";
 // import { useRouter } from "@/lib/intl";
 // import { Link } from "@/lib/intl";
 
 export const RecentProjects = () => {
+  const t = useTranslations("Projects");
+
   return (
     <section id="projects" className="py-20">
       <h1 className="heading">
-        A selection of <span className="text-purple">recent projects</span>
+        {/*A selection of <span className="text-purple">recent projects</span>*/}
+        {t("title")}
       </h1>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-x-24 gap-y-8 p-4">

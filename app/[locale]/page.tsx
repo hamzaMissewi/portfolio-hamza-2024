@@ -3,22 +3,20 @@ import React, { useEffect, useState } from "react";
 import { Approach } from "@/components/approach";
 import { Clients } from "@/components/clients";
 import { ExperiencesComponent } from "@/components/experiencesComponent";
-import { Footer } from "@/components/footer";
+import Footer from "@/components/footer";
 import { Grid } from "@/components/grid";
 import { Hero } from "@/components/hero";
 import { FloatingNav } from "@/components/ui/floating-nav";
 import { navItems } from "@/data";
 import Sidebar from "@/components/sidebar";
 import ChatBot from "@/components/chatBot";
-import Footer2 from "@/components/footer2";
 import SanityProjects from "@/components/sanityProjects";
 import { SanityExperiencesComponent } from "@/components/sanityExperiences";
 import { RecentProjects } from "@/components/recent-projects";
 import Socials from "@/components/socials";
 import fetchData, { SanityDataTypes } from "@/app/fetchData";
 import Skills from "@/components/skills";
-// import { unstable_setRequestLocale } from "next-intl";
-
+import ContactMe from "@/components/contactMe";
 // import { fetchSocials } from "@/utils/fetchSocials";
 // import { fetchProjects } from "@/utils/fetchProjects";
 // import { fetchExperiences } from "@/utils/fetchExperiences";
@@ -49,7 +47,6 @@ const MainPage = () => {
     // let isMounted = true; // flag to track if component is mounted
     const sanity = async () => {
       const data = await fetchData();
-      // return data;
       setSanityData(data);
     };
     sanity();
@@ -62,6 +59,7 @@ const MainPage = () => {
     const section = sanityData?.sections.find(
       (section) => section.title === title
     );
+
     return {
       addSectionColor: section?.addSectionColor || false,
       displayInNav: section?.displayInNav || false,
@@ -88,30 +86,38 @@ const MainPage = () => {
   // unstable_setRequestLocale("en-US"); // Set the locale for static rendering
 
   return (
-    <main className="flex w-full flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
+    <main className="flex h-full w-full flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
       <FloatingNav navItems={navItems} className={undefined} />
-      <div className={"flex overflow-x-hidden"}>
+      <div className={"relative flex flex-row space-x-2 overflow-x-hidden"}>
         <Sidebar />
-        <div className="ml-54 absolute flex-1 flex-col p-1">
+        <div className="ml-70 relative flex flex-1 flex-col items-center px-1">
           <Hero />
           <Grid />
           {sanityData?.skills && <Skills skills={sanityData.skills} />}
-          <RecentProjects />
-          {sanityData?.projects && (
-            <SanityProjects projects={sanityData.projects} {...projectsProps} />
-          )}
-          <ExperiencesComponent />
-          {sanityData?.experiences && (
-            <SanityExperiencesComponent
-              experiences={sanityData.experiences}
-              {...experienceProps}
-            />
-          )}
+          <div>
+            <RecentProjects />
+            {sanityData?.projects && (
+              <SanityProjects
+                projects={sanityData.projects}
+                {...projectsProps}
+              />
+            )}
+          </div>
+
+          <div>
+            <ExperiencesComponent />
+            {sanityData?.experiences && (
+              <SanityExperiencesComponent
+                experiences={sanityData.experiences}
+                {...experienceProps}
+              />
+            )}
+          </div>
           <Clients />
           <Approach />
           {sanityData?.socials && <Socials socials={sanityData.socials} />}
+          <ContactMe />
           <Footer />
-          <Footer2 />
         </div>
       </div>
       <ChatBot />

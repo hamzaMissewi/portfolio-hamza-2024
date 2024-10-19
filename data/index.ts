@@ -72,13 +72,13 @@ export const gridItems = [
 ] as const;
 
 export const projects: {
-  id: number,
-  title: string,
-  des: string,
-  img: string,
-  iconLists: string[],
-  link: string,
-  sourceCode: string
+  id: number;
+  title: string;
+  des: string;
+  img: string;
+  iconLists: string[];
+  link: string;
+  sourceCode: string;
 }[] = [
   {
     id: 1,
@@ -87,7 +87,7 @@ export const projects: {
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://clone-figmaa.netlify.app",
-    sourceCode: "",//"https://github.com/sanidhyy/figma-clone",
+    sourceCode: "", //"https://github.com/sanidhyy/figma-clone",
   },
   {
     id: 2,
@@ -96,7 +96,7 @@ export const projects: {
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://clone-yoom.netlify.app",
-    sourceCode: "",  //"https://github.com/sanidhyy/zoom-clone",
+    sourceCode: "", //"https://github.com/sanidhyy/zoom-clone",
   },
   {
     id: 3,
@@ -105,7 +105,7 @@ export const projects: {
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://ai-imaginify.netlify.app",
-    sourceCode: "",// "https://github.com/sanidhyy/imaginify",
+    sourceCode: "", // "https://github.com/sanidhyy/imaginify",
   },
   {
     id: 4,
@@ -114,7 +114,7 @@ export const projects: {
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://app-iphone.netlify.app",
-    sourceCode: "",// "https://github.com/sanidhyy/apple-clone",
+    sourceCode: "", // "https://github.com/sanidhyy/apple-clone",
   },
   {
     id: 5,
@@ -208,12 +208,13 @@ export const workExperience = [
     // new field hamza
     skills: [
       "Proven Expertise: Experienced software developer with 2 years in web developing,including cloud-based" +
-      " solutions.",
+        " solutions.",
       "Innovation and Efficiency: Implemented automated testing frameworks and CI/CD pipelines that" +
-      " reduced deployment time by 40% and increased code quality.",
+        " reduced deployment time by 40% and increased code quality.",
       "Leadership and Mentoring: Experienced in mentoring junior developers and leading technical teams, fostering" +
-      " a collaborative environment that encourages innovation and professional growth.",
-      "Workflow", "Communication",
+        " a collaborative environment that encourages innovation and professional growth.",
+      "Workflow",
+      "Communication",
     ],
   },
   {
@@ -256,13 +257,22 @@ export const socialMedia = [
   {
     name: "Twitter",
     img: "/twit.svg",
-    link: "https://twitter.com/TechnicalShubam",
+    link: "https://twitter.com/hamzaOstouri",
   },
   {
     name: "LinkedIn",
     img: "/link.svg",
-    // link: "https://www.linkedin.com/in/sanidhyy",
-    link: "https://www.linkedin.com/in/hamzaOstouri",
+    link: "https://www.linkedin.com/in/hamza-missaoui/",
+  },
+  {
+    name: "Facebook",
+    img: "/facebook.svg",
+    link: "https://www.facebook.com/hamza-missaoui/",
+  },
+  {
+    name: "Youtube",
+    img: "/youtube.svg",
+    link: "https://www.youtube.com/hamzatopg/",
   },
 ] as const;
 

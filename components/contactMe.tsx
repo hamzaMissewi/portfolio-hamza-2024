@@ -32,6 +32,26 @@ export type SendMailOutput = { success?: boolean; response?: string } & {
 } & { formatData?: MailFieldsType };
 
 function ContactMe() {
+  return (
+    <div className="flex flex-col items-center p-1">
+      <h1 className="heading lg:max-w-[45vw]">
+        Ready to take <span className="text-purple">your</span> digital presence
+        to the next level?
+      </h1>
+
+      <p className="my-5 text-center text-white-200 md:mt-10">
+        Reach out to me today and let&apos;s discuss how I can help your achieve
+        your goals.
+      </p>
+
+      <ContactForm />
+    </div>
+  );
+}
+
+export default ContactMe;
+
+function ContactForm() {
   const t = useTranslations("ContactMe");
   const touch = useTranslations("Navbar");
 
@@ -136,7 +156,6 @@ function ContactMe() {
   return (
     <div
       className={
-        // "flex min-h-screen h-screen relative flex-col text-center md:text-left md:flex-row md:flex-row max-w-7xl px-10
         "relative flex h-full snap-start flex-col items-center shadow shadow-slate-300" +
         " mx-auto max-w-7xl justify-evenly"
       }
@@ -245,21 +264,19 @@ function ContactMe() {
               <FaLocationArrow />
             </LoadingButton>
 
-            <div>
-              <Link
-                href={`mailto:${links.ownerEmail}`}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <p className={"flex self-start"}>{touch("getInTouch")}</p>
-                {/*<MagicButton*/}
-                {/*  title={touch("getInTouch")}//"Let's get in touch"*/}
-                {/*  icon={<FaLocationArrow />}*/}
-                {/*  // position="right"*/}
-                {/*  asChild*/}
-                {/*/>*/}
-              </Link>
-            </div>
+            <Link
+              href={`mailto:${links.ownerEmail}`}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <p className={"flex self-start"}>{touch("getInTouch")}</p>
+              {/*<MagicButton*/}
+              {/*  title={touch("getInTouch")}//"Let's get in touch"*/}
+              {/*  icon={<FaLocationArrow />}*/}
+              {/*  // position="right"*/}
+              {/*  asChild*/}
+              {/*/>*/}
+            </Link>
           </div>
         </form>
         {/*NEW*/}
@@ -282,5 +299,3 @@ function ContactMe() {
     </div>
   );
 }
-
-export default ContactMe;

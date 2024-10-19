@@ -31,7 +31,7 @@ export default function Sidebar() {
     // <section id="sidebar">
     <div
       // bg-grid-black/[0.2] dark:bg-grid-white/[0.03]
-      className={`max-w-55 fixed top-0.5 z-50 flex h-full min-w-0 space-y-2 ${
+      className={`w-55 fixed top-0.5 z-50 flex h-full min-w-0 space-y-2 ${
         locale !== "ar" ? "left-0 pr-5" : "right-0 pl-5"
       } rounded-xl border border-black border-white/[0.2] bg-[#fff] dark:bg-gray-800`}
       // shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"*/}

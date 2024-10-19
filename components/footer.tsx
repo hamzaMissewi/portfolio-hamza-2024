@@ -37,7 +37,8 @@ const Footer = ({ socials }: IFooterProps) => {
         {/*/>*/}
         {/*</div>*/}
         <p className="text-sm font-light md:text-base md:font-normal">
-          Copyright &copy; {new Date().getFullYear()} {/*<Link*/}
+          Copyright &copy; {new Date().getFullYear()}
+          {/*<Link*/}
           {/*  href={"https://www.linkedin.com/in/hamza-missaoui/"}*/}
           {/*  target="_blank"*/}
           {/*  rel="noreferrer noopener"*/}

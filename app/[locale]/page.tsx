@@ -13,7 +13,6 @@ import ChatBot from "@/components/chatBot";
 import SanityProjects from "@/components/sanityProjects";
 import { SanityExperiencesComponent } from "@/components/sanityExperiences";
 import { RecentProjects } from "@/components/recent-projects";
-import Socials from "@/components/socials";
 import fetchData, { SanityDataTypes } from "@/app/fetchData";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
@@ -115,7 +114,7 @@ const MainPage = () => {
           </div>
           <Clients />
           <Approach />
-          {sanityData?.socials && <Socials socials={sanityData.socials} />}
+          {/*{sanityData?.socials && <Socials socials={sanityData.socials} />}*/}
           <ContactMe />
           <Footer />
         </div>

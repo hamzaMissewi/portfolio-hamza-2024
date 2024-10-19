@@ -1,5 +1,4 @@
 import { defineField, defineType } from "sanity";
-
 import { MobileDeviceIcon } from "@sanity/icons";
 
 export default defineType({
@@ -17,6 +16,16 @@ export default defineType({
       name: "url",
       title: "Url",
       type: "url",
+    }),
+    defineField({
+      name: "width",
+      title: "Width",
+      type: "number",
+    }),
+    defineField({
+      name: "height",
+      title: "Height",
+      type: "number",
     }),
     defineField({
       name: "icon",

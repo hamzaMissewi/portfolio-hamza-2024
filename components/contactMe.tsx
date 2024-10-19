@@ -18,7 +18,6 @@ import { LoadingButton } from "@mui/lab";
 import { Link } from "@/lib/intl";
 import { links } from "@/config";
 import { FaLocationArrow } from "react-icons/fa6";
-// import { ContactRoutePayload } from "@/app/api/contact/route";
 
 type MailFieldsType = {
   name?: string;

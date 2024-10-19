@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { Approach } from "@/components/approach";
 import { Clients } from "@/components/clients";
 import { ExperiencesComponent } from "@/components/experiencesComponent";
@@ -13,7 +12,7 @@ import ChatBot from "@/components/chatBot";
 import SanityProjects from "@/components/sanityProjects";
 import { SanityExperiencesComponent } from "@/components/sanityExperiences";
 import { RecentProjects } from "@/components/recentProjects";
-import fetchData, { SanityDataTypes } from "@/utils/index";
+import fetchData from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
 import Socials from "@/components/socials";
@@ -34,24 +33,25 @@ import Socials from "@/components/socials";
 //   experiences,
 //   sections,
 // }: IMainPageProps) => {
-const MainPage = () => {
-  const [sanityData, setSanityData] = useState<SanityDataTypes | null>(null);
+export default async function Component() {
+  // const [sanityData, setSanityData] = useState<SanityDataTypes | null>(null);
+  //
+  // useEffect(() => {
+  //   // let isMounted = true; // flag to track if component is mounted
+  //   const sanity = async () => {
+  //     const data = await fetchData();
+  //     setSanityData(data);
+  //   };
+  //   sanity();
+  //   // return () => {
+  //   //   isMounted = false; // cleanup function to set flag to false
+  //   // };
+  // }, []);
 
-  useEffect(() => {
-    // let isMounted = true; // flag to track if component is mounted
-    const sanity = async () => {
-      const data = await fetchData();
-      setSanityData(data);
-    };
-    sanity();
-    // return () => {
-    //   isMounted = false; // cleanup function to set flag to false
-    // };
-  }, []);
-
+  const sanityData = await fetchData();
   const extractPropsFromSection = (title: string) => {
     const section = sanityData?.sections.find(
-      (section) => section.title === title
+      (section) => section.title === title,
     );
 
     return {
@@ -81,7 +81,7 @@ const MainPage = () => {
 
   return (
     <main className="flex flex-1 flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
-      <FloatingNav navItems={navItems} className={undefined} />
+      <FloatingNav navItems={navItems} />
       <div className={"relative flex flex-row space-x-2 overflow-x-hidden"}>
         <Sidebar />
         <div className="ml-70 relative flex flex-1 flex-col items-center px-1">
@@ -120,8 +120,6 @@ const MainPage = () => {
     </main>
   );
 };
-
-export default MainPage;
 
 // export async function getServerSideProps() {
 //   const {

@@ -24,7 +24,6 @@ import { useLocale } from "use-intl";
 function ChatBot() {
   const t = useTranslations("Chatbot");
   const { askChatGpt } = useAskChatGptHook();
-  // const { theme } = useTheme();
   const [userMessage, setUserMessage] = useState<string | undefined>(undefined);
   const [chatLoading, setChatLoading] = useState(false);
   const [responses, setResponses] = useState<

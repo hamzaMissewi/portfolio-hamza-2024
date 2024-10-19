@@ -6,9 +6,12 @@ import {
   useScroll,
 } from "framer-motion";
 import { Link } from "@/lib/intl";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { navItems } from "@/data";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import LoginIcon from "@mui/icons-material/Login";
 
 type FloatingNavProps = {
   navItems: typeof navItems;
@@ -39,8 +42,12 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
     }
   });
 
+  const router = useRouter();
+  const handleOpenLoginPage = useCallback(() => {
+    router.push("/login");
+  }, []);
+
   return (
-    // <nav className={"container flex justify-between"}>
     <AnimatePresence mode="wait">
       <motion.nav
         initial={{
@@ -55,12 +62,16 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
           duration: 0.2,
         }}
         className={cn(
-          "fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-fit items-center justify-center space-x-4" +
+          "container fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-[70%] items-center justify-center space-x-4" +
             " rounded-3xl border border-white/[0.2] bg-white px-3 py-5 dark:bg-black-100" +
             " shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
           className
         )}
       >
+        <Button asChild onClick={handleOpenLoginPage} color={"inehrit"}>
+          <LoginIcon />
+          Login
+        </Button>
         {/*<SignedOut>*/}
         {/*  <SignInButton />*/}
         {/*</SignedOut>*/}

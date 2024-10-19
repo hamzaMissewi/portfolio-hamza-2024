@@ -15,7 +15,17 @@ import { fetchSkills } from "@/utils/fetchSkills";
 import { fetchTestimonials } from "@/utils/fetchTestimonials";
 import { fetchSkillCategories } from "@/utils/fetchSkillCategories";
 
-export default async function fetchData() {
+export type SanityDataTypes = {
+  projects: Project[];
+  experiences: Experience[];
+  socials: Social[];
+  skills: Skill[];
+  sections: SectionWrapper[];
+  testimonials: Testimonial[];
+  skillCategories: SkillCategory[];
+};
+
+export default async function fetchData(): Promise<SanityDataTypes> {
   const projects: Project[] = await fetchProjects();
   const experiences: Experience[] = await fetchExperiences();
   const sections: SectionWrapper[] = await fetchSections();
@@ -24,25 +34,6 @@ export default async function fetchData() {
   const skills: Skill[] = await fetchSkills();
   const testimonials: Testimonial[] = await fetchTestimonials();
   const skillCategories: SkillCategory[] = await fetchSkillCategories();
-
-  const extractPropsFromSection = (title: string) => {
-    const section = sections.find((section) => section.title === title);
-    return {
-      addSectionColor: section?.addSectionColor || false,
-      displayInNav: section?.displayInNav || false,
-      dividerBackground: section?.dividerBackground || false,
-      dividerPattern: section?.dividerPattern || false,
-      heading: section?.heading || "",
-      menuUrl: section?.menuUrl || "",
-      patternBottom: section?.patternBottom || "",
-      patternTop: section?.patternTop || "",
-      sectionBackground: section?.sectionBackground,
-      sectionColor: section?.sectionColor,
-      sectionIcon: section?.sectionIcon || "",
-      subText: section?.subText || "",
-      title: section?.title || "",
-    };
-  };
 
   return {
     projects,
@@ -53,6 +44,5 @@ export default async function fetchData() {
     testimonials,
     skillCategories,
     // siteWides,
-    extractPropsFromSection,
   };
 }

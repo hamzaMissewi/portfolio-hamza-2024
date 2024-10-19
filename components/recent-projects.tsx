@@ -8,8 +8,6 @@ import { PinContainer } from "./ui/3d-pin";
 // import { Link } from "@/lib/intl";
 
 export const RecentProjects = () => {
-  // const router = useRouter();
-
   return (
     <section id="projects" className="py-20">
       <h1 className="heading">

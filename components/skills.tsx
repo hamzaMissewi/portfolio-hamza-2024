@@ -1,14 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import SkillComponent from "./skillComponent";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Skill } from "@/typings";
 import SanitySkill from "@/components/sanitySkill";
 
 type SkillsProps = { skills: Skill[] };
 
 function Skills({ skills }: SkillsProps) {
-  const language = useLocale();
   const t = useTranslations("Skills");
 
   return (
@@ -17,17 +16,13 @@ function Skills({ skills }: SkillsProps) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className={
-        "relative mx-auto flex min-h-screen max-w-[2000px] flex-col  items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0 xl:px-10"
+        "relative mx-auto flex  max-w-[2000px] flex-col  items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0 xl:px-10"
       }
     >
-      <h3
-        // className={`text-center uppercase text-gray-500 ${language && "tracking tracking-[20px]"} mb-5 text-2xl font-bold`}
-        className={
-          "absolute top-36 text-sm uppercase tracking-[3px] text-gray-500"
-        }
-      >
-        {t("title")}
-      </h3>
+      {/*"absolute top-36 text-sm uppercase tracking-[3px] text-gray-500"*/}
+      <h1 className="heading">
+        My <span className="text-purple">{t("title")}</span>
+      </h1>
 
       <div className={"flex w-full flex-wrap items-center space-x-2 p-1"}>
         {skills.map((skill) => (

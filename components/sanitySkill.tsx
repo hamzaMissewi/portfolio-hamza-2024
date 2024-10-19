@@ -20,8 +20,7 @@ function SanitySkill({ skill }: SkillProps) {
 
       {/*<p>{skill.activeSkill}</p>*/}
       <Switch checked={skill.activeSkill} disabled={true} />
-      <p>{skill.category.title}</p>
-      {/*<Image src={urlFor(skill.logo).url()} alt={""} />*/}
+      {/*<p>{skill.category?.title}</p>*/}
       <motion.img
         // initial={{ x: directionLeft ? -200 : 200, opacity: 0 }}
         initial={{ x: 200, opacity: 0 }}

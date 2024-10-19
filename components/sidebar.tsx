@@ -12,13 +12,13 @@ import { Divider } from "@mui/material";
 export default function Sidebar() {
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
-  // const [openSidebar, setOpenSidebar] = useState(false);
-  // const theme = useTheme();
 
+  // const theme = useTheme();
   // const isXsScreen = useMediaQuery(theme.breakpoints.up("xs"));
   // const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
   // const isLgScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
+  // const [openSidebar, setOpenSidebar] = useState(false);
   // const handleToggleSidebar = useCallback(() => {
   //   setOpenSidebar((isOpen) => !isOpen);
   // }, [setOpenSidebar]);

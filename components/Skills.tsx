@@ -1,0 +1,108 @@
+"use client";
+import { motion } from "framer-motion";
+import SkillComponent from "./SkillComponent";
+import { Typography } from "@mui/material";
+import { useLocale, useTranslations } from "next-intl";
+import { Skill } from "@/typings";
+import SanitySkill from "@/components/sanitySkill";
+
+type SkillsProps = { skills: Skill[] };
+
+function Skills({ skills }: SkillsProps) {
+  const language = useLocale();
+  const t = useTranslations("Skills");
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className={
+        "relative mx-auto flex min-h-screen max-w-[2000px] flex-col  items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0 xl:px-10"
+      }
+    >
+      <h3
+        className={`text-center uppercase text-gray-500 ${language && "tracking tracking-[20px]"} mb-5 text-2xl font-bold`}
+        //     "absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl"
+      >
+        My Skills
+      </h3>
+      <Typography
+        component={"h3"}
+        className={
+          "absolute top-36 text-sm uppercase tracking-[3px] text-gray-500"
+        }
+      >
+        {t("title")}
+      </Typography>
+
+      {/*Sanity */}
+      <div className={"flex w-full flex-wrap items-center space-x-2"}>
+        {skills.map((skill) => (
+          <SanitySkill skill={skill} />
+        ))}
+      </div>
+
+      <div className={"grid grid-cols-4 gap-5"}>
+        <SkillComponent
+          title={"Javascript - Typescript"}
+          skillUrl={
+            "https://www.adm.ee/wordpress/wp-content/uploads/2023/12/javascript_and_typescript-1.jpg"
+          }
+          percent={95}
+        />
+        <SkillComponent
+          title={"Node Js (Express - Koa)"}
+          skillUrl={
+            "https://www.appdevelopmentagency.com/wp-content/uploads/2019/08/koa-vs-express.png"
+          }
+          percent={90}
+        />
+        <SkillComponent
+          title={"React Js"}
+          skillUrl={
+            "https://blog.cellenza.com/wp-content/uploads/2015/05/React-JS.png"
+          }
+          percent={85}
+        />
+        <SkillComponent
+          title={"Graph ql"}
+          skillUrl={
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElXpEZNK5ocb5yYy8wfBv6ODmge4N6tGJTA&s"
+          }
+          percent={85}
+        />
+        <SkillComponent
+          title={"Mongo Db"}
+          skillUrl={
+            "https://www.threatdown.com/wp-content/uploads/2024/04/MongoDB_data_breach.png"
+          }
+          percent={80}
+        />
+        <SkillComponent
+          title={"Next Js"}
+          skillUrl={
+            "https://codewithmosh.com/_next/image?url=https%3A%2F%2Fcdn.filestackcontent.com%2F8MbtJ4hTAaOk3KPcptqZ&w=3840&q=75"
+          }
+          percent={75}
+        />
+        <SkillComponent
+          title={"React Native"}
+          skillUrl={
+            "https://devtop.io/wp-content/uploads/2022/10/react-native-1.png"
+          }
+          percent={65}
+        />
+        <SkillComponent
+          title={"Sanity"}
+          skillUrl={
+            "https://avatars.githubusercontent.com/u/17177659?s=280&v=4"
+          }
+          percent={40}
+        />
+      </div>
+    </motion.div>
+  );
+}
+
+export default Skills;

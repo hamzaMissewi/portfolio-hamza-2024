@@ -56,16 +56,18 @@
   },
   "Hero": {
     "text_effect": "Transformer les concepts en expériences utilisateur transparentes, travailler sur React et différentes technologies modernes",
-    "title": "Bonjour, je m'appelle Hamza Missaoui, un ingénieur logiciel et développeur Web Fullstack tunisien travaillant avec next js et aws d'autres technologies modernes.",
+    "title": "Bonjour, je m'appelle Hamza Missaoui un ingénieur en génie logiciel et développeur Web Fullstack tunisien travaillant avec next js et aws d'autres technologies modernes.",
     "description": "Je suis un développeur hautement qualifié et compétent en TypeScript, React et Next Js et bien d'autres technologies.",
     "showWork": "Afficher mon travail",
     "words": [
       "Bonjour, je m'appelle Hamza Missaoui",
-      "Je suis ingénieur logiciel et développeur Web qui aime",
-      "J'aime programmer et concevoir des applications Web élégantes",
+      "Je suis ingénieur tunisien en génie logiciel et développeur Web fullstack",
+      "J'aime la conception et la programmation des applications Web dynamiques et élégants et entrer dans des projets forts",
       "J'ai des connaissances avancées en TypeScript, React, Next et Node.",
-      "Connaissance des bibliothèques/frameworks tels que React, Next Js, Django et Spring Boot",
-      "Connaissance des services cloud AWS et de la conteneurisation Docker"
+      "J'ai des Connaissances en bibliothèques et frameworks comme React, Next Js, Django et Spring Boot",
+      "J'ai des Expériences en différents services de stockage et exporter des médias en amazon aws, azure et google comme google traduction et maps plus la conteneurisation Docker",
+      "J'ai travaillé avec différents services et technologies de recherche des documents comme algolia et elasticsearch",
+      "J'ai travaillé avec les fournisseurs de médias (image , vidéos, pdf, txt, etc) tel que adobestock, shutterstock, pexels, pixabay et bing"
     ],
     "route": {
       "aboutMe": "A propos moi",

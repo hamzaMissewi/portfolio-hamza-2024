@@ -60,12 +60,14 @@
     "title": "Hi, I'm Hamza Missaoui, a tunisian software engineer and Fullstack web developer working with next js and aws other modern technologies.",
     "showWork": "Show my work",
     "words": [
-      "Hi, My name is Hamza Missaoui",
-      "I am software engineer and web developer who loves",
-      "I love programming and design elegant web applications",
-      "I have advanced knowledge in typescript, react, next and node",
-      "Knowledge in libraries / frameworks such as react, next js, django and spring boot",
-      "Knowledge in aws cloud services and docker containerisation"
+      "Hello, my name is Hamza Missaoui",
+      "I am a Tunisian software engineer and fullstack web developer",
+      "I love designing and programming dynamic and elegant web applications and getting into strong projects",
+      "I have advanced knowledge in TypeScript, React, Next and Node.",
+      "I have knowledge of libraries and frameworks such as React, Next Js, Django and Spring Boot",
+      "I have Experience in different storage services and export media in amazon aws, azure and google like google translate and maps plus Docker containerization",
+      "I worked with different document search services and technologies like algolia and elasticsearch",
+      "I worked with media providers (image, videos, pdf, txt, etc.) such as adobestock, shutterstock, pexels, pixabay and bing"
     ],
     "description": "I am highly qualified and competent developer in typescript, react and next js and many other technologies",
     "route": {

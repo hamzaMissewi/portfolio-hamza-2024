@@ -17,6 +17,8 @@ import { RecentProjects } from "@/components/recent-projects";
 import Socials from "@/components/socials";
 import fetchData, { SanityDataTypes } from "@/app/fetchData";
 import Skills from "@/components/skills";
+// import { unstable_setRequestLocale } from "next-intl";
+
 // import { fetchSocials } from "@/utils/fetchSocials";
 // import { fetchProjects } from "@/utils/fetchProjects";
 // import { fetchExperiences } from "@/utils/fetchExperiences";
@@ -80,8 +82,10 @@ const MainPage = () => {
   const projectsProps = extractPropsFromSection("Project");
   const experienceProps = extractPropsFromSection("Experience");
 
-  console.log("sanity experiences", experienceProps);
-  console.log("sanity projects", projectsProps);
+  // console.log("sanity experiences", experienceProps);
+  // console.log("sanity projects", projectsProps);
+
+  // unstable_setRequestLocale("en-US"); // Set the locale for static rendering
 
   return (
     <main className="flex w-full flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">

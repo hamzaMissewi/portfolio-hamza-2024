@@ -5,48 +5,25 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { MagicButton } from "@/components/ui/magic-button";
 //
-import { useLocale } from "use-intl";
 import { useTranslations } from "next-intl";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { Link } from "@/lib/intl";
 
-
-const introductionsByLang: { [locale: string]: string[] } = {
-  en: [
-    "Hi, My name is Hamza Missaoui",
-    "I am software engineer and web developer who loves",
-    "I love programming and design elegant web applications",
-    "I have advanced knowledge in typescript, react, next and node",
-    "Knowledge on variety of frameworks like react, next js , django and spring boot",
-    "Knowledge in aws cloud serivces and docker containerisation",
-  ],
-  fr: [
-    "Salut, je m'appelle Hamza Missaoui",
-    "Je suis ingénieur génie logiciel et développeur web",
-    "Je travaille sur des fullstack applications web responsives avec graphql et rest api",
-    "J'ai des connaissances avancés en différents langages comme typescript python et java",
-    "Aussi frameworks comme react, next js , django et spring boot",
-    "Connaissances en aws cloud serivces et docker conteneurisation",
-  ],
-  ar: [
-    "مرحبا، اسمي حمزة ميساوي",
-    "أنا مهندس برمجيات ومطور ويب أحب",
-    "أنا أحب البرمجة وتصميم تطبيقات الويب الأنيقة",
-    "لدي معرفة متقدمة في الآلة الكاتبة والتفاعل والتالي والعقدة",
-    "المعرفة بمجموعة متنوعة من أطر العمل مثل رد الفعل، وjs التالي، وجانغو، والتمهيد الربيعي",
-    "المعرفة في الخدمات السحابية لـ aws وحاويات الإرساء",
-  ],
-};
-
-
 export const Hero = () => {
-  const localActive = useLocale();
   const t = useTranslations("Hero");
   const [dynamicTexts] = useTypewriter({
-    words: introductionsByLang[localActive],
-    // words: [...introductionsByLang[localActive], "<ButtonLovesToCodeMore />"],
+    words: [
+      t("words.0"),
+      t("words.1"),
+      t("words.2"),
+      t("words.3"),
+      t("words.4"),
+      t("words.5"),
+    ],
     loop: true,
-    delaySpeed: 3000,
+    typeSpeed: 30,
+    deleteSpeed: 3,
+    delaySpeed: 1000,
   });
 
   return (
@@ -65,36 +42,39 @@ export const Hero = () => {
 
       <div
         // className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black-100 dark:bg-grid-white/[0.03]">
-        className="absolute right top-0 flex w-full items-center justify-center bg-grid-black/[0.2] bg-black-100 dark:bg-grid-white/[0.03]">
+        className="right absolute top-0 flex w-full justify-center bg-black-100 bg-grid-black/[0.2] dark:bg-grid-white/[0.03]"
+      >
         <div
-          className="pointer-events-none absolute inset-0 flex items-center justify-center dark:bg-black-100
-                    bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white
+                    [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100"
+        />
       </div>
 
       {/*<h2 className={"text-xl uppercase lg:text-2xl"}>{t("title")}</h2>*/}
 
       {/*text-sm md:text-lg*/}
-      <div
-        className="relative z-10 my-20 flex flex-col max-w-[89vw] items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
-        <p className="mb-3 uppercase md:tracking-wider text-2xl">
-          {/*Hi, I&apos;m {links.ownerName}, a Fullstack web developer from Tunisia working with next js and aws other modern technologies.*/}
-          {t("title")}
-        </p>
-        <div className={"flex justify-center items-center md:text-lg lg:text-xl"}>
-          <h5 className={"font-semibold"}>{dynamicTexts}</h5>
+      <div className="relative z-10 my-20 flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
+        {/*<p className="mb-3 text-2xl uppercase md:tracking-wider">*/}
+        {/*  /!*Hi, I&apos;m {links.ownerName}, a Fullstack web developer from Tunisia working with next js and aws other modern technologies.*!/*/}
+        {/*  {t("title")}*/}
+        {/*</p>*/}
+        <div
+          className={
+            "mb-3  flex items-center justify-center md:text-lg lg:text-xl"
+          }
+        >
+          <h5 className={"text-2xl font-semibold uppercase md:tracking-wider"}>
+            {dynamicTexts}
+          </h5>
           <Cursor cursorColor={"#F7AB0A"} />
         </div>
 
-        {/*<h2 className="max-w-80 text-center text-xs uppercase tracking-widest text-blue-100">*/}
-        {/*  Dynamic Web Magic with Next.js*/}
-        {/*</h2>*/}
-
         <TextGenerateEffect
-          className="text-center text-[40px] text-xl"
-          // words="Transforming Concepts into Seamless User Experiences"
+          className="text-blue-100 text-md text-center uppercase tracking-widest"
+          // className="text-center text-[40px] text-xl"
           words={t("text_effect")}
+          // words={dynamicTexts}
         />
-
 
         <Link href="#about" className="md:mt-10">
           <MagicButton

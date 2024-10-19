@@ -110,6 +110,8 @@
   "Experience": {
     "title": "Expérience du travail",
     "description": "J'ai travaillé sur l'application principale d'une société de contenu visuel dans Typescript sur différentes fonctionnalités et tâches, m'a permis d'acquérir une expérience pratique avec React et TypeScript pour le front-end, et Node.js avec Koa js pour le back-end, tâches travaillées  ",
+    "skills": "Compétences",
+    "company": "Societé",
     "personalProjects": {
       "title": "Projets personnels",
       "projects": {

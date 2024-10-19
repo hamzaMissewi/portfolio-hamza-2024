@@ -6,7 +6,7 @@ export const config = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "t1nbpupj",
   // apiVersion: "2023-12-31",
-  apiVersion: "v2022-03-07", //'2023-12-31',
+  apiVersion: "v2022-03-07",
   useCdn: process.env.NODE_ENV === "production",
 };
 

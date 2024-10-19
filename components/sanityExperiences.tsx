@@ -15,10 +15,12 @@ export const SanityExperiencesComponent = ({
 
   return (
     <section id="sanity-experiences" className="py-20">
-      <h1 className="heading">
-        <span className="text-purple">Sanity {t("title")}</span>
-        {/*<span className="text-purple">Sanity experiences</span>*/}
-      </h1>
+      {/*<h1 className="heading">*/}
+      {/*<span className="text-purple">Sanity {t("title")}</span>*/}
+      {/*<span className="text-purple">Sanity experiences</span>*/}
+      {/*</h1>*/}
+
+      <Typography component={"h4"}>{t("personalProjects")}</Typography>
       <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">
         {experiences.map((experience) => (
           <div key={experience._id}>

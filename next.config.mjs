@@ -16,7 +16,7 @@ const nextConfig = {
       //   pathname: "**",
       // },
       {
-        protocol: "https",
+        // protocol: "http*",
         hostname: "cdn.sanity.io",
       },
       {

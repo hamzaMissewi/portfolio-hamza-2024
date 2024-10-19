@@ -32,26 +32,6 @@ export type SendMailOutput = { success?: boolean; response?: string } & {
 } & { formatData?: MailFieldsType };
 
 function ContactMe() {
-  return (
-    <div className="flex flex-col items-center p-1">
-      <h1 className="heading lg:max-w-[45vw]">
-        Ready to take <span className="text-purple">your</span> digital presence
-        to the next level?
-      </h1>
-
-      <p className="my-5 text-center text-white-200 md:mt-10">
-        Reach out to me today and let&apos;s discuss how I can help your achieve
-        your goals.
-      </p>
-
-      <ContactForm />
-    </div>
-  );
-}
-
-export default ContactMe;
-
-function ContactForm() {
   const t = useTranslations("ContactMe");
   const touch = useTranslations("Navbar");
 
@@ -154,148 +134,165 @@ function ContactForm() {
   );
 
   return (
-    <div
-      className={
-        "relative flex h-full snap-start flex-col items-center shadow shadow-slate-300" +
-        " mx-auto max-w-7xl justify-evenly"
-      }
-    >
-      {/*"absolute top-24"*/}
+    <div className="flex flex-col items-center p-1">
+      <h1 className="heading lg:max-w-[45vw]">
+        Ready to take <span className="text-purple">your</span> digital presence
+        to the next level?
+      </h1>
 
-      <h3
-        className={`text-center text-gray-500 ${locale !== "ar" && "tracking uppercase tracking-[20px]"} text-2xl font-bold`}
+      <p className="my-5 text-center text-white-200 md:mt-10">
+        Reach out to me today and let&apos;s discuss how I can help your achieve
+        your goals.
+      </p>
+      <div
+        className={
+          "relative flex h-full snap-start flex-col items-center shadow shadow-slate-300" +
+          " mx-auto max-w-7xl justify-evenly"
+        }
       >
-        {t("title")}
-      </h3>
+        {/*"absolute top-24"*/}
 
-      <div className={"relative flex flex-col space-y-10"}>
-        <h4
-          className={
-            "text-center text-xl font-semibold text-slate-700 decoration-[#F7AB0A]/50"
-          }
+        <h3
+          className={`text-center text-gray-500 ${locale !== "ar" && "tracking uppercase tracking-[20px]"} text-2xl font-bold`}
         >
-          {/*<span className={"decoration-[#F7AB0A]/50 underline"}>*/}
-          {t("contact")}
-        </h4>
+          {t("title")}
+        </h3>
 
-        <div className={"items-center"}>
-          <Box className={"flex items-center justify-center space-x-5"}>
-            <PhoneIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
-            <Typography
-              fontSize={"medium"}
-              // color={"text.color.secondary"}
-              className={"text-md color-gray-500"}
-            >
-              (+216) 56521184
-            </Typography>
-          </Box>
+        <div className={"relative flex flex-col space-y-10"}>
+          <h4
+            className={
+              "text-center text-xl font-semibold text-slate-700 decoration-[#F7AB0A]/50"
+            }
+          >
+            {/*<span className={"decoration-[#F7AB0A]/50 underline"}>*/}
+            {t("contact")}
+          </h4>
 
-          <Box className={"flex items-center justify-center space-x-5"}>
-            <EnvelopeIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
-            <Typography>hamza.missaoui@b2b-alive.com</Typography>
-          </Box>
+          <div className={"items-center"}>
+            <Box className={"flex items-center justify-center space-x-5"}>
+              <PhoneIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
+              <Typography
+                fontSize={"medium"}
+                // color={"text.color.secondary"}
+                className={"text-md color-gray-500"}
+              >
+                (+216) 56521184
+              </Typography>
+            </Box>
 
-          <Box className={"flex items-center justify-center space-x-5"}>
-            <MapPinIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
-            <Typography>{t("address")}</Typography>
-          </Box>
-        </div>
+            <Box className={"flex items-center justify-center space-x-5"}>
+              <EnvelopeIcon
+                className={"h-7 w-7 animate-pulse text-[#F7AB0A]"}
+              />
+              <Typography>hamza.missaoui@b2b-alive.com</Typography>
+            </Box>
 
-        {/*<Stack component={"form"}*/}
-        <form
-          onSubmit={handleSubmit(handleContactMeSubmit)}
-          className={
-            // bg-darkBackground dark:bg-gray-100
-            "flex w-full flex-1 flex-col space-y-2 self-center p-2"
-          }
-        >
-          {/*<div className={"flex w-full flex-grow justify-center space-x-2"}>*/}
-          <FormControl error={!!errors.name}>
-            <TextField
-              placeholder={t("default.name")}
-              className={"text-blue-800 bg-lightBackground"}
-              type={"text"}
-              {...register("name")}
-              required
-            />
-          </FormControl>
-          <FormControl error={!!errors.email}>
-            <TextField
-              placeholder={t("default.email")}
-              className={"text-blue-800 bg-lightBackground"}
-              type={"text"}
-              {...register("email")}
-              required
-            />
-          </FormControl>
-          {/*</div>*/}
-          <FormControl error={!!errors.subject}>
-            <TextField
-              placeholder={t("default.subject")}
-              className={"text-blue-800 bg-lightBackground"}
-              type={"text"}
-              {...register("subject")}
-              required
-            />
-          </FormControl>
-          <FormControl error={!!errors.message}>
-            {/*<textarea*/}
-            <TextareaAutosize
-              placeholder={t("default.message")}
-              className={
-                "h-[150px] bg-white p-2 text-black dark:bg-gray-900 dark:text-white"
-              }
-              {...register("message")}
-              required={false}
-            />
-          </FormControl>
-
-          <div className={"flex items-center justify-center space-x-3"}>
-            <LoadingButton
-              color={"primary"}
-              size={"small"}
-              className={"w-fit self-center rounded-md px-0 text-lg uppercase"}
-              disabled={!isValid}
-              loading={emailSending}
-              type={"submit"}
-              variant={"contained"}
-            >
-              <p>{t("send")}</p>
-              <FaLocationArrow />
-            </LoadingButton>
-
-            <Link
-              href={`mailto:${links.ownerEmail}`}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <p className={"flex self-start"}>{touch("getInTouch")}</p>
-              {/*<MagicButton*/}
-              {/*  title={touch("getInTouch")}//"Let's get in touch"*/}
-              {/*  icon={<FaLocationArrow />}*/}
-              {/*  // position="right"*/}
-              {/*  asChild*/}
-              {/*/>*/}
-            </Link>
+            <Box className={"flex items-center justify-center space-x-5"}>
+              <MapPinIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
+              <Typography>{t("address")}</Typography>
+            </Box>
           </div>
-        </form>
-        {/*NEW*/}
-      </div>
-      {/*Alert error*/}
-      <Snackbar
-        open={!!sendEmailResponse?.error?.message}
-        autoHideDuration={6000}
-        onClose={() => handleCloseErrorAlert()}
-      >
-        <Alert
+
+          {/*<Stack component={"form"}*/}
+          <form
+            onSubmit={handleSubmit(handleContactMeSubmit)}
+            className={
+              // bg-darkBackground dark:bg-gray-100
+              "flex w-full flex-1 flex-col space-y-2 self-center p-2"
+            }
+          >
+            {/*<div className={"flex w-full flex-grow justify-center space-x-2"}>*/}
+            <FormControl error={!!errors.name}>
+              <TextField
+                placeholder={t("default.name")}
+                className={"text-blue-800 bg-lightBackground"}
+                type={"text"}
+                {...register("name")}
+                required
+              />
+            </FormControl>
+            <FormControl error={!!errors.email}>
+              <TextField
+                placeholder={t("default.email")}
+                className={"text-blue-800 bg-lightBackground"}
+                type={"text"}
+                {...register("email")}
+                required
+              />
+            </FormControl>
+            {/*</div>*/}
+            <FormControl error={!!errors.subject}>
+              <TextField
+                placeholder={t("default.subject")}
+                className={"text-blue-800 bg-lightBackground"}
+                type={"text"}
+                {...register("subject")}
+                required
+              />
+            </FormControl>
+            <FormControl error={!!errors.message}>
+              {/*<textarea*/}
+              <TextareaAutosize
+                placeholder={t("default.message")}
+                className={
+                  "h-[150px] bg-white p-2 text-black dark:bg-gray-900 dark:text-white"
+                }
+                {...register("message")}
+                required={false}
+              />
+            </FormControl>
+
+            <div className={"flex items-center justify-center space-x-3"}>
+              <LoadingButton
+                color={"primary"}
+                size={"small"}
+                className={
+                  "w-fit self-center rounded-md px-0 text-lg uppercase"
+                }
+                disabled={!isValid}
+                loading={emailSending}
+                type={"submit"}
+                variant={"contained"}
+              >
+                <p>{t("send")}</p>
+                <FaLocationArrow />
+              </LoadingButton>
+
+              <Link
+                href={`mailto:${links.ownerEmail}`}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <p className={"flex self-start"}>{touch("getInTouch")}</p>
+                {/*<MagicButton*/}
+                {/*  title={touch("getInTouch")}//"Let's get in touch"*/}
+                {/*  icon={<FaLocationArrow />}*/}
+                {/*  // position="right"*/}
+                {/*  asChild*/}
+                {/*/>*/}
+              </Link>
+            </div>
+          </form>
+          {/*NEW*/}
+        </div>
+        {/*Alert error*/}
+        <Snackbar
+          open={!!sendEmailResponse?.error?.message}
+          autoHideDuration={6000}
           onClose={() => handleCloseErrorAlert()}
-          severity="error"
-          variant="filled"
-          sx={{ width: "100%" }}
         >
-          {sendEmailResponse.error?.message}
-        </Alert>
-      </Snackbar>
+          <Alert
+            onClose={() => handleCloseErrorAlert()}
+            severity="error"
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            {sendEmailResponse.error?.message}
+          </Alert>
+        </Snackbar>
+      </div>
     </div>
   );
 }
+
+export default ContactMe;

@@ -50,14 +50,11 @@ export const Hero = () => {
         />
       </div>
 
-      {/*<h2 className={"text-xl uppercase lg:text-2xl"}>{t("title")}</h2>*/}
+      {/*<p className=" text-sm md:text-lg mb-3 text-2xl uppercase md:tracking-wider">*/}
+      {/*  {t("title")}*/}
+      {/*</p>*/}
 
-      {/*text-sm md:text-lg*/}
       <div className="relative z-10 my-20 flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
-        {/*<p className="mb-3 text-2xl uppercase md:tracking-wider">*/}
-        {/*  {t("title")}*/}
-        {/*</p>*/}
-        {/*  /!*Hi, I&apos;m {links.ownerName}, a Fullstack web developer from Tunisia working with next js and aws other modern technologies.*!/*/}
         <div className="mb-3 flex items-center justify-center md:text-lg lg:text-xl">
           <h5 className={"text-2xl font-semibold uppercase md:tracking-wider"}>
             {dynamicTexts}
@@ -68,7 +65,6 @@ export const Hero = () => {
         <TextGenerateEffect
           className="text-blue-100 text-md text-center uppercase tracking-widest"
           words={t("text_effect")}
-          // words={dynamicTexts}
         />
 
         <Link href="#about" className="md:mt-10">
@@ -83,3 +79,32 @@ export const Hero = () => {
     </div>
   );
 };
+
+// export const introductionsByLang: { [locale: string]: string[] } = {
+//   en: [
+//     "Hi, My name is Hamza Missaoui",
+//     "I am software engineer and web developer who loves",
+//     "I love programming and design elegant web applications",
+//     "I have advanced knowledge in typescript, react, next and node",
+//     "Knowledge on variety of frameworks like react, next js , django and spring boot",
+//     "Knowledge in aws cloud serivces and docker containerisation",
+//   ],
+//   fr: [
+//     "Salut, je m'appelle Hamza Missaoui",
+//     "Je suis ingénieur génie logiciel et développeur web",
+//     "Je travaille sur des fullstack applications web responsives avec graphql et rest api",
+//     "J'ai des connaissances avancés en différents langages comme typescript python et java",
+//     "Aussi frameworks comme react, next js , django et spring boot",
+//     "Connaissances en aws cloud serivces et docker conteneurisation",
+//   ],
+//   ar: [
+//     "مرحبا، اسمي حمزة ميساوي",
+//     "أنا مهندس برمجيات ومطور ويب أحب",
+//     "أنا أحب البرمجة وتصميم تطبيقات الويب الأنيقة",
+//     "لدي معرفة متقدمة في الآلة الكاتبة والتفاعل والتالي والعقدة",
+//     "المعرفة بمجموعة متنوعة من أطر العمل مثل رد الفعل، وjs التالي، وجانغو، والتمهيد الربيعي",
+//     "المعرفة في الخدمات السحابية لـ aws وحاويات الإرساء",
+//   ],
+// };
+
+// words: [...introductionsByLang[localActive], "<ButtonLovesToCodeMore />"],

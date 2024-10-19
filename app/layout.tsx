@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import "./globals.css";
+// import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 // import { unstable_setRequestLocale } from "next-intl/server";
 
 type RootLayoutProps = {
@@ -9,7 +10,6 @@ type RootLayoutProps = {
 
 function RootLayout({ children }: RootLayoutProps) {
   // unstable_setRequestLocale("en-US");
-  // const user = await fetchUser(params.id);
 
   return (
     <html lang={"en"}>
@@ -19,3 +19,23 @@ function RootLayout({ children }: RootLayoutProps) {
 }
 
 export default RootLayout;
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <ClerkProvider>
+//       <html lang="en">
+//       <body>
+//       <header>
+//         <SignedOut>
+//           <SignInButton />
+//         </SignedOut>
+//         <SignedIn>
+//           <UserButton />
+//         </SignedIn>
+//       </header>
+//       <main>{children}</main>
+//       </body>
+//       </html>
+//     </ClerkProvider>
+//   )
+// }

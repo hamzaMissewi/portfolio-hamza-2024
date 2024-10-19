@@ -73,7 +73,7 @@ const MainPage = () => {
 
   const projectsProps = extractPropsFromSection("Project");
   const experienceProps = extractPropsFromSection("Experience");
-  const socialProps = extractPropsFromSection("Skill");
+  const socialProps = extractPropsFromSection("Social");
   // const skillProps = extractPropsFromSection("Skill");
 
   // console.log("sanity experiences", experienceProps);

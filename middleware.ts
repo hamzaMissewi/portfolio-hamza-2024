@@ -9,25 +9,23 @@ export const config = {
   matcher: [
     "/",
     "/(ar|fr|en)/:path*",
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // "/((?!api|_next|_vercel|.*\\..*).*)",
     // TODO clerk
     // Skip Next.js internals and all static files, unless found in search params
-    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    // "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
     // Always run for API routes
-    "/(api|trpc)(.*)",
+    // "/(api|trpc)(.*)",
   ],
 };
 
-// const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/forum(.*)'])
 const isProtectedRoute = createRouteMatcher([
   "/en/(.*)",
   "/fr/(.*)",
   "/ar/(.*)",
 ]);
 
-export default [
-  createMiddleware(routing),
+// export default clerkMiddleware();
+export default createMiddleware(routing) &&
   clerkMiddleware((auth, req) => {
     if (isProtectedRoute(req)) auth().protect();
-  }),
-];
+  });

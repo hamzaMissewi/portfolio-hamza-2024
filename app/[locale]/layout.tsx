@@ -7,7 +7,7 @@ import { siteConfig } from "@/config";
 import React, { PropsWithChildren } from "react";
 import "./globals.css";
 // import localFont from "next/dist/compiled/@next/font/dist/local";
-// import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+// import { ClerkProvider } from '@clerk/nextjs'
 
 // const arFont = localFont({
 //   src: "@/fonts/Rubik-MediumItalic.ttf",
@@ -36,7 +36,7 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
       <body
         // className={locale === "ar" ? arFont.className : inter.className}
         className={inter.className}
-        // suppressHydrationWarning={true}
+        suppressHydrationWarning={true}
       >
         {/* <ClerkProvider>*/}
         <NextIntlClientProvider messages={messages}>

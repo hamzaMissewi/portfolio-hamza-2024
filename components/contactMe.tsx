@@ -33,6 +33,7 @@ export type SendMailOutput = { success?: boolean; response?: string } & {
 function ContactMe() {
   const t = useTranslations("ContactMe");
   const touch = useTranslations("Navbar");
+  const locale = useLocale();
 
   const {
     handleSubmit,
@@ -46,9 +47,6 @@ function ContactMe() {
       name: t("default.name"),
     },
   });
-
-  const locale = useLocale();
-  // const { sendMail } = useSendmailHook();
 
   const [sendEmailResponse, setSendEmailResponse] = useState<SendMailOutput>({
     success: false,
@@ -70,18 +68,12 @@ function ContactMe() {
     });
   };
 
-  // const handleOldContactSubmit = useCallback(
-  //   async (formatData: MailFieldsType) => {
-  //     const emailContent = `Hi, my name is ${formatData.name}, ${formatData.message} ${formatData.email}`;
-  //     window.location.href = `mailto:hamza.missaoui47@gmail.com?subject=${formatData.subject}&body=${emailContent}`;
-  //   },
-  //   [],
-  // );
-
   const handleContactMeSubmit: SubmitHandler<MailFieldsType> = useCallback(
-    async (formatData: any) => {
+    async (formatData: MailFieldsType) => {
       setEmailSending(true);
       // const { response, success, error } = await sendMail(formatData);
+      //     const emailContent = `Hi, my name is ${formatData.name}, ${formatData.message} ${formatData.email}`;
+      //     window.location.href = `mailto:hamza.missaoui47@gmail.com?subject=${formatData.subject}&body=${emailContent}`;
 
       try {
         const response = await fetch("/api/contact", {
@@ -121,7 +113,6 @@ function ContactMe() {
           }
         );
         setSendEmailResponse({
-          // success: false,
           response: undefined,
           error: { message: error?.message, name: error?.name },
         });
@@ -129,7 +120,7 @@ function ContactMe() {
 
       setEmailSending(false);
     },
-    [showEnqueueSnackbar]
+    []
   );
 
   return (
@@ -149,10 +140,10 @@ function ContactMe() {
           " mx-auto max-w-7xl justify-evenly"
         }
       >
-        {/*"absolute top-24"*/}
-
         <h3
-          className={`text-center text-gray-500 ${locale !== "ar" && "tracking uppercase tracking-[20px]"} text-2xl font-bold`}
+          className={`absolute top-24 text-center text-gray-500 ${
+            locale !== "ar" && "tracking uppercase" + " tracking-[20px]"
+          } text-2xl font-bold`}
         >
           {t("title")}
         </h3>

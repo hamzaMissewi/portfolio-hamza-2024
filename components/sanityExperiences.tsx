@@ -25,7 +25,7 @@ type ISanityExperiences = {
 };
 export const SanityExperiencesComponent = ({
   experiences,
-  // ...props
+  ...props
 }: ISanityExperiences) => {
   const t = useTranslations("Experience");
 
@@ -37,10 +37,11 @@ export const SanityExperiencesComponent = ({
       <div className={"flex flex-col items-center justify-center"}>
         <h1 className="heading">
           <span className="text-purple">{t("title")}</span>
-          {/*<Typography component={"h4"}>{props.title}</Typography>*/}
+          <Typography component={"h4"}>{props.title}</Typography>
         </h1>
+        {/*{props.sectionColor}*/}
         {/*<Typography component={"h4"}>{t("personalProjects")}</Typography>*/}
-        <div className="mt-12 flex grid w-full grid-cols-1 flex-col gap-10 lg:grid-cols-4">
+        <div className="mt-12  grid w-full grid-cols-1 flex-col gap-10 lg:grid-cols-4">
           {experiences.map((experience) => (
             <div key={experience._id}>
               <Button

@@ -1,10 +1,9 @@
 //TODO
 import { routing } from "./lib/intl";
 import createMiddleware from "next-intl/middleware";
-// import { clerkMiddleware } from '@clerk/nextjs/server'
-// export clerkMiddleware()
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-export default createMiddleware(routing);
+// export default createMiddleware(routing);
 
 export const config = {
   matcher: [
@@ -18,3 +17,17 @@ export const config = {
     "/(api|trpc)(.*)",
   ],
 };
+
+// const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/forum(.*)'])
+const isProtectedRoute = createRouteMatcher([
+  "/en/(.*)",
+  "/fr/(.*)",
+  "/ar/(.*)",
+]);
+
+export default [
+  createMiddleware(routing),
+  clerkMiddleware((auth, req) => {
+    if (isProtectedRoute(req)) auth().protect();
+  }),
+];

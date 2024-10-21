@@ -81,7 +81,7 @@ export default async function Component() {
   // console.log("sanity projects", projectsProps);
 
   return (
-    <main className="flex flex-1 flex-col overflow-clip bg-lightBackground dark:bg-darkBackground">
+    <main className="flex flex-1 overflow-clip bg-lightBackground dark:bg-darkBackground">
       <FloatingNav navItems={navItems} />
       <div className={"relative flex flex-row space-x-2 overflow-x-hidden"}>
         <Sidebar />
@@ -113,6 +113,7 @@ export default async function Component() {
           {sanityData?.socials && (
             <Socials socials={sanityData.socials} {...socialProps} />
           )}
+          
           <ContactMe />
           <Footer />
         </div>

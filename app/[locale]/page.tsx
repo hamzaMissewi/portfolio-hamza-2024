@@ -29,6 +29,10 @@ import React from "react";
 //   sections: SectionWrapper[];
 // }
 
+// TODO
+// If you're specifically looking for features that Next.js offers (like server-side rendering, API routes, etc.), you would need to stick with Next.js itself. Vite is primarily a build tool and development server that enhances the development experience for single-page applications.
+// Using Vite with Next.js is not officially supported, as Next.js comes with its own built-in bundler (Webpack) and development server, which are tightly integrated into its framework. However, there are some ways you can leverage Vite in a Next.js project, although they may require additional configuration and may not provide the full benefits of either tool. Here are some approaches:
+
 export default async function MainPage() {
   // const [sanityData, setSanityData] = useState<SanityDataTypes | null>(null);
   // useEffect(() => {
@@ -67,8 +71,6 @@ export default async function MainPage() {
   const experienceProps = extractPropsFromSection("Experience");
   const socialProps = extractPropsFromSection("Social");
   const skillProps = extractPropsFromSection("Skill");
-
-  // console.log("sanity experiences", experienceProps);
 
   return (
     <main className="mx-auto flex max-w-7xl flex-1 overflow-clip bg-lightBackground px-6 dark:bg-darkBackground lg:px-16">

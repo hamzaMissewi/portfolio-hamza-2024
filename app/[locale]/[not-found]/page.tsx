@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // import { redirect } from "next/navigation";
 
-function Page() {
+function NotfoundPage() {
   const locale = useLocale();
 
   return (
@@ -24,4 +24,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default NotfoundPage;

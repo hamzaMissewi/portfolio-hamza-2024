@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocale } from "use-intl";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 import { getMessages } from "next-intl/server";
 
 async function IndexLayout({ children }: { children: React.ReactNode }) {
@@ -11,6 +11,9 @@ async function IndexLayout({ children }: { children: React.ReactNode }) {
   console.log("messages ", messages);
 
   if (!["en", "fr", "ar"].includes(locale)) {
+    // redirect(`/${locale}`);
+    redirect(`/not-found`);
+
     //   return (
     //     <html lang={"en"}>
     //       <body
@@ -25,8 +28,8 @@ async function IndexLayout({ children }: { children: React.ReactNode }) {
     //     </html>
     //     // redirect("/loading");
     //   );
-    return children;
   }
+  return children;
 }
 
 export default IndexLayout;

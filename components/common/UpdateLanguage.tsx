@@ -20,7 +20,12 @@ import {
 import { AppIcon, IconType } from "./AppIcon";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { useCallback, useState } from "react";
-import { Language } from "@/lib/intl";
+
+export enum Language {
+  fr = "french",
+  en = "english",
+  ar = "arabic",
+}
 
 export function useUpdateLanguageDialog() {
   const [open, setOpen] = useState(false);

@@ -1,7 +1,7 @@
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { defineRouting } from "next-intl/routing";
 
-export const locales: string[] = ["en", "fr", "ar"];
+export const locales: string[] = ["en", "fr", "ar"] as const;
 
 // export const localePrefix: LocalePrefix<Locales> = "as-needed"; // always
 
@@ -11,6 +11,7 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: "en",
   localePrefix: "always", // "as-needed",
+  // domains:{},
   // domains: [
   //   {
   //     domain: "dev.localhost:3000",
@@ -21,9 +22,3 @@ export const routing = defineRouting({
 
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation(routing);
-
-export enum Language {
-  fr = "french",
-  en = "english",
-  ar = "arabic",
-}

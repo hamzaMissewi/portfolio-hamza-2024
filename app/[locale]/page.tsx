@@ -17,6 +17,8 @@ import fetchData from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
 import Socials from "@/components/socials";
+import Header from "@/components/header";
+import React from "react";
 // import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 
 // interface IMainPageProps {
@@ -70,6 +72,8 @@ export default async function MainPage() {
 
   return (
     <main className="mx-auto flex max-w-7xl flex-1 overflow-clip bg-lightBackground px-6 dark:bg-darkBackground lg:px-16">
+      {sanityData?.socials && <Header socials={sanityData.socials} />}
+
       <FloatingNav navItems={navItems} />
       <div className={"relative flex flex-row space-x-2 overflow-x-hidden"}>
         <Sidebar />

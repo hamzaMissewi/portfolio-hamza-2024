@@ -7,7 +7,8 @@ import { siteConfig } from "@/config";
 import React, { PropsWithChildren } from "react";
 import "./globals.css";
 import localFont from "next/dist/compiled/@next/font/dist/local";
-// import { ClerkProvider } from "@clerk/clerk-react";
+import { ClerkProvider } from "@clerk/clerk-react";
+import { useRouter } from "next/router";
 
 const arFont = localFont({
   src: "@/fonts/arabicFont.ttf",
@@ -23,8 +24,11 @@ interface RootLayoutProps extends PropsWithChildren {
 }
 
 async function Layout({ children, params: { locale } }: RootLayoutProps) {
+  // const { id } = router.query;
   const messages = await getMessages({ locale });
   // const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+  const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const router = useRouter();
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
@@ -38,19 +42,21 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
         className={locale === "ar" ? arFont.className : inter.className}
         suppressHydrationWarning={true}
       >
-        {/*<ClerkProvider*/}
-        {/*  publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}*/}
-        {/*>*/}
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            themes={["dark", "light"]}
-            attribute="class"
-            defaultTheme="dark"
-          >
-            {children}
-          </ThemeProvider>
-        </NextIntlClientProvider>
-        {/*</ClerkProvider>*/}
+        <ClerkProvider
+          // signInFallbackRedirectUrl={clerkFrontendApi!}
+          publishableKey={clerkFrontendApi!}
+          i18nIsDynamicList
+        >
+          <NextIntlClientProvider messages={messages}>
+            <ThemeProvider
+              themes={["dark", "light"]}
+              attribute="class"
+              defaultTheme="dark"
+            >
+              {children}
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

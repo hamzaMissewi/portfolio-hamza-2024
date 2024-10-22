@@ -6,14 +6,11 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   distDir: "build",
   images: {
-    path: "",
-    // domains:[]
     remotePatterns: [
       {
-        // Pattern for images from a specific domain
         // pathname: "./public/**", // Use ** for wildcard matching
         hostname: "public",
-        pathname: "**",
+        pathname: "/**/*",
       },
       {
         protocol: "https",

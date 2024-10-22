@@ -8,15 +8,19 @@ import { portfolioTheme } from "@/theme/themeSanity";
 // import Logo from "@/components/studio/Logo/Logo.component";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+// const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 
 const config: Config = defineConfig({
-  basePath: "/studio",
+  // name: 'sanity-studio-shopify',
+  // title: 'Sanity Studio / Shopify',
+
+  basePath: "/hamza",
   name: "portfolio-sanity", //"default",
   title: "portfolio sanity",
   projectId: projectId ?? "t1nbpupj",
-  dataset: dataset ?? "production", // dataset
+  dataset: "production", // dataset
   plugins: [colorInput, structureTool(), visionTool()],
+  // plugins: [deskTool({ structure }), customDocumentActions(), visionTool()],
   schema: {
     types: schemaTypes,
   },

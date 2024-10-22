@@ -17,7 +17,6 @@ import fetchData from "@/utils/index";
 import Skills from "@/components/skills";
 import ContactMe from "@/components/contactMe";
 import Socials from "@/components/socials";
-
 // import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
 
 // interface IMainPageProps {
@@ -28,29 +27,18 @@ import Socials from "@/components/socials";
 //   sections: SectionWrapper[];
 // }
 
-// const MainPage = ({
-//   socials,
-//   skills,
-//   projects,
-//   experiences,
-//   sections,
-// }: IMainPageProps) => {
-export default async function Component() {
+export default async function MainPage() {
   // const [sanityData, setSanityData] = useState<SanityDataTypes | null>(null);
-  //
   // useEffect(() => {
-  //   // let isMounted = true; // flag to track if component is mounted
   //   const sanity = async () => {
   //     const data = await fetchData();
   //     setSanityData(data);
   //   };
   //   sanity();
-  //   // return () => {
-  //   //   isMounted = false; // cleanup function to set flag to false
-  //   // };
   // }, []);
 
   const sanityData = await fetchData();
+
   const extractPropsFromSection = (title: string) => {
     const section = sanityData?.sections?.find(
       (section) => section.title === title
@@ -79,7 +67,6 @@ export default async function Component() {
   const skillProps = extractPropsFromSection("Skill");
 
   // console.log("sanity experiences", experienceProps);
-  // console.log("sanity projects", projectsProps);
 
   return (
     <main className="mx-auto flex max-w-7xl flex-1 overflow-clip bg-lightBackground px-6 dark:bg-darkBackground lg:px-16">
@@ -114,6 +101,7 @@ export default async function Component() {
           </div>
           <Clients clients={sanityData?.clients} />
           <Approach />
+
           {sanityData?.socials && (
             <Socials socials={sanityData.socials} {...socialProps} />
           )}

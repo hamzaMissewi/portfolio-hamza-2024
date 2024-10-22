@@ -205,7 +205,6 @@ export const workExperience = [
     desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
-    // new field hamza
     skills: [
       "Proven Expertise: Experienced software developer with 2 years in web developing,including cloud-based" +
         " solutions.",
@@ -219,15 +218,19 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Hybrid App Dev - MERN Tech", //JSM Tech",
+    desc:
+      "Designed and developed hybrid app for both iOS & Android & web using Next, React, MongoDb, Graphql," +
+      " Elasticsearch and React Native.",
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
+    skills: ["I finish tasks on demand fast, work with react, next, graphql"],
   },
   {
     id: 3,
     title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    // desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    desc: "Led the dev of a web app for a client, from initial concept to deployment on app stores.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
@@ -277,7 +280,8 @@ export const socialMedia = [
 ] as const;
 
 export const techStack = {
-  stack1: ["React.js", "Next.js", "Typescript"],
-  stack2: ["NodeJs Koa", "ElasticSearch", "AWS", "MongoDB"],
-  stack3: ["AWS", "GraphQl", "MongoDB"],
+  stack1: ["React.js", "Next.js", "Typescript", "GraphQl"],
+  stack2: ["NodeJs Koa", "ElasticSearch", "NodeJs Express", "MongoDB"],
+  stack3: ["MongoDB", "PostgresSql", "MySQL"],
+  stack4: ["Spring boot", "Django", "Java", "Python"],
 } as const;

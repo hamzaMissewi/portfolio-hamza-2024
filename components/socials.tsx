@@ -13,10 +13,17 @@ type ISocialsProps = {
 
 function Socials({ socials }: ISocialsProps) {
   const router = useRouter();
-  const t = useTranslations();
+  const t = useTranslations("Socials");
 
   return (
     <div className={"flex"}>
+      <h3 className={"absolute top-32 text-center text-xl italic lg:text-3xl"}>
+        {t("title")}
+      </h3>
+      <p className={"text-lg text-darkBackground dark:text-gray-200"}>
+        {t("description")}
+      </p>
+
       {socials.map((social) => (
         <div className={"flex"} key={social._id}>
           {social.title.includes("email") ? (
@@ -26,9 +33,9 @@ function Socials({ socials }: ISocialsProps) {
             >
               <SlSocialGoogle
                 // network={"email"}
-                // bgColor={"transparent"}
                 // fgColor={"gray"}
-                // target={"_blank"}
+                color={"transparent"}
+                target={"_blank"}
                 href={"mailto:hamza.missaoui@b2b-alive.com?subject=offer_job"}
                 className={"size-1.5"}
               />
@@ -43,7 +50,6 @@ function Socials({ socials }: ISocialsProps) {
                 alt={social.title}
                 src={urlFor(social.icon).url()}
               />
-
               {/*<Link*/}
               {/*  aria-label={`${title} profile page`}*/}
               {/*  className={`flex items-center py-12 ${styles.box}`}*/}

@@ -18,6 +18,10 @@
       "minError": "Le mot de passe doit comporter au moins 8 caractères"
     }
   },
+  "Socials": {
+    "title": "Relations",
+    "description": "Voila une liste des avis des clients en freelance et directeurs des entreprises que j'ai travaillé avec au passé"
+  },
   "Sidebar": {
     "mainPage": "Page d'accueil",
     "moviesPage": "Page Films",

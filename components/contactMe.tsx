@@ -126,8 +126,8 @@ function ContactMe() {
   return (
     <div className="flex flex-col items-center p-1">
       <h1 className="heading lg:max-w-[45vw]">
-        Ready to take <span className="text-purple">your</span> digital presence
-        to the next level?
+        Ready to take <span className="text-purple">your</span> ideas and
+        projects to a reality and optimize the work to the next level?
       </h1>
 
       <p className="my-5 text-center text-white-200 md:mt-10">
@@ -163,7 +163,6 @@ function ContactMe() {
               <PhoneIcon className={"h-7 w-7 animate-pulse text-[#F7AB0A]"} />
               <Typography
                 fontSize={"medium"}
-                // color={"text.color.secondary"}
                 className={"text-md color-gray-500"}
               >
                 (+216) 56521184
@@ -225,7 +224,7 @@ function ContactMe() {
               <TextareaAutosize
                 placeholder={t("default.message")}
                 className={
-                  "h-[150px] bg-white p-2 text-black dark:bg-gray-900 dark:text-white"
+                  "min-h-[150px] bg-white p-1 text-black dark:bg-gray-900 dark:text-white"
                 }
                 {...register("message")}
                 required={false}
@@ -265,7 +264,7 @@ function ContactMe() {
           </form>
           {/*NEW*/}
         </div>
-        {/*Alert error*/}
+
         <Snackbar
           open={!!sendEmailResponse?.error?.message}
           autoHideDuration={6000}

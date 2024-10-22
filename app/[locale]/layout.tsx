@@ -6,12 +6,12 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config";
 import React, { PropsWithChildren } from "react";
 import "./globals.css";
-// import localFont from "next/dist/compiled/@next/font/dist/local";
-// import { ClerkProvider } from '@clerk/nextjs'
+import localFont from "next/dist/compiled/@next/font/dist/local";
+// import { ClerkProvider } from "@clerk/clerk-react";
 
-// const arFont = localFont({
-//   src: "@/fonts/Rubik-MediumItalic.ttf",
-// });
+const arFont = localFont({
+  src: "@/fonts/arabicFont.ttf",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,11 +34,13 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        // className={locale === "ar" ? arFont.className : inter.className}
-        className={inter.className}
+        // className={inter.className}
+        className={locale === "ar" ? arFont.className : inter.className}
         suppressHydrationWarning={true}
       >
-        {/* <ClerkProvider>*/}
+        {/*<ClerkProvider*/}
+        {/*  publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}*/}
+        {/*>*/}
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             themes={["dark", "light"]}
@@ -48,6 +50,7 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        {/*</ClerkProvider>*/}
       </body>
     </html>
   );

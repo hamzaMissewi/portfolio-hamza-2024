@@ -19,6 +19,7 @@ import ContactMe from "@/components/contactMe";
 import Socials from "@/components/socials";
 
 // import { Experience, Project, SectionWrapper, Skill, Social } from "@/typings";
+
 // interface IMainPageProps {
 //   experiences: Experience[];
 //   projects: Project[];
@@ -51,7 +52,7 @@ export default async function Component() {
 
   const sanityData = await fetchData();
   const extractPropsFromSection = (title: string) => {
-    const section = sanityData?.sections.find(
+    const section = sanityData?.sections?.find(
       (section) => section.title === title
     );
 
@@ -75,20 +76,22 @@ export default async function Component() {
   const projectsProps = extractPropsFromSection("Project");
   const experienceProps = extractPropsFromSection("Experience");
   const socialProps = extractPropsFromSection("Social");
-  // const skillProps = extractPropsFromSection("Skill");
+  const skillProps = extractPropsFromSection("Skill");
 
   // console.log("sanity experiences", experienceProps);
   // console.log("sanity projects", projectsProps);
 
   return (
-    <main className="flex flex-1 overflow-clip bg-lightBackground dark:bg-darkBackground">
+    <main className="mx-auto flex max-w-7xl flex-1 overflow-clip bg-lightBackground px-6 dark:bg-darkBackground lg:px-16">
       <FloatingNav navItems={navItems} />
       <div className={"relative flex flex-row space-x-2 overflow-x-hidden"}>
         <Sidebar />
         <div className="ml-70 relative flex flex-1 flex-col items-center px-1">
           <Hero />
           <Grid />
-          {sanityData?.skills && <Skills skills={sanityData.skills} />}
+          {sanityData?.skills && (
+            <Skills skills={sanityData.skills} {...skillProps} />
+          )}
           <div className={"flex flex-col"}>
             <RecentProjects />
             {sanityData?.projects && (
@@ -101,6 +104,7 @@ export default async function Component() {
 
           <div>
             <ExperiencesComponent />
+
             {sanityData?.experiences && (
               <SanityExperiencesComponent
                 experiences={sanityData.experiences}
@@ -108,12 +112,12 @@ export default async function Component() {
               />
             )}
           </div>
-          <Clients />
+          <Clients clients={sanityData?.clients} />
           <Approach />
           {sanityData?.socials && (
             <Socials socials={sanityData.socials} {...socialProps} />
           )}
-          
+
           <ContactMe />
           <Footer />
         </div>

@@ -154,7 +154,7 @@ export const testimonials = [
     title: "Director of AlphaStream Technologies",
   },
   {
-    quote: `As director of globalnet 3s i work with ${links.ownerName} for his internship project and i can say he's a hard worker, competent and fast learner throughout the period of project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. I rcommend him as web developer for any entreprise, ${links.ownerName} is a good option.`,
+    quote: `As director of globalnet 3s i worked with ${links.ownerName} for his internship project and i can say he's a hard worker, competent and fast learner throughout the period of project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. I rcommend him as web developer for any entreprise, ${links.ownerName} is a good option.`,
     name: "Akrem aalani",
     title: "Director of Tunisia Globalnet 3s",
   },
@@ -186,13 +186,13 @@ export const companies = [
   },
   {
     id: 4,
-    name: "stream",
+    name: "Sofrecom",
     img: "/s.svg",
     nameImg: "/streamName.svg",
   },
   {
     id: 5,
-    name: "docker.",
+    name: "B2B Alive LTD",
     img: "/dock.svg",
     nameImg: "/dockerName.svg",
   },

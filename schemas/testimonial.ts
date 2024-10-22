@@ -23,5 +23,10 @@ export default defineType({
       title: "Quote",
       type: "text",
     }),
+    defineField({
+      name: "image",
+      title: "Image",
+      type: "image",
+    }),
   ],
 });

@@ -43,7 +43,8 @@ export const Approach = () => {
         <Card
           title="Development & Launch"
           icon={<MagicButton title="Phase 3" asChild />}
-          description="This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up."
+          // description="This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up."
+          description="This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website with next , react typescript from scratch."
         >
           <CanvasRevealEffect
             animationSpeed={3}

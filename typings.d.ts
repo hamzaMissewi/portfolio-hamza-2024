@@ -177,4 +177,17 @@ export interface Testimonial extends SanityBody {
   author: string;
   quote: string;
   role: string;
+  image: BaseImage | Image;
 }
+
+
+// export interface Client extends SanityBody {
+//   _type: "Client";
+//   author: string;
+//   quote: string;
+//   role: string;
+//   image: BaseImage | Image;
+// }
+
+
+// https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Tld7QO8IAbRf4RraF9PCrGUyhukFoebZYw&s

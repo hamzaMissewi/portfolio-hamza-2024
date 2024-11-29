@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/moving-borders";
-import { BaseImage, Color, Experience } from "@/typings";
+import { Color, Experience } from "@/typings";
 import { urlFor } from "@/sanity";
 import DateUtils from "@/lib/date";
 import { Typography } from "@mui/material";
@@ -10,23 +10,23 @@ import { useTranslations } from "next-intl";
 type ISanityExperiences = {
   experiences: Experience[];
   // TODO
-  addSectionColor: boolean;
-  displayInNav: boolean;
-  dividerBackground: boolean;
-  dividerPattern: boolean;
-  heading: string;
-  menuUrl: string;
-  patternBottom: BaseImage;
-  patternTop: BaseImage;
-  sectionBackground: BaseImage;
+  // addSectionColor: boolean;
+  // displayInNav: boolean;
+  // dividerBackground: boolean;
+  // dividerPattern: boolean;
+  // heading: string;
+  // menuUrl: string;
+  // patternBottom: BaseImage;
+  // patternTop: BaseImage;
+  // sectionBackground: BaseImage;
+  // sectionIcon?: string;
   sectionColor?: Color;
-  sectionIcon?: string;
   title: string;
 };
 export const SanityExperiencesComponent = ({
-  experiences,
-  ...props
-}: ISanityExperiences) => {
+                                             experiences,
+                                             ...props
+                                           }: ISanityExperiences) => {
   const t = useTranslations("Experience");
 
   return (
@@ -37,9 +37,13 @@ export const SanityExperiencesComponent = ({
       <div className={"flex flex-col items-center justify-center"}>
         <h1 className="heading">
           <span className="text-purple">{t("title")}</span>
-          <Typography component={"h4"}>{props.title}</Typography>
+          <Typography
+            style={{ bgcolor: props.sectionColor?.hex }}
+            component={"h4"}
+          >
+            {props.title}
+          </Typography>
         </h1>
-        {/*{props.sectionColor}*/}
         {/*<Typography component={"h4"}>{t("personalProjects")}</Typography>*/}
         <div className="mt-12  grid w-full grid-cols-1 flex-col gap-10 lg:grid-cols-4">
           {experiences.map((experience) => (

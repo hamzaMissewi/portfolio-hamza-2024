@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    //    "noUnusedLocals": false,
+    //    "noUnusedParameters": false,
     "target": "ES2017",
     "lib": [
       "dom",
@@ -13,11 +13,11 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "ES2017",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -31,11 +31,12 @@
     }
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "build/types/**/*.ts"
+    "next-env.d.ts"
+    //    ".next/types/**/*.ts"
+    //    "build/types/**/*.ts"
+    //    "build/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -41,6 +41,22 @@ export const Approach = () => {
         </Card>
 
         <Card
+          title={"hamza effect"}
+          description={"I con show my skills on react and next technologies"}
+          icon={<MagicButton title="Phase 5" asChild />}
+        >
+          <CanvasRevealEffect
+            animationSpeed={4}
+            containerClassName="bg-black"
+            colors={[
+              [236, 72, 153],
+              [232, 121, 249],
+            ]}
+            dotSize={2}
+          />
+        </Card>
+
+        <Card
           title="Development & Launch"
           icon={<MagicButton title="Phase 3" asChild />}
           // description="This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up."
@@ -91,11 +107,13 @@ const Card = ({ title, description, icon, children }: CardProps) => {
       </AnimatePresence>
 
       <div className="relative z-20">
-        <div className="absolute left-[50%] top-[50%] mx-auto flex w-full -translate-x-[50%] -translate-y-[50%] items-center justify-center text-center transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0">
+        <div
+          className="absolute left-[50%] top-[50%] mx-auto flex w-full -translate-x-[50%] -translate-y-[50%] items-center justify-center text-center transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0">
           {icon}
         </div>
 
-        <h2 className="relative z-10 mt-4 text-3xl font-bold text-black opacity-0 transition  duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white">
+        <h2
+          className="relative z-10 mt-4 text-3xl font-bold text-black opacity-0 transition  duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white">
           {title}
         </h2>
 

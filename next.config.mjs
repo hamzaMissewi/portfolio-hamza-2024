@@ -1,14 +1,21 @@
 import createNextIntlPlugin from "next-intl/plugin";
-
+// import middleware from "./clerkMiddleware";
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   distDir: "build",
+  i18n: {
+    locales: ["en", "fr", "ar"],
+    defaultLocale: "en",           // Set the default locale to 'en' (English)
+  },
+  // middleware: [
+  //   // await import("./clerkMiddleware"),
+  //   // await import("./intlMiddleware"),
+  // ],
   images: {
     remotePatterns: [
       {
-        // pathname: "./public/**", // Use ** for wildcard matching
         hostname: "public",
         pathname: "/**/*",
       },

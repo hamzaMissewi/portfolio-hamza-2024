@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import SkillComponent from "./skillComponent";
 import { useTranslations } from "next-intl";
-import { Skill } from "@/typings";
+// import { Skill } from "@/typings";
 import SanitySkill from "@/components/sanitySkill";
 
 type SkillsProps = { skills: Skill[] };

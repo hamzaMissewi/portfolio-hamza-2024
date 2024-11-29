@@ -6,6 +6,7 @@ import { MagicButton } from "@/components/ui/magic-button";
 import { useTranslations } from "next-intl";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { Link } from "@/lib/intl";
+// import { getProfile } from "@/utils/fetchSkills";
 
 export const Hero = () => {
   const t = useTranslations("Hero");
@@ -24,7 +25,7 @@ export const Hero = () => {
     delaySpeed: 2000,
   });
 
-  //   const profile: ProfileType[] = await getProfile();
+  // const profile: ProfileType[] = await getProfile();
 
   return (
     <div className="flex flex-col items-center pb-20 pt-36">
@@ -50,20 +51,22 @@ export const Hero = () => {
         />
       </div>
 
-      {/*<p className=" text-sm md:text-lg mb-3 text-2xl uppercase md:tracking-wider">*/}
-      {/*  {t("title")}*/}
-      {/*</p>*/}
-      {/*//         {profile &&*/}
-      {/*//           profile.map((data) => (*/}
-      {/*//             <div key={data._id} className="max-w-2xl lg:max-w-2xl">*/}
-      {/*//               <h1 className="mb-6 min-w-full text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:min-w-[700px] lg:leading-[3.7rem]">*/}
-      {/*//                 {data.headline}*/}
-      {/*//               </h1>*/}
-      {/*//               // Add more content as needed*/}
-      {/*//             </div>*/}
-      {/*//           ))}*/}
+      <p className=" mb-3 text-2xl text-sm uppercase md:text-lg md:tracking-wider">
+        {t("title")}
+      </p>
 
-      <div className="relative z-10 my-20 flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
+      {/*{profile &&*/}
+      {/*  profile.map((data) => (*/}
+      {/*    <div key={data._id} className="max-w-2xl lg:max-w-2xl">*/}
+      {/*      <h1 className="mb-6 min-w-full text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:min-w-[700px] lg:leading-[3.7rem]">*/}
+      {/*        {data.headline}*/}
+      {/*      </h1>*/}
+      {/*      /!*Add more content as needed*!/*/}
+      {/*    </div>*/}
+      {/*  ))}*/}
+
+      <div
+        className="relative z-10 my-20 flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
         <div className="mb-3 flex items-center justify-center md:text-lg lg:text-xl">
           <h5 className={"text-2xl font-semibold uppercase md:tracking-wider"}>
             {dynamicTexts}

@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { companies, testimonials } from "@/data";
-import { Testimonial } from "@/typings";
-import { urlFor } from "@/sanity";
+// import { Testimonial } from "@/typings";
+// import { urlFor } from "@/sanity";
 
 export const Clients = ({ clients }: { clients?: Testimonial[] }) => {
   return (
@@ -13,7 +13,8 @@ export const Clients = ({ clients }: { clients?: Testimonial[] }) => {
       </h1>
 
       <div className="flex flex-col items-center max-lg:mt-10">
-        <div className="relative flex h-[50vh] flex-col items-center justify-center  overflow-hidden rounded-md antialiased md:h-[30rem]">
+        <div
+          className="relative flex h-[50vh] flex-col items-center justify-center  overflow-hidden rounded-md antialiased md:h-[30rem]">
           <InfiniteMovingCards
             items={testimonials}
             direction="right"
@@ -39,8 +40,7 @@ export const Clients = ({ clients }: { clients?: Testimonial[] }) => {
                 width={143}
                 src={img}
                 alt={`${name}'s logo`}
-                className="md:w-24"
-                // className="w-5 md:w-10"
+                className="w-5 md:w-24"
               />
               <Image
                 height={28}

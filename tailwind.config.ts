@@ -13,7 +13,7 @@ const config = {
     "./src/**/*.{ts,tsx}",
     "./data/**/*.{ts,tsx}",
   ],
-  prefix: "",
+  // prefix: "",
   theme: {
     container: {
       center: true,
@@ -23,6 +23,10 @@ const config = {
       },
     },
     extend: {
+      loading: {
+        backgroundColor: "#f7f7f7",
+        color: "#333",
+      },
       colors: {
         lightBackground: "#819bf1",
         darkBackground: "#040c2e",

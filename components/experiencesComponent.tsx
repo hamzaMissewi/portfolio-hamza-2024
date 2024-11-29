@@ -8,7 +8,6 @@ export const ExperiencesComponent = () => {
   const t = useTranslations("Experience");
   return (
     <section id="experience" className="py-20">
-      {/*<span className="text-purple">*/}
       <h1 className="heading">{t("title")}</h1>
 
       <div className="mt-12 grid w-full grid-cols-1 gap-10 lg:grid-cols-4">

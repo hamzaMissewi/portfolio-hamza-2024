@@ -29,20 +29,20 @@ type IProjectsProps = {
 };
 
 function SanityProjects({
-  addSectionColor,
-  displayInNav,
-  dividerBackground,
-  dividerPattern,
-  heading,
-  menuUrl,
-  patternBottom,
-  patternTop,
-  projects,
-  sectionBackground,
-  sectionColor,
-  sectionIcon,
-  title,
-}: IProjectsProps) {
+                          addSectionColor,
+                          displayInNav,
+                          menuUrl,
+                          projects,
+                          sectionBackground,
+                          title,
+                          // dividerBackground,
+                          // dividerPattern,
+                          // heading,
+                          // patternBottom,
+                          // patternTop,
+                          // sectionColor,
+                          // sectionIcon,
+                        }: IProjectsProps) {
   const t = useTranslations("Projects");
   const dataPosition = displayInNav && menuUrl.length > 0 ? menuUrl : null;
   const animatedWrapper = useRef(null);
@@ -56,7 +56,7 @@ function SanityProjects({
       <Section
         dataPosition={dataPosition}
         sectionClassName="relative"
-        // sectionColor={addSectionColor ? sectionColor?.hex : undefined}
+        sectionColor={addSectionColor ? "#fff" : undefined}
       >
         {/*<HeadingDivider*/}
         {/*  title={heading || ""}*/}
@@ -91,9 +91,9 @@ function SanityProjects({
             animate={
               isInViewWrapper
                 ? {
-                    opacity: 1,
-                    y: 0,
-                  }
+                  opacity: 1,
+                  y: 0,
+                }
                 : {}
             }
             initial={{

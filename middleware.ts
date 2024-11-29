@@ -1,49 +1,46 @@
 //TODO
 import { routing } from "./lib/intl";
 import createMiddleware from "next-intl/middleware";
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { createRouteMatcher } from "@clerk/nextjs/server";
+// import { NextRequest, NextResponse } from "next/server";
+
+const intlMiddleware = createMiddleware(routing);
+export default intlMiddleware;
 
 const isProtectedRoute = createRouteMatcher([
-  "/en/(.*)",
-  "/fr/(.*)",
-  "/ar/(.*)",
+  "/en(.*)",
+  "/fr(.*)",
+  "/ar(.*)",
 ]);
 
-// const intlMiddleware = createMiddleware({
-//   locales: AppConfig.locales,
-//   localePrefix: AppConfig.localePrefix,
-//   defaultLocale: AppConfig.defaultLocale,
-// })
-const intlMiddleware = createMiddleware(routing);
-
-// export default createMiddleware(routing) &&
-export default clerkMiddleware(
-  (auth, req) => {
-    if (isProtectedRoute(req)) auth().protect();
-    //     // Restrict admin routes to users with specific permissions
-    //     if (isProtectedRoute(req)) {
-    //       auth().protect((has) => {
-    //         return (
-    //           has({ permission: "org:sys_memberships:manage" }) ||
-    //           has({ permission: "org:sys_domains_manage" })
-    //         );
-    //       });
-    //     }
-    return intlMiddleware(req);
-  },
-  { debug: true }
-);
-
-// export default createMiddleware(routing);
+// export function middleware(req: NextRequest) {
+//   // Log the request URL
+//   console.log(`Request URL: ${req.nextUrl}`);
+//   // const isAuthenticated = false; // Replace with your authentication logic
+//
+//   // const session = useSession();
+//
+//   // if (!isAuthenticated) {
+//   // if (isProtectedRoute(req) && !session.isSignedIn) {
+//     clerkMiddleware();
+//   if (isProtectedRoute(req)) {
+//     // Redirect to login if not authenticated
+//     return NextResponse.redirect(new URL("/login", req.url));
+//     intlMiddleware(req);
+//   }
+//   // If everything is okay, continue to the next middleware or the requested page
+//   return NextResponse.next();
+//   // next();
+// }
 
 export const config = {
+  // matcher: ['/protected/:path*'], // Apply middleware to all paths under /protected
   matcher: [
     "/",
-    "/(ar|fr|en)/:path*",
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // "/(fr|en|ar)/:path*",
     // "/((?!.*\\..*|_next).*)",
-    // TODO clerk
     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    //     // "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv",
     "/(api|trpc)(.*)",
   ],
 };

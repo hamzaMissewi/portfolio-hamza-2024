@@ -1,12 +1,12 @@
 import { defineField, defineType } from "sanity";
-// import { BookIcon } from "@sanity/icons";
-import SchoolIcon from "@mui/icons-material/School";
+import { BookIcon } from "@sanity/icons";
+// import SchoolIcon from "@mui/icons-material/School";
 
-export default defineType({
+export const educationType = defineType({
   name: "education",
   title: "Hamza Education",
   type: "document",
-  icon: SchoolIcon,
+  icon: BookIcon,//SchoolIcon,
   fields: [
     defineField({
       name: "title",

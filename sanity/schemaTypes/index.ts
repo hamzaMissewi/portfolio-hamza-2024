@@ -1,25 +1,29 @@
 import { type SchemaTypeDefinition } from "sanity";
-import profile from "./profileType";
-import experience from "./experienceType";
-import project from "./projectType";
-import skill from "./skillType";
-import social from "./socialType";
-import skillCategory from "./skillCategoryType";
-import education from "./educationType";
-import certification from "./certificationType";
+import { profileType } from "./profileType";
+import { experienceType } from "./experienceType";
+import { projectType } from "./projectType";
+import { skillType } from "./skillType";
+import { socialType } from "./socialType";
+import { skillCategoryType } from "./skillCategoryType";
+import { educationType } from "./educationType";
+import { certificationType } from "./certificationType";
 import blockContent from "./blockContentType";
+import { testimonialType } from "./testimonial";
+import hamzaType from "@/sanity/schemaTypes/hamzaType";
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    skill,
-    social,
-    skillCategory,
-    certification,
+    profileType,
+    socialType,
+    skillType,
+    skillCategoryType,
+    certificationType,
     blockContent,
-    education,
-    project,
-    experience, // todo
-    profile,
+    educationType,
+    projectType,
+    experienceType,
+    testimonialType,// clients
+    hamzaType,
   ],
 };

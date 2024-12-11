@@ -1,9 +1,8 @@
 "use client";
-// import React from "react";
 import { motion } from "framer-motion";
 import { Stack, Switch, Typography } from "@mui/material";
 import { Skill } from "@/typings";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/sanity/sanity";
 
 type SkillProps = { skill: Skill };
 

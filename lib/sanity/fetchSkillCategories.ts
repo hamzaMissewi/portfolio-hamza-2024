@@ -1,15 +1,12 @@
-import { SkillCategory } from "../../typings";
 import { defineQuery } from "next-sanity";
-import { sanityFetch } from "../lib/live";
+import { sanityFetch } from "../../sanity/lib/live";
 import { toast } from "react-toast";
-
-// const query = groq(`*[_type == "skillCategory"] | order(_createdAt desc)`);
-const FETCH_SKILL_CATEGORIES = defineQuery(
-  `*[_type == "skillCategory"] | order(name desc)`);
+import { SkillCategory } from "@/sanity.types";
 
 
 export async function fetchSkillCategories(): Promise<SkillCategory[]> {
-  // return sanityClient.fetch(FETCH_SKILL_CATEGORIES);
+  const FETCH_SKILL_CATEGORIES = defineQuery(
+    `*[_type == "skillCategory"] | order(name desc)`);
   try {
     const result = await sanityFetch({ query: FETCH_SKILL_CATEGORIES });
     return result.data || [];

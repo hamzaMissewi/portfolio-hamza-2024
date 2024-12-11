@@ -1,10 +1,9 @@
 import { defineQuery } from "next-sanity";
-import { sanityFetch } from "../lib/live";
-import { Education } from "../../sanity.types";
+import { sanityFetch } from "../../sanity/lib/live";
+import { Education } from "@/sanity.types";
 
 
 export async function fetchEducations(): Promise<Education[]> {
-  // return sanityClient.fetch(FETCH_EDUCATIONS);
   const FETCH_EDUCATIONS = defineQuery(`
   *[_type == "education"] | order(_createdAt desc)
 `);

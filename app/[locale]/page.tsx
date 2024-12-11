@@ -1,12 +1,10 @@
 import React from "react";
 import HomeComponent from "@/components/home";
 import { locales, useRouter } from "@/lib/intl";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 
-export default async function MainPage({
-                                         params: { locale },
-                                       }: {
-  params: { locale: string };
+export default async function MainPage({ params }: {
+  params: Promise<{ locale: string }>
 }) {
   // const sanityData = await fetchData();
   // const [sanityData, setSanityData] = useState<SanityDataTypes | null>(null);
@@ -18,19 +16,20 @@ export default async function MainPage({
   //   sanity();
   // }, []);
 
+
   const router = useRouter();
-  const params = useParams();
-  // const { locale } = router;
-
-  // Supported languages
-  // const supportedLanguages = ["en", "fr", "es"];
-
-  const paramsLocale = params?.locale as string;
+  // const params = useParams();
+  const paramsLocale = (await params).locale;
 
   // If the locale is not supported, redirect to English
   if (!locales.includes(paramsLocale)) {
     router.replace(`/${paramsLocale}`, { locale: "/en" });
   }
+
+  // const socials = await fetchSocials();
+  // const profile = await getProfile();
+  // const experiences = await fetchExperiences();
+// const sections=await getSections()
 
   // return <HomeComponent sanityData={sanityData} />;
   return <HomeComponent />;

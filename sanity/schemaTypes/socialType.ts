@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 import { MobileDeviceIcon } from "@sanity/icons";
 
-export default defineType({
+export const socialType = defineType({
   name: "social",
   title: "Social",
   type: "document",
@@ -32,16 +32,16 @@ export default defineType({
         },
       ],
     }),
-    // defineField({
-    //   name: "width",
-    //   title: "Width",
-    //   type: "number",
-    // }),
-    // defineField({
-    //   name: "height",
-    //   title: "Height",
-    //   type: "number",
-    // }),
+    defineField({
+      name: "width",
+      title: "Width",
+      type: "number",
+    }),
+    defineField({
+      name: "height",
+      title: "Height",
+      type: "number",
+    }),
     // defineField({
     //   name: "primaryColor",
     //   title: "Primary Colour",

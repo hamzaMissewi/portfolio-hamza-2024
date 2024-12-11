@@ -2,7 +2,7 @@
 import React from "react";
 import { Social } from "@/typings";
 import Image from "next/image";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/sanity/sanity";
 import { useRouter } from "next/navigation";
 import { SlSocialGoogle } from "react-icons/sl";
 import { useTranslations } from "next-intl";

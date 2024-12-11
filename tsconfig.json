@@ -1,24 +1,29 @@
 {
   "compilerOptions": {
-    //    "noUnusedLocals": false,
-    //    "noUnusedParameters": false,
-    "target": "ES2017",
+    "target": "ES2023",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "noEmitOnError": false,
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "ES2017",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
     "moduleResolution": "Bundler",
+    //    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "noEmit": true,
+    "jsx": "preserve",
     "incremental": true,
+    "outDir": "./build",
+    "noImplicitAny": true,
+    // to remove no used of type any error
     "plugins": [
       {
         "name": "next"
@@ -33,10 +38,8 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts"
-    //    ".next/types/**/*.ts"
-    //    "build/types/**/*.ts"
-    //    "build/types/**/*.ts"
+    "next-env.d.ts",
+    "**/*.types.ts"
   ],
   "exclude": [
     "node_modules"

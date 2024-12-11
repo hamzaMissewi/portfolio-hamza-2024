@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 import { CubeIcon } from "@sanity/icons";
 
-export default defineType({
+export const skillType = defineType({
   name: "skill",
   title: "Skill",
   type: "document",

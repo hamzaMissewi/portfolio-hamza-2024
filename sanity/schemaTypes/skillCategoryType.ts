@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 import { ThLargeIcon } from "@sanity/icons";
 
-export default defineType({
+export const skillCategoryType = defineType({
   name: "skillCategory",
   title: "Skill Category",
   type: "document",

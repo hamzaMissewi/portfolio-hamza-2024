@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useInView } from "framer-motion";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/sanity/sanity";
 import { BaseImage, Color, Project } from "@/typings";
 import { useTranslations } from "next-intl";
 import InnerSection from "@/components/new/InnerSection.component";

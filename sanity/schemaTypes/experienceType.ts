@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 import { HomeIcon } from "@sanity/icons";
 
-export default defineType({
+export const experienceType = defineType({
   name: "experience",
   title: "Hamza Experience",
   type: "document",

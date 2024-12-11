@@ -13,7 +13,7 @@ import styles from "./ProjectCard.module.scss";
 import * as Dialog from "@radix-ui/react-dialog";
 import SkillComponent from "@/components/skillComponent";
 import { Skill } from "@/typings";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/sanity/sanity";
 
 type ProjectCardProps = {
   backgroundText?: string;
@@ -32,16 +32,16 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCardComponent({
-  // futureUseText,
-  backgroundText,
-  brandColor,
-  coverImage,
-  github,
-  skills,
-  text,
-  title,
-  website,
-}: ProjectCardProps) {
+                                               // futureUseText,
+                                               backgroundText,
+                                               brandColor,
+                                               coverImage,
+                                               github,
+                                               skills,
+                                               text,
+                                               title,
+                                               website,
+                                             }: ProjectCardProps) {
   const animatedCard = useRef(null);
   const isInViewCard = useInView(animatedCard, {
     once: true,
@@ -53,10 +53,10 @@ export default function ProjectCardComponent({
         animate={
           isInViewCard
             ? {
-                opacity: 1,
-                scale: 1,
-                y: 0,
-              }
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }
             : {}
         }
         className={`relative px-3.5 ${styles.card}`}

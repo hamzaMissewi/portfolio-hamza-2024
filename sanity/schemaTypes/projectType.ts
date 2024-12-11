@@ -1,8 +1,7 @@
 import { defineField, defineType } from "sanity";
-
 import { CodeBlockIcon } from "@sanity/icons";
 
-export default defineType({
+export const projectType = defineType({
   name: "project",
   title: "Project",
   type: "document",
@@ -40,6 +39,32 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "otherImages",
+      title: "Other Product Images (Optional)",
+      type: "array",
+      of: [
+        { type: "image", options: { hotspot: false } },
+      ],
+      // validation: (Rule) => Rule.optional(),
+    }),
+    defineField({
+      name: "video",
+      title: "Video",
+      type: "file",
+      validation: (Rule) => Rule.optional(),
+      // type: "reference",
+      // to: {
+      //   type: "itemVideo",
+      // },
+    }),
+    defineField({
+      name: "videoUrl",
+      title: "Video Url",
+      description: "Video URl (Optional)",
+      type: "url",
+      validation: (Rule) => Rule.optional(),
+    }),
+    defineField({
       name: "codeURL",
       title: "Code URL",
       type: "url",
@@ -47,6 +72,7 @@ export default defineType({
     defineField({
       name: "previewURL",
       title: "Preview URL",
+      description: "Project Url Live",
       type: "url",
     }),
     defineField({
@@ -54,11 +80,11 @@ export default defineType({
       title: "Project Background",
       type: "text",
     }),
-    defineField({
-      name: "futureUse",
-      title: "Future Use",
-      type: "text",
-    }),
+    // defineField({
+    //   name: "futureUse",
+    //   title: "Future Use",
+    //   type: "text",
+    // }),
     defineField({
       name: "technologies",
       title: "Technologies",

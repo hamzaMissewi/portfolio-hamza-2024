@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/moving-borders";
 import { Color, Experience } from "@/typings";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/sanity/sanity";
 import DateUtils from "@/lib/date";
 import { Typography } from "@mui/material";
 import { useTranslations } from "next-intl";

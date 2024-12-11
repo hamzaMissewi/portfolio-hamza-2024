@@ -5,7 +5,7 @@ import { Link } from "@/lib/intl";
 import { links } from "@/config";
 import { socialMedia } from "@/data";
 import { Social } from "@/typings";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/sanity/sanity";
 
 type IFooterProps = {
   socials?: Social[];

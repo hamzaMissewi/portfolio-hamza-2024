@@ -1,5 +1,6 @@
 "use client";
-import React, { ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
+import type { ThemeProviderProps } from "next-themes/dist/types";
 
 export type ThemeType = "light" | "dark" | "system";
 
@@ -13,17 +14,17 @@ interface ThemeContextType {
 
 export const ThemeContext = React.createContext<ThemeContextType | undefined>(
   undefined,
-);
-
-// const ThemeContext = createContext<ThemeContextType | null>({
 //   theme: "light", // Default theme
 //   toggleTheme: () => {},
-// });
+);
 
-export default function ThemeProvider({ children }: { children: ReactNode }) {
+// export default function ThemeProvider({ children }: { children: ReactNode }) {
+export default function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState<ThemeType>("light");
-  //   localStorage.getItem("theme") === "dark" ? "dark" : "light",
+
+  useEffect(() => setMounted(true), []);
+
 
   useEffect(() => {
     setMounted(true);
@@ -46,9 +47,11 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   //   document.documentElement.style.setProperty("--theme", theme); // Update CSS variable
   // }, [theme]);
 
-  // const toggleTheme = () => {
-  //   setTheme(theme === "light" ? "dark" : "light");
-  // };
+  const toggleTheme = () => {
+    //   localStorage.getItem("theme") === "dark" ? "dark" : "light",
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
 
   useEffect(() => {
     window
@@ -90,11 +93,14 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     [theme],
   );
 
+
   if (!mounted) {
-    return null;
+    //   return null;
+    return children;
   }
 
   return (
+    // <NextThemesProvider value={value}>{children}</NextThemesProvider>
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }

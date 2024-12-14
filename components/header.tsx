@@ -19,10 +19,11 @@ import {
 } from "@clerk/nextjs"; // TODO not
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "./ui/button";
-import { ThemeToggler } from "@/theme/themeToggler";
+// import { ThemeToggler } from "@/theme/themeToggler";
 import LocaleSwitcher from "@/components/localeSwitcher";
 import Socials from "@/components/socials";
 import { Social } from "@/sanity.types";
+import { ThemeToggler } from "@/components/common/themeToggler";
 // import { useUpdateLanguageDialog } from "./common/UpdateLanguage";
 // import { Social } from "@/typings";
 
@@ -91,7 +92,6 @@ const Header: React.FC<IHeaderProps> = ({ socials }) => {
 
       {!isSignedIn ? (
         <SignedOut>
-          {/*<SignIn />*/}
           <SignInButton />
           <SignUpButton />
         </SignedOut>
@@ -115,7 +115,8 @@ const Header: React.FC<IHeaderProps> = ({ socials }) => {
             </SignedIn>
           </div>
         ) : (
-          <ButtonGroup color={"success"} size={"small"}>
+          // <ButtonGroup color={"success"} size={"small"}>
+          <ButtonGroup>
             <Button
               type={"button"}
               asChild

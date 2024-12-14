@@ -6,7 +6,6 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   // distDir: "build",
   reactStrictMode: true,
-
   i18n: {
     locales: ["en", "fr", "ar"],
     defaultLocale: "en",

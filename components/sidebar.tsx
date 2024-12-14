@@ -4,12 +4,12 @@ import NavigationLink from "./navigationLink";
 import { useTranslations } from "next-intl";
 import { useLocale } from "use-intl";
 import Image from "next/image";
-import { ThemeToggler } from "@/theme/themeToggler";
 import LocaleSwitcher from "@/components/localeSwitcher";
 import { Divider } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+// import { ThemeToggler } from "@/theme/themeToggler";
 // import { useTheme } from "next-themes";
 // import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 
@@ -48,7 +48,6 @@ export default function Sidebar() {
           sx={{
             border: "1px solid black",
             backgroundColor: "white",
-            // boxShadow:
             //   "rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px",
             p: 0.5,
             ":hover": {
@@ -67,24 +66,21 @@ export default function Sidebar() {
             (locale === "ar" ? (
               <ChevronRightIcon fontSize={"small"} />
             ) : (
-              <ChevronLeftIcon fontSize={"small"} />
+              <ChevronLeftIcon fontSize={"medium"} />
             ))}
         </IconButton>
       </div>
 
       {openSidebar && (
         <div
-        // initial={{
-        //   opacity: 0.5,
-        //   x: -100,
-        // }}
-        // animate={{
-        //   x: 0,
-        //   opacity: 1,
-        // }}
-        // transition={{
-        //   duration: 0.4,
-        // }}
+          // initial={{
+          //   opacity: 0.5,
+          //   x: -100,
+          // }}
+          // animate={{
+          //   x: 0,
+          //   opacity: 1,
+          // }}
         >
           <NavigationLink href={"https://www.b2b-alive.com"} target={"_blank"}>
             <Image

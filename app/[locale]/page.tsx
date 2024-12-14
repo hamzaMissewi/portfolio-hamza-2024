@@ -1,6 +1,5 @@
 import React from "react";
 import HomeComponent from "@/components/home";
-import ThemeProvider from "@/context/ThemeContext";
 // import { locales, useRouter } from "@/lib/intl";
 
 export default async function MainPage({ params }: {
@@ -16,17 +15,13 @@ export default async function MainPage({ params }: {
   //   sanity();
   // }, []);
 
-
-  // const router = useRouter();
-  // const paramsLocale = (await params).locale;
-  //
+  const paramsLocale = (await params).locale;
   // // If the locale is not supported, redirect to English
   // if (!locales.includes(paramsLocale)) {
   //   router.replace(`/${paramsLocale}`, { locale: "/en" });
   // }
 
-
-  return <ThemeProvider><HomeComponent /></ThemeProvider>;
+  return <HomeComponent />;
 }
 
 // export async function getStaticProps({ locale }: GetStaticPropsContext) {

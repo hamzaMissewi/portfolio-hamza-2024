@@ -1,7 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/theme/provider";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config";
 import React, { PropsWithChildren } from "react";
@@ -10,6 +9,9 @@ import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/header";
 import { ToastContainer } from "react-toast";
+import ThemeProvider from "@/context/ThemeContext";
+// import { ThemeProvider } from "@/theme/provider";
+
 
 const arFont = localFont({
   src: "../../fonts/arabicFont.ttf",

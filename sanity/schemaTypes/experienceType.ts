@@ -18,7 +18,7 @@ export const experienceType = defineType({
       title: "Description",
       type: "text",
       // type: "array",
-      // of: [{ type: "string" }],
+      // of: [{ type: "blockContent" }],
     }),
     defineField({
       name: "type",
@@ -42,7 +42,6 @@ export const experienceType = defineType({
       type: "string",
     }),
     // defineField({
-    //   // description: "Select true if Contract role",
     //   name: "contractRole",
     //   title: "Contract Role",
     //   type: "boolean",
@@ -81,7 +80,6 @@ export const experienceType = defineType({
       },
     }),
     defineField({
-      // hidden: ({ document }) => document?.currentlyWorkplace === true,
       name: "dateEnded",
       title: "Date Ended",
       type: "date",
@@ -94,26 +92,25 @@ export const experienceType = defineType({
       title: "Is Current Occupied",
       type: "boolean",
     }),
-    // TODO or will got error
-    // defineField({
-    //   name: "technologies",
-    //   title: "Technologies",
-    //   type: "array",
-    //   of: [
-    //     {
-    //       type: "reference",
-    //       to: {
-    //         type: "technology",
-    //       },
-    //     },
-    //   ],
-    // }),
+    // TODO
+    defineField({
+      name: "technologies",
+      title: "Technologies",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: {
+            type: "technology",
+          },
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
       title: "title",
       role: "role",
-      // description: "description",
       startDate: "startDate",
       endDate: "endDate",
       company: "company",

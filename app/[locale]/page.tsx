@@ -1,7 +1,7 @@
 import React from "react";
 import HomeComponent from "@/components/home";
-import { locales, useRouter } from "@/lib/intl";
-// import { useParams } from "next/navigation";
+import ThemeProvider from "@/context/ThemeContext";
+// import { locales, useRouter } from "@/lib/intl";
 
 export default async function MainPage({ params }: {
   params: Promise<{ locale: string }>
@@ -17,20 +17,22 @@ export default async function MainPage({ params }: {
   // }, []);
 
 
-  const router = useRouter();
-  // const params = useParams();
-  const paramsLocale = (await params).locale;
+  // const router = useRouter();
+  // const paramsLocale = (await params).locale;
+  //
+  // // If the locale is not supported, redirect to English
+  // if (!locales.includes(paramsLocale)) {
+  //   router.replace(`/${paramsLocale}`, { locale: "/en" });
+  // }
 
-  // If the locale is not supported, redirect to English
-  if (!locales.includes(paramsLocale)) {
-    router.replace(`/${paramsLocale}`, { locale: "/en" });
-  }
 
-  // const socials = await fetchSocials();
-  // const profile = await getProfile();
-  // const experiences = await fetchExperiences();
-// const sections=await getSections()
-
-  // return <HomeComponent sanityData={sanityData} />;
-  return <HomeComponent />;
+  return <ThemeProvider><HomeComponent /></ThemeProvider>;
 }
+
+// export async function getStaticProps({ locale }: GetStaticPropsContext) {
+//   return {
+//     props: {
+//       messages: (await import(`../../locales/${locale}.json`)).default,
+//     },
+//   };
+// }

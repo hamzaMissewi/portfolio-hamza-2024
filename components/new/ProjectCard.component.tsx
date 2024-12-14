@@ -1,38 +1,30 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/solid";
-
-// import ModalCard from "../ModalCard/ModalCard.component";
 import styles from "./ProjectCard.module.scss";
-// import { Dialog } from "@radix-ui/react-dialog";
 import * as Dialog from "@radix-ui/react-dialog";
 import SkillComponent from "@/components/skillComponent";
-import { Skill } from "@/typings";
-import { urlFor } from "@/sanity/sanity";
+import { urlFor } from "@/lib/imageUrl";
+import { Skill } from "@/sanity.types";
 
 type ProjectCardProps = {
   backgroundText?: string;
   brandColor?: string;
-  coverImage: string;
+  coverImage?: string;
   futureUseText?: string;
-  github?: {
-    url: string;
-  };
-  skills: Skill[];
-  text: string;
-  title: string;
-  website: {
+  github?: { url: string; };
+  skills?: Skill[];
+  text?: string;
+  title?: string;
+  website?: {
     url: string;
   };
 };
 
 export default function ProjectCardComponent({
-                                               // futureUseText,
                                                backgroundText,
                                                brandColor,
                                                coverImage,
@@ -42,6 +34,8 @@ export default function ProjectCardComponent({
                                                title,
                                                website,
                                              }: ProjectCardProps) {
+
+  // const project = await getProjectById();
   const animatedCard = useRef(null);
   const isInViewCard = useInView(animatedCard, {
     once: true,
@@ -59,7 +53,8 @@ export default function ProjectCardComponent({
             }
             : {}
         }
-        className={`relative px-3.5 ${styles.card}`}
+        // className={`relative px-3.5 ${styles.card}`}
+        className={`relative px-3.5 `}
         initial={{
           opacity: 0,
           scale: 0,
@@ -79,7 +74,8 @@ export default function ProjectCardComponent({
           }}
         >
           <div
-            className={`block rounded-t-lg px-4 py-2.5 text-center font-medium uppercase ${styles.header}`}
+            // className={`block rounded-t-lg px-4 py-2.5 text-center font-medium uppercase ${styles.header}`}
+            className={`block rounded-t-lg px-4 py-2.5 text-center font-medium uppercase`}
             style={{
               backgroundColor: `${brandColor}`,
             }}
@@ -87,21 +83,23 @@ export default function ProjectCardComponent({
             {title}
           </div>
           <div className="relative">
-            <Image
-              alt={title}
+            {coverImage && <Image
+              alt={title || "image"}
               height={500}
               loading="lazy"
               src={coverImage}
               width={767}
-            />
+            />}
             <div
-              className={`absolute top-0 z-10 h-full w-full ${styles.overlay}`}
+              // className={`absolute top-0 z-10 h-full w-full ${styles.overlay}`}
+              className={`absolute top-0 z-10 h-full w-full`}
             />
             <div
               className={`absolute top-0 z-10 flex h-full w-full items-center justify-center px-4 ${styles.details}`}
             >
               <p
-                className={`z-20 text-center ${styles.copy}`}
+                // className={`z-20 text-center ${styles.copy}`}
+                className={`z-20 text-center`}
                 style={{
                   transform: "translateZ(75px)",
                 }}
@@ -117,14 +115,16 @@ export default function ProjectCardComponent({
               borderColor: brandColor,
             }}
           >
-            {skills?.map((skill) => (
-              <SkillComponent
-                key={skill._id}
-                title={skill.title}
-                skillUrl={urlFor(skill.logo).url()}
-                percent={40}
-              />
-            ))}
+            {skills?.map((skill) => {
+              if (skill.logo) {
+                return <SkillComponent
+                  key={skill._id}
+                  title={skill.title}
+                  skillUrl={urlFor(skill.logo).url()}
+                  percent={skill.percent}
+                />;
+              }
+            })}
             <div className="flex w-full justify-between">
               <Dialog.Root>
                 <Dialog.Trigger asChild>

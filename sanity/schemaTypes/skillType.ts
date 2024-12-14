@@ -1,5 +1,4 @@
 import { defineField, defineType } from "sanity";
-
 import { CubeIcon } from "@sanity/icons";
 
 export const skillType = defineType({
@@ -9,19 +8,18 @@ export const skillType = defineType({
   icon: CubeIcon,
   fields: [
     defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+    }),
+    defineField({
       name: "activeSkill",
       title: "Active Skill",
-      // description: "Display skill on skillset region",
       type: "boolean",
     }),
     defineField({
       name: "brandColor",
       title: "Brand Color",
-      type: "string",
-    }),
-    defineField({
-      name: "title",
-      title: "Title",
       type: "string",
     }),
     defineField({
@@ -63,31 +61,19 @@ export const skillType = defineType({
         layout: "dropdown",
       },
     }),
-
     defineField({
       name: "skillCategory",
-      title: "Select Skill Category",
+      title: "SkillCategory",
       type: "reference",
       to: {
         type: "skillCategory",
       },
-      // type: "array",
-      // of: [
-      //   {
-      //     type: "reference",
-      //     to: {
-      //       type: "skillCategory",
-      //     },
-      //   },
-      // ],
-      // validation: (Rule) =>
-      //   Rule.min(1).error("You can select min 1 category."),
     }),
   ],
   preview: {
     select: {
       title: "title",
-      subtitle: "brandColor",
+      brandColor: "brandColor",
       percent: "percent",
       activeSkill: "activeSkill",
       media: "logo",
@@ -95,7 +81,7 @@ export const skillType = defineType({
     prepare: (select) => {
       return {
         title: select.title,
-        subtitle: `${select.subtitle}- ${select.percent}% - ${select.activeSkill ? "active" : "inactive"}`,
+        subtitle: `${select.brandColor}- ${select.percent}% - ${select.activeSkill ? "active" : "inactive"}`,
         media: select.media,
       };
     },

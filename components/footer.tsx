@@ -4,8 +4,9 @@ import Image from "next/image";
 import { Link } from "@/lib/intl";
 import { links } from "@/config";
 import { socialMedia } from "@/data";
-import { Social } from "@/typings";
-import { urlFor } from "@/sanity/sanity";
+import { Social } from "@/sanity.types";
+import { urlFor } from "@/lib/imageUrl";
+// import { urlFor } from "@/sanity/sanity";
 
 type IFooterProps = {
   socials?: Social[];
@@ -57,20 +58,22 @@ const Footer = ({ socials }: IFooterProps) => {
             socials.map((social) => (
               <div
                 key={social._id}
-                style={{ backgroundColor: social.primaryColor.hex }}
+                // style={{ backgroundColor: social.primaryColor.hex }}
               >
                 <Link
-                  href={social.url}
-                  target="_blank"
+                  href={social.url ? social.url : "#"}
+                  target={social.url ? "_blank" : undefined}
                   rel="noreferrer noopener"
                   className="saturate-180 flex size-10 justify-center rounded-lg bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter"
                 >
-                  <Image
-                    src={urlFor(social.icon).url()}
-                    alt={social.title}
-                    width={20}
-                    height={20}
-                  />
+                  {social.icon &&
+                    <Image
+                      src={urlFor(social.icon).url()}
+                      alt={social.title || ""}
+                      width={20}
+                      height={20}
+                    />
+                  }
                 </Link>
               </div>
             ))}

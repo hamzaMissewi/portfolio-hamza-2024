@@ -24,7 +24,6 @@ export const skillCategoryType = defineType({
       options: {
         hotspot: true,
       },
-      // validation: (Rule) => Rule.required("Icon is required"),
     }),
   ],
 });

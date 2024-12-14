@@ -207,11 +207,11 @@ export const workExperience = [
     thumbnail: "/exp1.svg",
     skills: [
       "Proven Expertise: Experienced software developer with 2 years in web developing,including cloud-based" +
-        " solutions.",
+      " solutions.",
       "Innovation and Efficiency: Implemented automated testing frameworks and CI/CD pipelines that" +
-        " reduced deployment time by 40% and increased code quality.",
+      " reduced deployment time by 40% and increased code quality.",
       "Leadership and Mentoring: Experienced in mentoring junior developers and leading technical teams, fostering" +
-        " a collaborative environment that encourages innovation and professional growth.",
+      " a collaborative environment that encourages innovation and professional growth.",
       "Workflow",
       "Communication",
     ],
@@ -255,7 +255,6 @@ export const socialMedia = [
     name: "GitHub",
     img: "/git.svg",
     link: "https://github.com/hamzaMissewi",
-    // https://github.com/HamzaOstouri
   },
   {
     name: "Twitter",

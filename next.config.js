@@ -1,18 +1,16 @@
 import createNextIntlPlugin from "next-intl/plugin";
-// import middleware from "./clerkMiddleware";
+
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  distDir: "build",
+  // distDir: "build",
+  reactStrictMode: true,
+
   i18n: {
     locales: ["en", "fr", "ar"],
-    defaultLocale: "en",           // Set the default locale to 'en' (English)
+    defaultLocale: "en",
   },
-  // middleware: [
-  //   // await import("./clerkMiddleware"),
-  //   // await import("./intlMiddleware"),
-  // ],
   images: {
     remotePatterns: [
       {
@@ -35,5 +33,4 @@ const nextConfig = {
   },
 };
 
-// export default nextConfig;
 export default withNextIntl(nextConfig);

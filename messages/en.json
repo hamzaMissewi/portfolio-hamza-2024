@@ -1,23 +1,4 @@
 {
-  "common": {
-    "cancel": "Cancel",
-    "connectionError": "Error while contacting our servers. Please check your Internet connection or try again later.",
-    "language": "Language",
-    "languages": {
-      "en": "English",
-      "fr": "French"
-    },
-    "ok": "ok",
-    "password": {
-      "diversityError": "Please add at least one {list, list(style: short; type: disjunction)}.",
-      "diversityLowercase": "lowercase letter",
-      "diversityNumber": "number",
-      "diversitySymbol": "symbol",
-      "diversityUppercase": "uppercase letter",
-      "helperText": "Password must be at least 8 characters long, contain numbers, uppercase letters or symbols.",
-      "minError": "Password must be at least 8 characters long"
-    }
-  },
   "Socials": {
     "title": "Socials",
     "description": "Here a list of opinions and feedbacks of clients and directors of companies that i worked with"
@@ -40,7 +21,7 @@
     "aboutPage": "About page"
   },
   "Navbar": {
-    "welcome": "Hello and welcome {username}",
+    "welcome": "Welcome back {username}",
     "home": "Home page",
     "signUp": "Sign up",
     "signIn": "Sign in",
@@ -118,6 +99,9 @@
       "description": "Integrate into professional corporate work\ncreated an application in typescript that provide service that show the supplier point sales locations on maps and worked on development of a feature for managing purchases of customer network products after doing authentication "
     }
   },
+  "Testimonial": {
+    "title": "Testimonial"
+  },
   "Experience": {
     "title": "My Work experience",
     "description": "I worked on main application of visual content company in Typescript on different features and tasks , allowed me to gain hands-on experience with React and TypeScript for the front-end, and Node.js with Koa js for the back-end, tasks worked on like managing medias and upload them on AWS S3. \nI got  experience in writing clean, maintainable code and optimizing existing codebases to improve performance and reduce load times. Apply best practices to ensure efficient and scalable web solutions.\n Besides developping i work as tester sometimes to test some queries and mutations of graphql endpoint in server side ",
@@ -177,5 +161,24 @@
     "title": "Chatbot",
     "typeMessage": "Type your message...",
     "send": "Send"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "connectionError": "Error while contacting our servers. Please check your Internet connection or try again later.",
+    "language": "Language",
+    "languages": {
+      "en": "English",
+      "fr": "French"
+    },
+    "ok": "ok",
+    "password": {
+      "diversityError": "Please add at least one {list, list(style: short; type: disjunction)}.",
+      "diversityLowercase": "lowercase letter",
+      "diversityNumber": "number",
+      "diversitySymbol": "symbol",
+      "diversityUppercase": "uppercase letter",
+      "helperText": "Password must be at least 8 characters long, contain numbers, uppercase letters or symbols.",
+      "minError": "Password must be at least 8 characters long"
+    }
   }
 }

@@ -8,20 +8,20 @@ export const projectType = defineType({
   icon: CodeBlockIcon,
   fields: [
     defineField({
-      name: "brandColor",
-      title: "Brand Colour",
+      name: "title",
+      title: "Title",
       type: "string",
     }),
     defineField({
-      name: "title",
-      title: "Title",
+      name: "brandColor",
+      title: "Brand Color",
       type: "string",
     }),
     defineField({
       name: "summary",
       title: "Summary",
       type: "string",
-      validation: (Rule) => Rule.max(40),
+      // validation: (Rule) => Rule.max(40),
     }),
     defineField({
       name: "coverImage",
@@ -45,24 +45,21 @@ export const projectType = defineType({
       of: [
         { type: "image", options: { hotspot: false } },
       ],
-      // validation: (Rule) => Rule.optional(),
     }),
     defineField({
       name: "video",
-      title: "Video",
-      type: "file",
-      validation: (Rule) => Rule.optional(),
-      // type: "reference",
-      // to: {
-      //   type: "itemVideo",
-      // },
+      title: "Item Video",
+      type: "reference",
+      to: {
+        type: "itemVideo",
+      },
     }),
     defineField({
       name: "videoUrl",
       title: "Video Url",
-      description: "Video URl (Optional)",
+      description: "Video URL (Optional)",
       type: "url",
-      validation: (Rule) => Rule.optional(),
+      // validation: (Rule) => Rule.optional(),
     }),
     defineField({
       name: "codeURL",
@@ -72,7 +69,7 @@ export const projectType = defineType({
     defineField({
       name: "previewURL",
       title: "Preview URL",
-      description: "Project Url Live",
+      description: "Preview Url Live",
       type: "url",
     }),
     defineField({
@@ -80,11 +77,6 @@ export const projectType = defineType({
       title: "Project Background",
       type: "text",
     }),
-    // defineField({
-    //   name: "futureUse",
-    //   title: "Future Use",
-    //   type: "text",
-    // }),
     defineField({
       name: "technologies",
       title: "Technologies",

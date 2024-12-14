@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { companies, testimonials } from "@/data";
-// import { Testimonial } from "@/typings";
-// import { urlFor } from "@/sanity";
+import { Testimonial } from "@/sanity.types";
+import { urlFor } from "@/lib/imageUrl";
 
 export const Clients = ({ clients }: { clients?: Testimonial[] }) => {
   return (
@@ -28,7 +28,7 @@ export const Clients = ({ clients }: { clients?: Testimonial[] }) => {
               <h1>{client.role}</h1>
               <h2>{client.quote}</h2>
               <h4>{client.author}</h4>
-              <Image src={urlFor(client.image).url()} alt={client.quote} />
+              {client.image && <Image src={urlFor(client.image).url()} alt={client.author || ""} />}
             </div>
           ))}
 

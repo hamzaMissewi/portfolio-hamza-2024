@@ -2,8 +2,10 @@
 import { motion } from "framer-motion";
 import SkillComponent from "./skillComponent";
 import { useTranslations } from "next-intl";
-// import { Skill } from "@/typings";
+import { Skill } from "@/sanity.types";
 import SanitySkill from "@/components/sanitySkill";
+import React from "react";
+import SkillsByCategory from "@/components/skillsByCategory";
 
 type SkillsProps = { skills: Skill[] };
 
@@ -20,14 +22,21 @@ function Skills({ skills }: SkillsProps) {
       }
     >
       <h1 className="heading absolute top-36 text-sm uppercase tracking-[3px] text-gray-500">
-        My <span className="text-purple">{t("title")}</span>
+        <span className="text-purple">{t("title")}</span>
       </h1>
 
       <div className={"flex w-full flex-wrap items-center space-x-2 p-1"}>
         {skills.map((skill) => (
-          <SanitySkill key={skill._id} skill={skill} />
+          <>
+            <SanitySkill key={skill._id} skill={skill} />
+            Related skills
+            {skill.skillCategory?._ref &&
+              <SkillsByCategory skillByCategory={skill.skillCategory._ref} />
+            }
+          </>
         ))}
       </div>
+
 
       <div className={"grid grid-cols-4 gap-5"}>
         <SkillComponent

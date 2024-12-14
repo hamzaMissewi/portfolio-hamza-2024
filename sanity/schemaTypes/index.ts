@@ -8,8 +8,11 @@ import { skillCategoryType } from "./skillCategoryType";
 import { educationType } from "./educationType";
 import { certificationType } from "./certificationType";
 import blockContent from "./blockContentType";
-import { testimonialType } from "./testimonial";
-import hamzaType from "@/sanity/schemaTypes/hamzaType";
+import { testimonialType } from "./testimonialType";
+import { technologyType } from "@/sanity/schemaTypes/technologyType";
+import { itemVideoType } from "@/sanity/schemaTypes/itemVideoType";
+// import bioType from "@/sanity/schemaTypes/hamzaType";
+// import hamzaType from "@/sanity/schemaTypes/hamzaType";
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -23,7 +26,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     educationType,
     projectType,
     experienceType,
-    testimonialType,// clients
-    hamzaType,
+    testimonialType,
+    technologyType,
+    itemVideoType,
+    // bioType,
   ],
 };

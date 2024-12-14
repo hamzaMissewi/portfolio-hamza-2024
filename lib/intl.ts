@@ -1,29 +1,52 @@
-// import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { createNavigation } from "next-intl/navigation";
-import { defineRouting } from "next-intl/routing";
+import { defineRouting, LocalePrefix } from "next-intl/routing";
 
 export const locales: string[] = ["en", "fr", "ar"] as const;
+export type Locales = typeof locales;
+export const localePrefix: LocalePrefix<Locales> = "always";
 
-// export const localePrefix: LocalePrefix<Locales> = "as-needed"; // always
+// export const pathnames: Pathnames<Locales> = {
+//   "/": "/",
+//   "/about": "/about",
+//   "/project(.*)": "/project(.*)",
+//   "/experience": "/experience",
+// };
+
+
+export enum Language {
+  fr = "french",
+  en = "english",
+  ar = "arabic",
+}
+
+
+// export const routing = defineRouting({
+//   // A list of all locales that are supported
+//   defaultLocale: locales[0],
+//   locales: locales,
+//   localePrefix: "always", // "as-needed",
+//   // localeCookie: "NEXT_LOCALE",
+//   // Used when no locale matches
+//   // defaultLocale: locales[0],
+//   // domains: undefined,
+//   // alternateLinks: false,
+//   // localeDetection: false,
+//   // domains: [
+//   //   {
+//   //     domain: "dev.localhost:3000",
+//   //     locales: ["en"],
+//   //     defaultLocale: "en",
+//   //   },
+// });
 
 export const routing = defineRouting({
   // A list of all locales that are supported
   locales: locales,
-  // localeCookie: "NEXT_LOCALE",
   // Used when no locale matches
-  // defaultLocale: locales[0],
-  localePrefix: "always", // "always", // "as-needed",
-  // domains: undefined,
-  // alternateLinks: false,
-  // localeDetection: false,
-  // domains: [
-  //   {
-  //     domain: "dev.localhost:3000",
-  //     locales: ["en"],
-  //     defaultLocale: "en",
-  //   },
+  defaultLocale: "en",
 });
+// { defaultLocale: "en", localePrefix: "always", locales: locales }
 
-export const { Link, redirect, usePathname, useRouter, permanentRedirect } =
+export const { Link, redirect, useRouter, permanentRedirect } =
   createNavigation(routing);
-// createSharedPathnamesNavigation(routing);
+

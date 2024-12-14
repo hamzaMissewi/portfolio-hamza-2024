@@ -1,6 +1,6 @@
 import { defineQuery } from "next-sanity";
-import { sanityFetch } from "../../sanity/lib/live";
-import { Social } from "../../sanity.types";
+import { sanityFetch } from "../live";
+import { Social } from "@/sanity.types";
 
 
 export async function fetchSocials(): Promise<Social[]> {

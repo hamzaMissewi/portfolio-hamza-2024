@@ -18,6 +18,10 @@ const arFont = localFont({
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = siteConfig;
 
+
+export const dynamic = "force-static";
+export const revalidate = 60;
+
 interface RootLayoutProps extends PropsWithChildren {
   children: React.ReactNode;
   params: { locale: string };
@@ -25,11 +29,8 @@ interface RootLayoutProps extends PropsWithChildren {
 
 async function Layout({ children, params: { locale } }: RootLayoutProps) {
   const messages = await getMessages({ locale });
-  // const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-
 
   return (
-    // <ClerkProvider publishableKey={clerkFrontendApi}>
     <ClerkProvider dynamic>
       <NextIntlClientProvider messages={messages} locale={locale}>
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
@@ -62,3 +63,4 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
 }
 
 export default Layout;
+

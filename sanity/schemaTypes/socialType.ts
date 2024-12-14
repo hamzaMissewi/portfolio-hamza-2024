@@ -47,10 +47,5 @@ export const socialType = defineType({
     //   title: "Primary Colour",
     //   type: "string",
     // }),
-    // defineField({
-    //   name: "secondaryColor",
-    //   title: "Secondary Colour",
-    //   type: "string",
-    // }),
   ],
 });

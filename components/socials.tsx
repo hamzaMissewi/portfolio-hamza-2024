@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import { Social } from "@/typings";
+// import { Social } from "@/typings";
 import Image from "next/image";
-import { urlFor } from "@/sanity/sanity";
 import { useRouter } from "next/navigation";
 import { SlSocialGoogle } from "react-icons/sl";
 import { useTranslations } from "next-intl";
+import { urlFor } from "@/lib/imageUrl";
+import { Social } from "@/sanity.types";
 
 type ISocialsProps = {
   socials: Social[];
@@ -26,7 +27,7 @@ function Socials({ socials }: ISocialsProps) {
 
       {socials.map((social) => (
         <div className={"flex"} key={social._id}>
-          {social.title.includes("email") ? (
+          {social.title?.includes("email") ? (
             <div
               className="flex cursor-pointer items-center space-x-1"
               onClick={() => router.push("mailto:hamza.missaoui@b2b-alive.com")}
@@ -45,11 +46,12 @@ function Socials({ socials }: ISocialsProps) {
             <div>
               <p className={"text-lg font-bold"}>{social.title}</p>
               <p className={"text-md text-gray-900"}>{social.url}</p>
-              <Image
-                className={`color-${social.primaryColor}`}
-                alt={social.title}
+              {social.icon && <Image
+                // className={`color-${social.primaryColor}`}
+                className={"text-blue-500"}
                 src={urlFor(social.icon).url()}
-              />
+                alt={social.title || ""}
+              />}
               {/*<Link*/}
               {/*  aria-label={`${title} profile page`}*/}
               {/*  className={`flex items-center py-12 ${styles.box}`}*/}

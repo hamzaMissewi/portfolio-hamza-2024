@@ -1,15 +1,16 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/moving-borders";
-import { Color, Experience } from "@/typings";
-import { urlFor } from "@/sanity/sanity";
+// import { urlFor } from "@/sanity/sanity";
 import DateUtils from "@/lib/date";
 import { Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
+import { Experience } from "@/sanity.types";
+import { urlFor } from "@/lib/imageUrl";
 
 type ISanityExperiences = {
   experiences: Experience[];
-  // TODO
+  // sectionColor?: Color;
   // addSectionColor: boolean;
   // displayInNav: boolean;
   // dividerBackground: boolean;
@@ -20,14 +21,14 @@ type ISanityExperiences = {
   // patternTop: BaseImage;
   // sectionBackground: BaseImage;
   // sectionIcon?: string;
-  sectionColor?: Color;
-  title: string;
+  // title: string;
 };
 export const SanityExperiencesComponent = ({
                                              experiences,
-                                             ...props
+                                             // sectionColor,
                                            }: ISanityExperiences) => {
-  const t = useTranslations("Experience");
+  // const t = useTranslations("Experience");
+  const t = useTranslations();
 
   return (
     <section
@@ -38,10 +39,12 @@ export const SanityExperiencesComponent = ({
         <h1 className="heading">
           <span className="text-purple">{t("title")}</span>
           <Typography
-            style={{ bgcolor: props.sectionColor?.hex }}
+            // style={{ bgcolor: sectionColor?.hex }}
+            className={"bg-red-500"}
             component={"h4"}
           >
-            {props.title}
+            Experiences
+            {/*{props.title}*/}
           </Typography>
         </h1>
         {/*<Typography component={"h4"}>{t("personalProjects")}</Typography>*/}
@@ -55,28 +58,29 @@ export const SanityExperiencesComponent = ({
               >
                 <div className="flex flex-col gap-2 p-3 py-6 md:p-5 lg:flex-row lg:items-center lg:p-10">
                   <div className="h-30 flex justify-between">
-                    <Image
-                      width={95}
-                      height={87}
-                      src={urlFor(experience.companyIcon).url()}
-                      alt={experience.company}
-                      className="w-32 lg:w-32"
-                    />
-
-                    <Image
-                      width={95}
-                      height={87}
-                      src={urlFor(experience.companyLogo).url()}
-                      alt={experience.company}
-                      className="h-16 w-16"
-                      // className="w-16 md:w-20 lg:w-32"
-                    />
+                    {experience.companyLogo &&
+                      <Image
+                        width={95}
+                        height={87}
+                        src={urlFor(experience.companyLogo).url()}
+                        alt={experience.company || ""}
+                        className="w-32 lg:w-32"
+                      />
+                    }
+                    {experience.companyLogo &&
+                      <Image
+                        width={95}
+                        height={87}
+                        src={urlFor(experience.companyLogo).url()}
+                        alt={experience.company || "B2b alive"}
+                        className="h-16 w-16"
+                        // className="w-16 md:w-20 lg:w-32"
+                      />
+                    }
                   </div>
 
                   <div className="lg:ms-5">
                     {/*<p className="text-start font-semibold text-white-100">*/}
-                    {/*  {experience.role}*/}
-                    {/*</p>*/}
                     <h1 className="text-start text-xl font-bold md:text-2xl">
                       {experience.role}
                     </h1>
@@ -87,7 +91,7 @@ export const SanityExperiencesComponent = ({
                       <p className="text-start font-semibold text-white-100">
                         {experience.dateStarted}
                       </p>
-                      {experience.currentlyWorkplace ? (
+                      {experience.currentlyOccupied ? (
                         <p className="text-start font-semibold text-white-100">
                           {DateUtils.getHumanDate(new Date())}
                         </p>
@@ -103,35 +107,37 @@ export const SanityExperiencesComponent = ({
                         "my-2 flex w-full flex-col items-center space-y-1"
                       }
                     >
-                      <Typography component={"h4"}>{t("skills")}</Typography>
-                      <div className={"flex justify-between"}>
-                        {experience.technologies.map((skill) => (
-                          <div
-                            key={skill._id}
-                            className={
-                              "flex flex-col items-center space-y-1 p-3 shadow-md"
-                            }
-                          >
-                            <p className="text-start font-semibold text-white-100">
-                              {skill.title}
-                            </p>
-                            <p className="text-start font-semibold text-white-100">
-                              {skill.activeSkill
-                                ? "active skill"
-                                : "not active skill"}
-                            </p>
-                            <Image
-                              width={50}
-                              height={50}
-                              src={urlFor(skill.logo).url()}
-                              alt={skill._createdAt}
-                              className="h-15 object-cover"
-                              // className="w-16 md:w-20 lg:w-32"
-                            />
-                            {/*<Typography>{technology.category}</Typography>*/}
-                          </div>
-                        ))}
-                      </div>
+                      {/*<Typography component={"h4"}>{t("skills")}</Typography>*/}
+                      <Typography component={"h4"}>Skills</Typography>
+                      {/*<div className={"flex justify-between items-center"}>*/}
+                      {/*  /!*TODO *!/*/}
+                      {/*  {experience.technologies.map((skill) => (*/}
+                      {/*    <div*/}
+                      {/*      key={skill._id}*/}
+                      {/*      className={*/}
+                      {/*        "flex flex-col items-center space-y-1 p-3 shadow-md"*/}
+                      {/*      }*/}
+                      {/*    >*/}
+                      {/*      <p className="text-start font-semibold text-white-100">*/}
+                      {/*        {skill.title}*/}
+                      {/*      </p>*/}
+                      {/*      <p className="text-start font-semibold text-white-100">*/}
+                      {/*        {skill.activeSkill*/}
+                      {/*          ? "active skill"*/}
+                      {/*          : "not active skill"}*/}
+                      {/*      </p>*/}
+                      {/*      <Image*/}
+                      {/*        width={50}*/}
+                      {/*        height={50}*/}
+                      {/*        src={urlFor(skill.logo).url()}*/}
+                      {/*        alt={skill._createdAt}*/}
+                      {/*        className="h-15 object-cover"*/}
+                      {/*        // className="w-16 md:w-20 lg:w-32"*/}
+                      {/*      />*/}
+                      {/*      /!*<Typography>{technology.category}</Typography>*!/*/}
+                      {/*    </div>*/}
+                      {/*  ))}*/}
+                      {/*</div>*/}
                     </div>
                   </div>
                 </div>

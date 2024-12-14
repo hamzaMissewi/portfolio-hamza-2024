@@ -19,14 +19,13 @@ import {
 } from "@clerk/nextjs"; // TODO not
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "./ui/button";
-// import { useUpdateLanguageDialog } from "./common/UpdateLanguage";
 import { ThemeToggler } from "@/theme/themeToggler";
 import LocaleSwitcher from "@/components/localeSwitcher";
-import { Social } from "@/typings";
 import Socials from "@/components/socials";
+import { Social } from "@/sanity.types";
+// import { useUpdateLanguageDialog } from "./common/UpdateLanguage";
+// import { Social } from "@/typings";
 
-// const b2bAliveLogo =
-// "https://media.licdn.com/dms/image/C4E0BAQECttqhzuGqBw/company-logo_200_200/0/1651029832992/b2b_alive_logo?e=2147483647&v=beta&t=yaQVzsyhkQw3LhBJexMtVjWovIEQXEzzxRmGTF20RHk";
 // "disney": "https://links.papareact.com/a943ae"
 
 type IHeaderProps = {

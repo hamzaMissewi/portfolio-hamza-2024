@@ -76,7 +76,7 @@ export const projects: {
   title: string;
   des: string;
   img: string;
-  iconLists: string[];
+  iconLists?: string[];
   link: string;
   sourceCode: string;
 }[] = [
@@ -88,6 +88,16 @@ export const projects: {
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://clone-figmaa.netlify.app",
     sourceCode: "", //"https://github.com/sanidhyy/figma-clone",
+  },
+
+  {
+    id: 1,
+    title: "Ecommerce app with sanity and next",
+    des: "A complete ecommerce application with  next typescript and stripe and sanity.",
+    img: "/ecommerce-app.svg",
+    // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    link: "https://hamza-missaoui-ecommerce-app.vercel.app/",
+    sourceCode: "https://github.com/hamzaMissewi/ecommerce-nextjs-sanity-app-20-11-2024",
   },
   {
     id: 2,

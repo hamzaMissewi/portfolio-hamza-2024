@@ -15,7 +15,7 @@ export default async function MainPage({ params }: {
   //   sanity();
   // }, []);
 
-  const paramsLocale = (await params).locale;
+  // const paramsLocale = (await params).locale;
   // // If the locale is not supported, redirect to English
   // if (!locales.includes(paramsLocale)) {
   //   router.replace(`/${paramsLocale}`, { locale: "/en" });

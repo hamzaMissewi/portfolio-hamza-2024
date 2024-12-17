@@ -1,4 +1,5 @@
 import createNextIntlPlugin from "next-intl/plugin";
+import path from "path";
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -10,6 +11,8 @@ const nextConfig = {
     locales: ["en", "fr", "ar"],
     defaultLocale: "en",
   },
+  localePath: path.resolve("./messages/locales"), // Path to your translation files
+
   images: {
     remotePatterns: [
       {

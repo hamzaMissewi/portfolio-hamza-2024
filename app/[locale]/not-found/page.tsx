@@ -3,7 +3,6 @@ import Link from "next/link";
 
 function NotfoundPage() {
   // const locale = useLocale();
-  // return redirect(`/${locale}`);
 
 
   return (

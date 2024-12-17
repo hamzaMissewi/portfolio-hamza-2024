@@ -44,6 +44,7 @@ export const routing = defineRouting({
   locales: locales,
   // Used when no locale matches
   defaultLocale: "en",
+  // localePrefix: "as-needed",
 });
 // { defaultLocale: "en", localePrefix: "always", locales: locales }
 

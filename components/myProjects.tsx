@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 // import { useRouter } from "next/navigation";
 // import { Link } from "@/lib/intl";
 
-export const RecentProjects = () => {
+export const MyProjects = () => {
   const t = useTranslations("Projects");
 
   return (

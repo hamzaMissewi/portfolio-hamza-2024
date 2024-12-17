@@ -1,17 +1,37 @@
-// import { NextRequest } from "next/server";
-import { createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 // import { NextIntlMiddleware } from "next-intl";
-
-// export default createMiddleware(routing);
-// export default clerkMiddleware((req, auth) => ({
-//
-// }));
 
 const isProtectedRoute = createRouteMatcher([
   "/en(.*)",
   "/fr(.*)",
   "/ar(.*)",
 ]);
+
+// const isAdminRoute = createRouteMatcher([
+//   "/categories(.*)",
+//   "/users(.*)",
+//   "/sale(.*)",
+//   // "/admin(.*)",
+// ]);
+
+
+const isAdminRoute = createRouteMatcher(["/admin"]);
+
+export default clerkMiddleware(async (auth, req) => {
+  const { sessionClaims, redirectToSignIn, userId } = await auth();
+  const userRole = sessionClaims?.metadata?.role;
+  // const url = req.nextUrl.clone(); // this clones the current URL
+
+  if (isProtectedRoute(req)) {
+    await auth.protect();
+  }
+
+  if (userId && isAdminRoute(req) && userRole !== "admin") {
+    redirectToSignIn();
+    // return redirect("/sign-in"); // Redirect non-admin users trying to access admin routes
+  }
+});
+
 
 // export function middleware(req: NextRequest) {
 // //   // Log the request URL
@@ -31,17 +51,18 @@ const isProtectedRoute = createRouteMatcher([
 // //   return NextResponse.next();
 // }
 
-export function middleware(request) {
-  // return NextIntlMiddleware(request, {
-  //   locales: locales,
-  //   defaultLocale: "en",
-  // });
-}
+// export function middleware(request) {
+//   // return NextIntlMiddleware(request, {
+//   //   locales: locales,
+//   //   defaultLocale: "en",
+//   // });
+// }
 
 export const config = {
   // matcher: ['/protected/:path*'], // Apply middleware to all paths under /protected
   matcher: [
-    // "/(fr|en|ar)/:path*",
+    "/",
+    "/(fr|en|ar)/:path*",
     // "/((?!.*\\..*|_next).*)",
     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
     //     // "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv",

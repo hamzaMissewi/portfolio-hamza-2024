@@ -19,13 +19,11 @@ import {
 } from "@clerk/nextjs"; // TODO not
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "./ui/button";
-// import { ThemeToggler } from "@/theme/themeToggler";
 import LocaleSwitcher from "@/components/localeSwitcher";
 import Socials from "@/components/socials";
 import { Social } from "@/sanity.types";
 import { ThemeToggler } from "@/components/common/themeToggler";
 // import { useUpdateLanguageDialog } from "./common/UpdateLanguage";
-// import { Social } from "@/typings";
 
 // "disney": "https://links.papareact.com/a943ae"
 

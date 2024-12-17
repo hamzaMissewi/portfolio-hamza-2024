@@ -15,7 +15,6 @@ import {
   Radio,
   RadioGroup,
   Stack,
-  Typography,
 } from "@mui/material";
 import { AppIcon, IconType } from "./AppIcon";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -57,9 +56,9 @@ interface IUpdateLanguageProps {
 }
 
 export default function UpdateLanguageDialog({
-  open,
-  onClose,
-}: IUpdateLanguageProps) {
+                                               open,
+                                               onClose,
+                                             }: IUpdateLanguageProps) {
   return (
     <Dialog
       open={open}
@@ -129,9 +128,10 @@ function UpdateLanguageForm({ onClose }: UpdateLanguageFormProps) {
       </DialogTitle>
       <Divider />
       <Box>
-        <Typography ml={2} mt={2} variant={"h6"}>
+        {/*<Typography ml={2} mt={2} variant={"h6"}>*/}
+        <h6>
           {t("dialogs.updateLanguageDialog.title")}
-        </Typography>
+        </h6>
       </Box>
       <Box sx={{ pt: 2, ml: 2 }}>
         <FormControl>
@@ -153,8 +153,6 @@ function UpdateLanguageForm({ onClose }: UpdateLanguageFormProps) {
             />
             <Divider sx={{ mt: 2 }} />
           </RadioGroup>
-          {/*  )}*/}
-          {/*/>*/}
         </FormControl>
       </Box>
       <Divider />

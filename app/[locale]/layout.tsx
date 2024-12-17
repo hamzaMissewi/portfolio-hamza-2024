@@ -13,6 +13,9 @@ import ThemeProvider from "@/context/ThemeContext";
 // import { ThemeProvider } from "@/theme/provider";
 
 
+export const dynamic = "force-static";
+export const revalidate = 60;
+
 const arFont = localFont({
   src: "../../fonts/arabicFont.ttf",
 });
@@ -20,9 +23,6 @@ const arFont = localFont({
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = siteConfig;
 
-
-export const dynamic = "force-static";
-export const revalidate = 60;
 
 interface RootLayoutProps extends PropsWithChildren {
   children: React.ReactNode;
@@ -34,7 +34,7 @@ async function Layout({ children, params: { locale } }: RootLayoutProps) {
 
   return (
     <ClerkProvider dynamic>
-      <NextIntlClientProvider messages={messages} locale={locale}>
+      <NextIntlClientProvider messages={messages}>
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
         <head>
           <title>Hamza Missaoui Portfolio</title>
